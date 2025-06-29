@@ -1,21 +1,41 @@
 {
-  "title": "联系我们",
-  "subtitle": "有问题或建议？我们很乐意听取您的意见",
+  "meta": {
+    "title": "联系Smail团队 - 技术支持、反馈建议、商务合作",
+    "description": "联系Smail团队获取技术支持、反馈问题或合作咨询。我们提供多种联系方式，快速响应用户需求。如遇临时邮箱使用问题、功能建议或商务合作，欢迎随时联系我们。"
+  },
+  "hero": {
+    "title": "联系我们",
+    "subtitle": "有问题或建议？我们很乐意听取您的意见"
+  },
+  "success": {
+    "title": "消息发送成功！",
+    "message": "感谢您的反馈，我们会尽快回复您的消息。"
+  },
   "form": {
+    "title": "发送消息",
+    "description": "填写下面的表单，我们会尽快回复您",
     "name": {
       "label": "姓名",
       "placeholder": "请输入您的姓名"
     },
     "email": {
-      "label": "邮箱地址",
-      "placeholder": "请输入您的邮箱地址"
+      "label": "邮箱",
+      "placeholder": "请输入您的邮箱"
     },
     "subject": {
       "label": "主题",
-      "placeholder": "请输入邮件主题"
+      "placeholder": "请选择主题",
+      "options": {
+        "default": "请选择主题",
+        "bug": "问题反馈",
+        "feature": "功能建议",
+        "help": "使用帮助",
+        "business": "商务合作",
+        "other": "其他"
+      }
     },
     "message": {
-      "label": "消息内容",
+      "label": "消息",
       "placeholder": "请详细描述您的问题或建议..."
     },
     "submit": "发送消息",
@@ -23,41 +43,44 @@
     "success": "消息发送成功！我们会尽快回复您。",
     "error": "发送失败，请稍后重试。"
   },
-  "info": {
-    "title": "其他联系方式",
+  "contact": {
     "email": {
-      "title": "邮箱",
-      "value": "support@smail.pw",
-      "description": "技术支持和一般咨询"
+      "title": "邮箱联系",
+      "description": "您也可以直接发送邮件给我们：",
+      "address": "support@smail.pw"
     },
     "response": {
       "title": "响应时间",
-      "value": "24小时内",
-      "description": "我们通常在24小时内回复"
+      "general": "一般问题：",
+      "generalTime": "24小时内",
+      "urgent": "紧急问题：",
+      "urgentTime": "12小时内",
+      "business": "商务合作：",
+      "businessTime": "48小时内"
     },
-    "languages": {
-      "title": "支持语言",
-      "value": "中文、英文、日文",
-      "description": "我们支持多种语言的客户服务"
+    "faq": {
+      "title": "常见问题",
+      "description": "在联系我们之前，您可以先查看我们的常见问题页面，也许能找到您要的答案。",
+      "button": "查看 FAQ"
     }
   },
-  "types": {
-    "title": "常见问题类型",
-    "technical": {
-      "title": "技术问题",
-      "description": "邮箱无法接收、网站访问问题等"
+  "help": {
+    "title": "其他获取帮助的方式",
+    "subtitle": "我们提供多种方式来为您提供支持",
+    "docs": {
+      "title": "在线文档",
+      "description": "查看详细的使用说明和帮助文档",
+      "button": "查看文档"
     },
-    "feature": {
-      "title": "功能建议",
-      "description": "新功能建议、用户体验改进等"
+    "email": {
+      "title": "邮件支持",
+      "description": "发送邮件给我们的支持团队",
+      "button": "发送邮件"
     },
-    "business": {
-      "title": "商务合作",
-      "description": "合作伙伴关系、API集成等"
-    },
-    "other": {
-      "title": "其他问题",
-      "description": "任何其他相关问题或反馈"
+    "response": {
+      "title": "快速响应",
+      "description": "我们承诺在24小时内回复您的问题",
+      "button": "了解更多"
     }
   }
 }

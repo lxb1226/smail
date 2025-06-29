@@ -1,18 +1,38 @@
 {
-  "title": "お問い合わせ",
-  "subtitle": "ご質問やご提案がございましたら、お気軽にお聞かせください",
+  "meta": {
+    "title": "Smailチームへのお問い合わせ - 技術サポート、フィードバック、ビジネス協力",
+    "description": "技術サポート、フィードバック、協力に関するお問い合わせはSmailチームまでご連絡ください。複数の連絡方法を提供し、ユーザーのニーズに迅速に対応いたします。一時メールの使用に関する問題、機能提案、ビジネス協力については、いつでもお気軽にお問い合わせください。"
+  },
+  "hero": {
+    "title": "お問い合わせ",
+    "subtitle": "ご質問やご提案がございましたら、お気軽にお聞かせください"
+  },
+  "success": {
+    "title": "メッセージが正常に送信されました！",
+    "message": "フィードバックをありがとうございます。できるだけ早くご返信いたします。"
+  },
   "form": {
+    "title": "メッセージを送信",
+    "description": "以下のフォームにご記入いただければ、すぐにご返信いたします",
     "name": {
       "label": "お名前",
       "placeholder": "お名前を入力してください"
     },
     "email": {
-      "label": "メールアドレス",
+      "label": "メール",
       "placeholder": "メールアドレスを入力してください"
     },
     "subject": {
       "label": "件名",
-      "placeholder": "メールの件名を入力してください"
+      "placeholder": "件名を選択してください",
+      "options": {
+        "default": "件名を選択してください",
+        "bug": "問題報告",
+        "feature": "機能リクエスト",
+        "help": "ヘルプ・サポート",
+        "business": "ビジネス協力",
+        "other": "その他"
+      }
     },
     "message": {
       "label": "メッセージ",
@@ -23,41 +43,44 @@
     "success": "メッセージが正常に送信されました！お早めにご返信いたします。",
     "error": "送信に失敗しました。後でもう一度お試しください。"
   },
-  "info": {
-    "title": "その他の連絡方法",
+  "contact": {
     "email": {
-      "title": "メール",
-      "value": "support@smail.pw",
-      "description": "技術サポートと一般的なお問い合わせ"
+      "title": "メールでのお問い合わせ",
+      "description": "直接メールでお問い合わせいただくこともできます：",
+      "address": "support@smail.pw"
     },
     "response": {
       "title": "応答時間",
-      "value": "24時間以内",
-      "description": "通常24時間以内にご返信いたします"
+      "general": "一般的な問題：",
+      "generalTime": "24時間以内",
+      "urgent": "緊急の問題：",
+      "urgentTime": "12時間以内",
+      "business": "ビジネス協力：",
+      "businessTime": "48時間以内"
     },
-    "languages": {
-      "title": "対応言語",
-      "value": "中国語、英語、日本語",
-      "description": "複数言語でのカスタマーサービスを提供"
+    "faq": {
+      "title": "よくある質問",
+      "description": "お問い合わせの前に、よくある質問ページをご確認ください。お探しの答えが見つかるかもしれません。",
+      "button": "FAQを見る"
     }
   },
-  "types": {
-    "title": "よくある問題の種類",
-    "technical": {
-      "title": "技術的な問題",
-      "description": "メールが受信できない、ウェブサイトアクセスの問題など"
+  "help": {
+    "title": "その他のサポート方法",
+    "subtitle": "様々な方法でサポートを提供しています",
+    "docs": {
+      "title": "オンラインドキュメント",
+      "description": "詳細な使用方法とヘルプドキュメントをご覧ください",
+      "button": "ドキュメントを見る"
     },
-    "feature": {
-      "title": "機能の提案",
-      "description": "新機能の提案、ユーザーエクスペリエンスの改善など"
+    "email": {
+      "title": "メールサポート",
+      "description": "サポートチームにメールを送信",
+      "button": "メールを送信"
     },
-    "business": {
-      "title": "ビジネス協力",
-      "description": "パートナーシップの機会、API統合など"
-    },
-    "other": {
-      "title": "その他の問題",
-      "description": "その他の関連する質問やフィードバック"
+    "response": {
+      "title": "迅速な対応",
+      "description": "24時間以内にお返事することをお約束します",
+      "button": "詳細を見る"
     }
   }
 }

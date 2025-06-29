@@ -8,16 +8,18 @@ import {
 	CardHeader,
 	CardTitle,
 } from "~/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 import type { Route } from "./+types/contact";
 
+// TODO: meta函数无法直接使用useTranslation钩子，需要考虑其他国际化解决方案
 export function meta(_: Route.MetaArgs) {
 	return [
-		{ title: "联系Smail团队 - 技术支持、反馈建议、商务合作" },
+		{ title: "联系我们 - Smail 临时邮箱" },
 		{
 			name: "description",
 			content:
-				"联系Smail团队获取技术支持、反馈问题或合作咨询。我们提供多种联系方式，快速响应用户需求。如遇临时邮箱使用问题、功能建议或商务合作，欢迎随时联系我们。",
+				"联系 Smail 团队，获取技术支持、反馈问题或商务合作。我们提供多种联系方式，快速响应用户需求。",
 		},
 	];
 }
@@ -55,6 +57,7 @@ interface ComponentProps {
 }
 
 export default function Contact({ loaderData }: ComponentProps) {
+	const { t } = useTranslation("contact");
 	const { success } = loaderData || { success: false };
 
 	return (
@@ -85,10 +88,10 @@ export default function Contact({ loaderData }: ComponentProps) {
 							<CardContent className="pt-4 sm:pt-6">
 								<div className="text-center">
 									<h3 className="text-base sm:text-lg font-semibold text-green-800 mb-2">
-										消息发送成功！
+										{t("success.title")}
 									</h3>
 									<p className="text-green-600 text-sm sm:text-base">
-										感谢您的反馈，我们会尽快回复您的消息。
+										{t("success.message")}
 									</p>
 								</div>
 							</CardContent>
@@ -104,12 +107,12 @@ export default function Contact({ loaderData }: ComponentProps) {
 						{/* Contact Form */}
 						<div>
 							<Card>
-								<CardHeader>
-									<CardTitle className="text-lg sm:text-xl">发送消息</CardTitle>
-									<CardDescription className="text-sm sm:text-base">
-										填写下面的表单，我们会尽快回复您
-									</CardDescription>
-								</CardHeader>
+							<CardHeader>
+								<CardTitle className="text-lg sm:text-xl">{t("form.title")}</CardTitle>
+								<CardDescription className="text-sm sm:text-base">
+									{t("form.description")}
+								</CardDescription>
+							</CardHeader>
 								<CardContent>
 									<Form method="post" className="space-y-4">
 										<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -118,7 +121,7 @@ export default function Contact({ loaderData }: ComponentProps) {
 													htmlFor="name"
 													className="block text-sm font-medium text-gray-700 mb-1"
 												>
-													姓名 *
+													{t("form.name.label")}
 												</label>
 												<input
 													type="text"
@@ -126,7 +129,7 @@ export default function Contact({ loaderData }: ComponentProps) {
 													name="name"
 													required
 													className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
-													placeholder="请输入您的姓名"
+													placeholder={t("form.name.placeholder")}
 												/>
 											</div>
 											<div>
@@ -134,7 +137,7 @@ export default function Contact({ loaderData }: ComponentProps) {
 													htmlFor="email"
 													className="block text-sm font-medium text-gray-700 mb-1"
 												>
-													邮箱 *
+													{t("form.email.label")}
 												</label>
 												<input
 													type="email"
@@ -142,7 +145,7 @@ export default function Contact({ loaderData }: ComponentProps) {
 													name="email"
 													required
 													className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
-													placeholder="请输入您的邮箱"
+													placeholder={t("form.email.placeholder")}
 												/>
 											</div>
 										</div>
@@ -151,7 +154,7 @@ export default function Contact({ loaderData }: ComponentProps) {
 												htmlFor="subject"
 												className="block text-sm font-medium text-gray-700 mb-1"
 											>
-												主题 *
+												{t("form.subject.label")}
 											</label>
 											<select
 												id="subject"
@@ -159,12 +162,12 @@ export default function Contact({ loaderData }: ComponentProps) {
 												required
 												className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
 											>
-												<option value="">请选择主题</option>
-												<option value="bug">问题反馈</option>
-												<option value="feature">功能建议</option>
-												<option value="help">使用帮助</option>
-												<option value="business">商务合作</option>
-												<option value="other">其他</option>
+												<option value="">{t("form.subject.options.default")}</option>
+												<option value="bug">{t("form.subject.options.bug")}</option>
+												<option value="feature">{t("form.subject.options.feature")}</option>
+												<option value="help">{t("form.subject.options.help")}</option>
+												<option value="business">{t("form.subject.options.business")}</option>
+												<option value="other">{t("form.subject.options.other")}</option>
 											</select>
 										</div>
 										<div>
@@ -172,7 +175,7 @@ export default function Contact({ loaderData }: ComponentProps) {
 												htmlFor="message"
 												className="block text-sm font-medium text-gray-700 mb-1"
 											>
-												消息 *
+												{t("form.message.label")}
 											</label>
 											<textarea
 												id="message"
@@ -180,14 +183,14 @@ export default function Contact({ loaderData }: ComponentProps) {
 												required
 												rows={6}
 												className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
-												placeholder="请详细描述您的问题或建议..."
+												placeholder={t("form.message.placeholder")}
 											/>
 										</div>
 										<Button
 											type="submit"
 											className="w-full text-sm sm:text-base"
 										>
-											发送消息
+											{t("form.submit")}
 										</Button>
 									</Form>
 								</CardContent>
@@ -201,18 +204,18 @@ export default function Contact({ loaderData }: ComponentProps) {
 									<CardHeader>
 										<CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
 											<MailIcon className="w-4 sm:w-5 h-4 sm:h-5 text-blue-600" />
-											邮箱联系
+											{t("contact.email.title")}
 										</CardTitle>
 									</CardHeader>
 									<CardContent>
 										<p className="text-gray-600 mb-2 text-sm sm:text-base">
-											您也可以直接发送邮件给我们：
+											{t("contact.email.description")}
 										</p>
 										<a
 											href="mailto:support@smail.pw"
 											className="text-blue-600 font-medium hover:underline text-sm sm:text-base break-all"
 										>
-											support@smail.pw
+											{t("contact.email.address")}
 										</a>
 									</CardContent>
 								</Card>
@@ -221,22 +224,22 @@ export default function Contact({ loaderData }: ComponentProps) {
 									<CardHeader>
 										<CardTitle className="flex items-center gap-2 text-lg sm:text-xl">
 											<ClockIcon className="w-4 sm:w-5 h-4 sm:h-5 text-green-600" />
-											响应时间
+											{t("contact.response.title")}
 										</CardTitle>
 									</CardHeader>
 									<CardContent>
 										<div className="space-y-2 text-sm sm:text-base">
 											<div className="flex justify-between">
-												<span className="text-gray-600">一般问题：</span>
-												<span className="font-medium">24小时内</span>
+												<span className="text-gray-600">{t("contact.response.general")}</span>
+												<span className="font-medium">{t("contact.response.generalTime")}</span>
 											</div>
 											<div className="flex justify-between">
-												<span className="text-gray-600">紧急问题：</span>
-												<span className="font-medium">12小时内</span>
+												<span className="text-gray-600">{t("contact.response.urgent")}</span>
+												<span className="font-medium">{t("contact.response.urgentTime")}</span>
 											</div>
 											<div className="flex justify-between">
-												<span className="text-gray-600">商务合作：</span>
-												<span className="font-medium">48小时内</span>
+												<span className="text-gray-600">{t("contact.response.business")}</span>
+												<span className="font-medium">{t("contact.response.businessTime")}</span>
 											</div>
 										</div>
 									</CardContent>
@@ -245,19 +248,19 @@ export default function Contact({ loaderData }: ComponentProps) {
 								<Card>
 									<CardHeader>
 										<CardTitle className="text-lg sm:text-xl">
-											常见问题
+											{t("contact.faq.title")}
 										</CardTitle>
 									</CardHeader>
 									<CardContent>
 										<p className="text-gray-600 mb-4 text-sm sm:text-base">
-											在联系我们之前，您可以先查看我们的常见问题页面，也许能找到您要的答案。
+											{t("contact.faq.description")}
 										</p>
 										<Button
 											asChild
 											variant="outline"
 											className="w-full text-sm sm:text-base"
 										>
-											<Link to="/faq">查看 FAQ</Link>
+											<Link to="/faq">{t("contact.faq.button")}</Link>
 										</Button>
 									</CardContent>
 								</Card>
@@ -271,13 +274,13 @@ export default function Contact({ loaderData }: ComponentProps) {
 			<section className="py-8 sm:py-16 bg-white">
 				<div className="max-w-screen-xl mx-auto px-3 sm:px-4">
 					<div className="text-center mb-8 sm:mb-12">
-						<h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-							其他获取帮助的方式
-						</h2>
-						<p className="text-base sm:text-lg text-gray-600">
-							我们提供多种方式来为您提供支持
-						</p>
-					</div>
+				<h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
+					{t("help.title")}
+				</h2>
+				<p className="text-base sm:text-lg text-gray-600">
+					{t("help.subtitle")}
+				</p>
+			</div>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
 						<Card className="w-full text-center">
 							<CardContent className="pt-4 sm:pt-6">
@@ -285,17 +288,17 @@ export default function Contact({ loaderData }: ComponentProps) {
 									<MessageCircleIcon className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 text-blue-600" />
 								</div>
 								<h3 className="text-lg sm:text-xl font-semibold mb-2">
-									在线文档
+									{t("help.docs.title")}
 								</h3>
 								<p className="text-gray-600 mb-4 text-sm sm:text-base">
-									查看详细的使用说明和帮助文档
+									{t("help.docs.description")}
 								</p>
 								<Button
 									variant="outline"
 									size="sm"
 									className="text-xs sm:text-sm"
 								>
-									查看文档
+									{t("help.docs.button")}
 								</Button>
 							</CardContent>
 						</Card>
@@ -305,17 +308,17 @@ export default function Contact({ loaderData }: ComponentProps) {
 									<MailIcon className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 text-green-600" />
 								</div>
 								<h3 className="text-lg sm:text-xl font-semibold mb-2">
-									邮件支持
+									{t("help.email.title")}
 								</h3>
 								<p className="text-gray-600 mb-4 text-sm sm:text-base">
-									发送邮件给我们的支持团队
+									{t("help.email.description")}
 								</p>
 								<Button
 									variant="outline"
 									size="sm"
 									className="text-xs sm:text-sm"
 								>
-									发送邮件
+									{t("help.email.button")}
 								</Button>
 							</CardContent>
 						</Card>
@@ -325,17 +328,17 @@ export default function Contact({ loaderData }: ComponentProps) {
 									<ClockIcon className="w-6 sm:w-7 lg:w-8 h-6 sm:h-7 lg:h-8 text-purple-600" />
 								</div>
 								<h3 className="text-lg sm:text-xl font-semibold mb-2">
-									快速响应
+									{t("help.response.title")}
 								</h3>
 								<p className="text-gray-600 mb-4 text-sm sm:text-base">
-									我们承诺在24小时内回复您的问题
+									{t("help.response.description")}
 								</p>
 								<Button
 									variant="outline"
 									size="sm"
 									className="text-xs sm:text-sm"
 								>
-									了解更多
+									{t("help.response.button")}
 								</Button>
 							</CardContent>
 						</Card>

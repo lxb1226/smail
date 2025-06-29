@@ -1,45 +1,53 @@
 {
-  "title": "About Smail",
-  "description": "Smail is a free temporary email service that helps you protect your privacy and avoid spam.",
-  "mission": {
-    "title": "Our Mission",
-    "description": "To provide secure, reliable, and free temporary email services for users worldwide, protecting user privacy and enhancing online security experience."
+  "meta": {
+    "title": "About Smail Team - Dedicated to Building the Most Secure Temporary Email Platform",
+    "description": "Learn about the Smail team and our mission: providing free, secure, ad-free temporary email services for global users. Focused on privacy protection, helping users stay away from spam, building the most reliable disposable email platform."
+  },
+  "hero": {
+    "title": "About",
+    "subtitle": "Smail is a free, secure, and easy-to-use temporary email service that helps you protect your privacy and avoid spam",
+    "description": "Smail is a free, secure, and easy-to-use temporary email service that helps you protect your privacy and avoid spam"
   },
   "features": {
-    "title": "Features",
+    "title": "Why Choose Smail?",
+    "instant": {
+      "title": "Instant Creation",
+      "description": "No registration required, generate temporary email addresses with one click, start using immediately"
+    },
     "privacy": {
       "title": "Privacy Protection",
-      "description": "No registration required, protect your real email address and avoid personal information leaks"
+      "description": "Protect your real email address, avoid spam and privacy leaks"
     },
-    "temporary": {
-      "title": "Temporary",
-      "description": "Email addresses expire automatically after 24 hours, ensuring data security"
-    },
-    "instant": {
-      "title": "Instant Generation",
-      "description": "Generate temporary email addresses with one click, no waiting, immediately available"
+    "global": {
+      "title": "Global Access",
+      "description": "Support global user access, no geographical restrictions, use anytime, anywhere"
     },
     "free": {
       "title": "Completely Free",
-      "description": "No payment required, free to use forever, no ads"
-    },
-    "reliable": {
-      "title": "Stable & Reliable",
-      "description": "Built on Cloudflare's global network, ensuring service stability and availability"
-    },
-    "secure": {
-      "title": "Security Guarantee",
-      "description": "Uses modern encryption technology to protect email transmission and storage security"
+      "description": "Free to use forever, no hidden fees, no ads"
     }
   },
-  "technology": {
-    "title": "Technology Stack",
-    "description": "Built with modern web technologies to provide fast and secure user experience",
-    "stack": {
-      "frontend": "React Router v7 + TypeScript",
-      "backend": "Cloudflare Workers",
-      "database": "Cloudflare D1",
-      "email": "Cloudflare Email Routing"
+  "mission": {
+    "title": "Our Mission",
+    "description": "In the digital age, privacy protection is becoming increasingly important. We are committed to providing users with simple and secure temporary email services, allowing everyone to easily protect their privacy.",
+    "steps": {
+      "simple": {
+        "title": "Simple and Easy",
+        "description": "No complex registration process, get a temporary mailbox with one click"
+      },
+      "secure": {
+        "title": "Safe and Reliable",
+        "description": "Using the latest security technology to protect your email content"
+      },
+      "improve": {
+        "title": "Continuous Improvement",
+        "description": "We continuously optimize our services to provide users with a better experience"
+      }
     }
+  },
+  "cta": {
+    "title": "Ready to Get Started?",
+    "subtitle": "Get your temporary mailbox now and start protecting your privacy",
+    "button": "Get Started"
   }
 }
