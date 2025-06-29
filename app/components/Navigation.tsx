@@ -38,11 +38,11 @@ export function Navigation({
 			label: t("navigation.faq"), 
 			description: t("faq:title") 
 		},
-		{ 
-			href: generateLocalizedPath("/contact", currentLang), 
-			label: t("navigation.contact"), 
-			description: t("contact:subtitle") 
-		},
+		// { 
+		// 	href: generateLocalizedPath("/contact", currentLang), 
+		// 	label: t("navigation.contact"), 
+		// 	description: t("contact:subtitle") 
+		// },
 	];
 
 	return (

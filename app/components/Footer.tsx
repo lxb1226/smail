@@ -101,14 +101,14 @@ export function Footer() {
 					<div>
 						<h4 className="text-lg font-semibold mb-4">{t('footer.support')}</h4>
 						<ul className="space-y-2">
-							<li>
+							{/* <li>
 								<Link
 									to="/contact"
 									className="text-gray-300 hover:text-blue-400 transition-colors"
 								>
 									{t('navigation.contact')}
 								</Link>
-							</li>
+							</li> */}
 							<li>
 								<Link
 									to="/privacy"
