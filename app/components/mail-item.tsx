@@ -30,9 +30,9 @@ export function MailItem({
 		const diffTime = Math.abs(now.getTime() - date.getTime());
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-		if (diffDays === 1) return t('common.time.today');
-		if (diffDays === 2) return t('common.time.yesterday');
-		if (diffDays <= 7) return t('common.time.daysAgo', { count: diffDays - 1 });
+		if (diffDays === 1) return t('time.today');
+  if (diffDays === 2) return t('time.yesterday');
+  if (diffDays <= 7) return t('time.daysAgo', { count: diffDays - 1 });
 		return date.toLocaleDateString(i18n.language === 'zh' ? 'zh-CN' : i18n.language === 'ja' ? 'ja-JP' : 'en-US', { month: "short", day: "numeric" });
 	};
 

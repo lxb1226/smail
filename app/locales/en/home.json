@@ -33,6 +33,7 @@
       "testHint": "Send an email to {{email}} to test"
     }
   },
+  "generateEmail": "Generate Email",
   "features": {
     "title": "Why Choose Smail?",
     "subtitle": "Professional temporary email service to protect your privacy",

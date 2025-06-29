@@ -4,12 +4,12 @@ import { Link, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
 import { Button } from "~/components/ui/button";
 import { LanguageSwitcher } from "~/components/LanguageSwitcher";
-import { getCurrentLanguage, generateLocalizedPath } from "~/lib/i18n";
+import { getCurrentLanguage, generateLocalizedPath, type SupportedLanguage } from "~/lib/i18n";
 
 interface NavigationProps {
 	currentPath?: string;
-	currentLang: string;
-	onLanguageChange: (lang: string) => void;
+	currentLang: SupportedLanguage;
+	onLanguageChange: (lang: SupportedLanguage) => void;
 }
 
 export function Navigation({ 
@@ -17,7 +17,7 @@ export function Navigation({
 	currentLang,
 	onLanguageChange 
 }: NavigationProps) {
-	const { t } = useTranslation();
+	const { t } = useTranslation(['common', 'home', 'about', 'faq', 'contact']);
 	const location = useLocation();
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,22 +26,22 @@ export function Navigation({
 		{ 
 			href: generateLocalizedPath("/", currentLang), 
 			label: t("navigation.home"), 
-			description: t("home.subtitle") 
+			description: t("home:subtitle") 
 		},
 		{ 
 			href: generateLocalizedPath("/about", currentLang), 
 			label: t("navigation.about"), 
-			description: t("about.description") 
+			description: t("about:description") 
 		},
 		{ 
 			href: generateLocalizedPath("/faq", currentLang), 
 			label: t("navigation.faq"), 
-			description: t("faq.title") 
+			description: t("faq:title") 
 		},
 		{ 
 			href: generateLocalizedPath("/contact", currentLang), 
 			label: t("navigation.contact"), 
-			description: t("contact.description") 
+			description: t("contact:description") 
 		},
 	];
 
@@ -61,7 +61,7 @@ export function Navigation({
 							<h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
 								Smail
 							</h1>
-							<p className="text-sm text-gray-600">{t("home.subtitle")}</p>
+							<p className="text-sm text-gray-600">{t("home:subtitle")}</p>
 						</div>
 					</Link>
 
@@ -91,7 +91,7 @@ export function Navigation({
 							asChild
 							className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
 						>
-							<Link to={generateLocalizedPath("/", currentLang)}>{t("home.generateEmail")}</Link>
+							<Link to={generateLocalizedPath("/", currentLang)}>{t("home:generateEmail")}</Link>
 						</Button>
 					</nav>
 
@@ -100,7 +100,7 @@ export function Navigation({
 						type="button"
 						className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
 						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-						aria-label={t("common.close")}
+						aria-label={t("actions.close")}
 					>
 						{isMobileMenuOpen ? (
 							<X className="h-6 w-6" />
@@ -148,7 +148,7 @@ export function Navigation({
 									asChild
 									className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
 								>
-									<Link to={generateLocalizedPath("/", currentLang)}>{t("home.generateEmail")}</Link>
+									<Link to={generateLocalizedPath("/", currentLang)}>{t("home:generateEmail")}</Link>
 								</Button>
 							</div>
 						</div>

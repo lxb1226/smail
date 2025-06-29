@@ -11,7 +11,6 @@ import { useTranslation } from 'react-i18next';
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import "./i18n"; // 初始化i18n
 import { getCurrentLanguage, languageConfig } from "./lib/i18n";
 
 // 全局默认 meta 配置

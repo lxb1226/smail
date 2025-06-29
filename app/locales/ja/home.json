@@ -33,6 +33,7 @@
       "testHint": "{{email}} にメールを送信してテストしてください"
     }
   },
+  "generateEmail": "メール生成",
   "features": {
     "title": "なぜSmailを選ぶのか？",
     "subtitle": "プライバシーを保護する専門的な一時メールサービス",

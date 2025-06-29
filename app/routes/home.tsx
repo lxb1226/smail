@@ -170,7 +170,7 @@ export async function action({ request, context }: Route.ActionArgs) {
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
-	const { t } = useTranslation();
+	const { t } = useTranslation('home');
 	const navigation = useNavigation();
 	const revalidator = useRevalidator();
 	const isSubmitting = navigation.state === "submitting";
@@ -186,7 +186,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 			<div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50 flex items-center justify-center">
 				<div className="text-center">
 					<Loader2Icon className="h-8 w-8 animate-spin mx-auto mb-4" />
-					<p className="text-gray-600">{t('home.loading')}</p>
+					<p className="text-gray-600">{t('loading')}</p>
 				</div>
 			</div>
 		);
@@ -231,13 +231,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 					{/* Hero Section */}
 					<div className="text-center mb-12">
 						<h2 className="text-4xl font-bold text-gray-800 mb-4">
-							{t('home.hero.title')}
-							<span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-								{t('home.hero.highlight')}
-							</span>
-						</h2>
-						<p className="text-lg text-gray-600 max-w-2xl mx-auto">
-							{t('home.hero.description')}
+							{t('hero.title')}
+					<span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+						{t('hero.highlight')}
+					</span>
+				</h2>
+				<p className="text-lg text-gray-600 max-w-2xl mx-auto">
+					{t('hero.description')}
 						</p>
 					</div>
 
@@ -251,17 +251,17 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 									<div className="bg-blue-600 rounded-lg p-2">
 										<Mail className="h-5 w-5 text-white" />
 									</div>
-									<span className="text-gray-800">{t('home.mailbox.title')}</span>
+									<span className="text-gray-800">{t('mailbox.title')}</span>
 								</CardTitle>
 								<div className="flex flex-wrap items-center gap-2 text-sm">
 									<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-										✓ {t('home.mailbox.features.validity')}
+										✓ {t('mailbox.features.validity')}
 									</span>
 									<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-										⚡ {t('home.mailbox.features.autoRefresh')}
+										⚡ {t('mailbox.features.autoRefresh')}
 									</span>
 									<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-										🎁 {t('home.mailbox.features.free')}
+										🎁 {t('mailbox.features.free')}
 									</span>
 								</div>
 								</CardHeader>
@@ -270,7 +270,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 									<div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-6">
 										<div className="text-center">
 											<p className="text-xs text-gray-500 mb-2 font-medium">
-												{t('home.mailbox.emailLabel')}
+												{t('mailbox.emailLabel')}
 											</p>
 											<span className="font-mono text-base sm:text-lg font-bold text-gray-900 tracking-wide select-all break-all block">
 												{loaderData.email}
@@ -299,10 +299,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 												{isDeleting ? (
 																<>
 																	<Loader2Icon className="w-4 h-4 animate-spin mr-2" />
-																	{t('home.mailbox.generating')}
+																	{t('mailbox.generating')}
 																</>
 															) : (
-																<>🔄 {t('home.mailbox.generateNew')}</>
+																<>🔄 {t('mailbox.generateNew')}</>
 															)}
 											</Button>
 										</Form>
@@ -316,10 +316,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 											</div>
 											<div className="text-sm">
 												<p className="font-semibold text-blue-800 mb-1">
-													{t('home.mailbox.tips.title')}
+													{t('mailbox.tips.title')}
 												</p>
 												<p className="text-blue-700 leading-relaxed">
-													{t('home.mailbox.tips.description')}
+													{t('mailbox.tips.description')}
 												</p>
 											</div>
 										</div>
@@ -335,13 +335,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 									<div className="flex items-center justify-between">
 										<div className="flex items-center gap-2">
 											<CardTitle className="flex items-center space-x-2">
-												<span>{t('home.inbox.title')}</span>
+												<span>{t('inbox.title')}</span>
 											</CardTitle>
 											<span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
-												{loaderData.stats.unread} {t('home.inbox.unread')}
+												{loaderData.stats.unread} {t('inbox.unread')}
 											</span>
 											<span className="text-gray-500 text-xs">
-												{t('home.inbox.total', { count: loaderData.stats.total })}
+												{t('inbox.total', { count: loaderData.stats.total })}
 											</span>
 										</div>
 										<Form method="post">
@@ -356,12 +356,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 												{isRefreshing ? (
 														<>
 															<Loader2Icon className="w-3 h-3 animate-spin mr-1" />
-															{t('home.inbox.refreshing')}
+															{t('inbox.refreshing')}
 														</>
 													) : (
 														<>
 															<RefreshCcwIcon className="w-3 h-3 mr-1" />
-															{t('home.inbox.manualRefresh')}
+															{t('inbox.manualRefresh')}
 														</>
 													)}
 											</Button>
@@ -370,7 +370,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 									{isAutoRefreshing && (
 										<div className="text-xs text-blue-600 flex items-center gap-1">
 											<Loader2Icon className="w-3 h-3 animate-spin" />
-											{t('home.inbox.autoRefreshing')}
+											{t('inbox.autoRefreshing')}
 										</div>
 									)}
 								</CardHeader>
@@ -386,13 +386,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 											<div className="flex flex-col items-center justify-center py-12 text-gray-500 px-4">
 												<div className="text-4xl mb-3">📭</div>
 												<h3 className="text-lg font-semibold mb-2 text-center">
-													{t('home.inbox.empty.title')}
+													{t('inbox.empty.title')}
 												</h3>
 												<p className="text-sm text-center">
-													{t('home.inbox.empty.description')}
+													{t('inbox.empty.description')}
 												</p>
 												<p className="text-xs text-gray-400 mt-2 text-center break-all">
-													{t('home.inbox.empty.testHint', { email: loaderData.email })}
+													{t('inbox.empty.testHint', { email: loaderData.email })}
 												</p>
 											</div>
 										)}
@@ -406,37 +406,37 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 					<div className="mt-16">
 						<div className="text-center mb-8">
 							<h3 className="text-2xl font-bold text-gray-800 mb-2">
-							{t('home.features.title')}
+							{t('features.title')}
 						</h3>
 						<p className="text-gray-600">
-							{t('home.features.subtitle')}
+							{t('features.subtitle')}
 						</p>
 						</div>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							<Card className="text-center">
 							<CardContent className="pt-6">
 								<div className="text-4xl mb-4">🔒</div>
-								<h4 className="text-lg font-semibold mb-2">{t('home.features.privacy.title')}</h4>
+								<h4 className="text-lg font-semibold mb-2">{t('features.privacy.title')}</h4>
 								<p className="text-gray-600 text-sm">
-									{t('home.features.privacy.description')}
+									{t('features.privacy.description')}
 								</p>
 							</CardContent>
 						</Card>
 							<Card className="text-center">
 								<CardContent className="pt-6">
 									<div className="text-4xl mb-4">⚡</div>
-									<h4 className="text-lg font-semibold mb-2">{t('home.features.instant.title')}</h4>
+									<h4 className="text-lg font-semibold mb-2">{t('features.instant.title')}</h4>
 									<p className="text-gray-600 text-sm">
-										{t('home.features.instant.description')}
+										{t('features.instant.description')}
 									</p>
 								</CardContent>
 							</Card>
 							<Card className="text-center">
 								<CardContent className="pt-6">
 									<div className="text-4xl mb-4">💰</div>
-									<h4 className="text-lg font-semibold mb-2">{t('home.features.free.title')}</h4>
+									<h4 className="text-lg font-semibold mb-2">{t('features.free.title')}</h4>
 									<p className="text-gray-600 text-sm">
-										{t('home.features.free.description')}
+										{t('features.free.description')}
 									</p>
 								</CardContent>
 							</Card>

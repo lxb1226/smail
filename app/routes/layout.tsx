@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { Navigation } from "~/components/Navigation";
 import { Footer } from "~/components/Footer";
-import { getCurrentLanguage, generateLocalizedPath } from "~/lib/i18n";
+import { getCurrentLanguage, generateLocalizedPath, type SupportedLanguage } from "~/lib/i18n";
 
 export default function Layout() {
 	const { lang } = useParams();
@@ -13,7 +13,7 @@ export default function Layout() {
 	const [isHydrated, setIsHydrated] = useState(false);
 	
 	// 获取当前语言，如果URL中没有语言参数，使用默认语言
-	const currentLang = lang || getCurrentLanguage(location.pathname);
+	const currentLang = (lang as SupportedLanguage) || getCurrentLanguage(location.pathname);
 	
 	// 水合化完成后设置标志
 	useEffect(() => {
@@ -28,7 +28,7 @@ export default function Layout() {
 	}, [currentLang, i18n, isHydrated]);
 	
 	// 语言切换函数
-	const switchLanguage = (newLang: string) => {
+	const switchLanguage = (newLang: SupportedLanguage) => {
 		const newPath = generateLocalizedPath(location.pathname, newLang);
 		navigate(newPath);
 	};

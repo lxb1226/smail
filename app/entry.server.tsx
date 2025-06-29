@@ -2,8 +2,8 @@ import { isbot } from "isbot";
 import { renderToReadableStream } from "react-dom/server";
 import type { AppLoadContext, EntryContext } from "react-router";
 import { ServerRouter } from "react-router";
-import i18n from "./i18n";
 import { getCurrentLanguage } from "./lib/i18n";
+import i18n from "./lib/i18n";
 
 export default async function handleRequest(
 	request: Request,

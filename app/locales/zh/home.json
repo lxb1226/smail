@@ -33,6 +33,7 @@
       "testHint": "发送邮件到 {{email}} 来测试"
     }
   },
+  "generateEmail": "生成邮箱",
   "features": {
     "title": "为什么选择 Smail？",
     "subtitle": "专业的临时邮箱服务，保护您的隐私安全",

@@ -1,7 +1,17 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-// import Backend from 'i18next-http-backend'; // 暂时禁用HTTP后端
+
+// 导入翻译资源
+import zhCommon from '../locales/zh/common.json';
+import zhHome from '../locales/zh/home.json';
+import zhMail from '../locales/zh/mail.json';
+import enCommon from '../locales/en/common.json';
+import enHome from '../locales/en/home.json';
+import enMail from '../locales/en/mail.json';
+import jaCommon from '../locales/ja/common.json';
+import jaHome from '../locales/ja/home.json';
+import jaMail from '../locales/ja/mail.json';
 
 // 支持的语言列表
 export const supportedLanguages = ['zh', 'en', 'ja'] as const;
@@ -46,114 +56,25 @@ const detectionOptions = {
   checkWhitelist: true
 };
 
-// 内置翻译资源
+// 翻译资源配置
 const resources = {
   zh: {
-    common: {
-      "navigation": {
-        "home": "首页",
-        "about": "关于",
-        "faq": "常见问题",
-        "contact": "联系我们",
-        "privacy": "隐私政策",
-        "terms": "服务条款"
-      },
-      "home": {
-        "title": "临时邮箱服务",
-        "subtitle": "快速生成临时邮箱地址，保护您的隐私",
-        "generateEmail": "生成邮箱",
-        "copyEmail": "复制邮箱",
-        "refreshInbox": "刷新收件箱"
-      },
-      "about": {
-        "title": "关于我们",
-        "description": "我们提供安全、快速的临时邮箱服务"
-      },
-      "faq": {
-        "title": "常见问题"
-      },
-      "contact": {
-        "title": "联系我们",
-        "description": "如有任何问题，请联系我们"
-      },
-      "common": {
-        "close": "关闭",
-        "loading": "加载中...",
-        "error": "错误"
-      }
-    }
+    common: zhCommon,
+    home: zhHome,
+    mail: zhMail
   },
   en: {
-    common: {
-      "navigation": {
-        "home": "Home",
-        "about": "About",
-        "faq": "FAQ",
-        "contact": "Contact",
-        "privacy": "Privacy Policy",
-        "terms": "Terms of Service"
-      },
-      "home": {
-        "title": "Temporary Email Service",
-        "subtitle": "Generate temporary email addresses quickly to protect your privacy",
-        "generateEmail": "Generate Email",
-        "copyEmail": "Copy Email",
-        "refreshInbox": "Refresh Inbox"
-      },
-      "about": {
-        "title": "About Us",
-        "description": "We provide secure and fast temporary email services"
-      },
-      "faq": {
-        "title": "Frequently Asked Questions"
-      },
-      "contact": {
-        "title": "Contact Us",
-        "description": "Please contact us if you have any questions"
-      },
-      "common": {
-        "close": "Close",
-        "loading": "Loading...",
-        "error": "Error"
-      }
-    }
+    common: enCommon,
+    home: enHome,
+    mail: enMail
   },
   ja: {
-    common: {
-      "navigation": {
-        "home": "ホーム",
-        "about": "について",
-        "faq": "よくある質問",
-        "contact": "お問い合わせ",
-        "privacy": "プライバシーポリシー",
-        "terms": "利用規約"
-      },
-      "home": {
-        "title": "一時メールサービス",
-        "subtitle": "プライバシーを保護するために一時的なメールアドレスを素早く生成",
-        "generateEmail": "メール生成",
-        "copyEmail": "メールをコピー",
-        "refreshInbox": "受信箱を更新"
-      },
-      "about": {
-        "title": "私たちについて",
-        "description": "安全で高速な一時メールサービスを提供しています"
-      },
-      "faq": {
-        "title": "よくある質問"
-      },
-      "contact": {
-        "title": "お問い合わせ",
-        "description": "ご質問がございましたらお気軽にお問い合わせください"
-      },
-      "common": {
-        "close": "閉じる",
-        "loading": "読み込み中...",
-        "error": "エラー"
-      }
-    }
+    common: jaCommon,
+    home: jaHome,
+    mail: jaMail
   }
 };
+
 
 // i18n初始化配置
 const i18nConfig = {
@@ -164,11 +85,11 @@ const i18nConfig = {
   supportedLngs: supportedLanguages,
   
   // 调试模式（开发环境启用）
-  debug: typeof window !== 'undefined' ? window.location.hostname === 'localhost' : false,
+  debug: true,
   
   // 命名空间
   defaultNS: 'common',
-  ns: ['common'],
+  ns: ['common', 'home', 'mail'],
   
   // 插值配置
   interpolation: {

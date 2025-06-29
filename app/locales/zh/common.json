@@ -17,7 +17,8 @@
     "copy": "复制",
     "delete": "删除",
     "back": "返回",
-    "download": "下载"
+    "download": "下载",
+    "close": "关闭"
   },
   "status": {
     "loading": "加载中...",
