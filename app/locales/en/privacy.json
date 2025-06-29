@@ -59,23 +59,24 @@
     "protection": {
       "title": "Data Protection",
       "description": "How we protect your data security",
-      "technical": {
-        "title": "Technical Protection Measures",
-        "items": [
-          "All data transmission uses SSL/TLS encryption",
-          "Servers use firewalls and intrusion detection systems",
-          "Regular security audits and vulnerability scans",
-          "Data storage uses encryption technology"
-        ]
-      },
-      "access": {
-        "title": "Access Control",
-        "items": [
-          "Strictly limit data access permissions",
-          "Employees required to sign confidentiality agreements",
-          "Regular security training"
-        ]
-      }
+      "items": [
+        {
+          "label": "SSL/TLS Encryption:",
+          "value": "All data transmission uses SSL/TLS encryption"
+        },
+        {
+          "label": "Server Security:",
+          "value": "Servers use firewalls and intrusion detection systems"
+        },
+        {
+          "label": "Security Audits:",
+          "value": "Regular security audits and vulnerability scans"
+        },
+        {
+          "label": "Data Encryption:",
+          "value": "Data storage uses encryption technology"
+        }
+      ]
     },
     "retention": {
       "title": "Data Retention",
@@ -115,6 +116,10 @@
         {
           "label": "Security protection:",
           "value": "To protect our rights, property, or safety, as well as the safety of users and the public"
+        },
+        {
+          "label": "Business transfers:",
+          "value": "In case of merger, acquisition, or sale of assets, with proper notice to users"
         }
       ]
     },
@@ -162,29 +167,49 @@
           "value": "Remember your preference settings"
         }
       ],
-      "control": "You can control cookie usage through your browser settings."
+      "note": "You can control cookie usage through your browser settings."
     },
     "updates": {
       "title": "Policy Updates",
       "description": "Privacy policy change notifications",
-      "content1": "We may update this privacy policy from time to time. Any significant changes will be prominently notified on our website. Continued use of our services indicates your acceptance of the updated privacy policy.",
-      "content2": "We recommend regularly reviewing this page to stay informed about the latest privacy protection information."
+      "items": [
+        {
+          "label": "Update notification:",
+          "value": "We may update this privacy policy from time to time. Any significant changes will be prominently notified on our website."
+        },
+        {
+          "label": "Acceptance:",
+          "value": "Continued use of our services indicates your acceptance of the updated privacy policy."
+        },
+        {
+          "label": "Regular review:",
+          "value": "We recommend regularly reviewing this page to stay informed about the latest privacy protection information."
+        }
+      ]
     },
     "contact": {
       "title": "Contact Us",
       "description": "How to contact us about privacy issues",
       "content": "If you have any questions or concerns about this privacy policy, please contact us through:",
       "items": [
-        "Email: privacy@smail.pw",
-        "Contact form: Through our contact page"
+        {
+          "label": "Email:",
+          "value": "privacy@smail.pw"
+        },
+        {
+          "label": "Contact form:",
+          "value": "Through our contact page"
+        }
       ],
-      "response": "We will respond to your inquiry within 48 hours."
+      "note": "We will respond to your inquiry within 48 hours."
     }
   },
   "cta": {
     "title": "Use Our Service with Confidence",
     "subtitle": "We are committed to protecting your privacy, allowing you to use our temporary email service with peace of mind",
-    "startButton": "Start Using",
-    "contactButton": "Contact Us"
+    "buttons": {
+      "start": "Start Using",
+      "contact": "Contact Us"
+    }
   }
 }

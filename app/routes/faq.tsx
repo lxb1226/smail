@@ -13,6 +13,8 @@ import {
 import type { Route } from "./+types/faq";
 
 export function meta(_: Route.MetaArgs) {
+	// 注意：meta函数在服务器端运行，无法直接使用useTranslation
+	// 这里使用默认的中文内容，多语言版本的meta将在lang.faq.tsx中处理
 	return [
 		{ title: "常见问题解答 - Smail临时邮箱使用指南及疑难解答" },
 		{

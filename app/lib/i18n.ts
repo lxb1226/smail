@@ -9,18 +9,21 @@ import zhMail from '../locales/zh/mail.json';
 import zhAbout from '../locales/zh/about.json';
 import zhFaq from '../locales/zh/faq.json';
 import zhContact from '../locales/zh/contact.json';
+import zhPrivacy from '../locales/zh/privacy.json';
 import enCommon from '../locales/en/common.json';
 import enHome from '../locales/en/home.json';
 import enMail from '../locales/en/mail.json';
 import enAbout from '../locales/en/about.json';
 import enFaq from '../locales/en/faq.json';
 import enContact from '../locales/en/contact.json';
+import enPrivacy from '../locales/en/privacy.json';
 import jaCommon from '../locales/ja/common.json';
 import jaHome from '../locales/ja/home.json';
 import jaMail from '../locales/ja/mail.json';
 import jaAbout from '../locales/ja/about.json';
 import jaFaq from '../locales/ja/faq.json';
 import jaContact from '../locales/ja/contact.json';
+import jaPrivacy from '../locales/ja/privacy.json';
 
 // 支持的语言列表
 export const supportedLanguages = ['zh', 'en', 'ja'] as const;
@@ -73,7 +76,8 @@ const resources = {
     mail: zhMail,
     about: zhAbout,
     faq: zhFaq,
-    contact: zhContact
+    contact: zhContact,
+    privacy: zhPrivacy
   },
   en: {
     common: enCommon,
@@ -81,7 +85,8 @@ const resources = {
     mail: enMail,
     about: enAbout,
     faq: enFaq,
-    contact: enContact
+    contact: enContact,
+    privacy: enPrivacy
   },
   ja: {
     common: jaCommon,
@@ -89,7 +94,8 @@ const resources = {
     mail: jaMail,
     about: jaAbout,
     faq: jaFaq,
-    contact: jaContact
+    contact: jaContact,
+    privacy: jaPrivacy
   }
 };
 
@@ -107,7 +113,7 @@ const i18nConfig = {
   
   // 命名空间
   defaultNS: 'common',
-  ns: ['common', 'home', 'mail', 'about', 'faq', 'contact'],
+  ns: ['common', 'home', 'mail', 'about', 'faq', 'contact', 'privacy'],
   
   // 插值配置
   interpolation: {

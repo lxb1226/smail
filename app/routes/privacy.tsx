@@ -12,15 +12,29 @@ import {
 
 import type { Route } from "./+types/privacy";
 
-export function meta(_: Route.MetaArgs) {
+export function meta({ params }: Route.MetaArgs) {
+	const lang = (params as any).lang || 'zh';
+	
+	const titles = {
+		zh: "隐私政策 - Smail",
+		en: "Privacy Policy - Smail",
+		ja: "プライバシーポリシー - Smail"
+	};
+	
+	const descriptions = {
+		zh: "了解 Smail 如何保护您的隐私和数据安全。",
+		en: "Learn how Smail protects your privacy and data security.",
+		ja: "Smail がお客様のプライバシーとデータセキュリティをどのように保護するかをご覧ください。"
+	};
+	
 	return [
-		{ title: "隐私政策 - Smail" },
-		{ name: "description", content: "查看Smail临时邮箱的隐私政策，了解我们如何保护您的隐私。" },
+		{ title: titles[lang as keyof typeof titles] || titles.zh },
+		{ name: "description", content: descriptions[lang as keyof typeof descriptions] || descriptions.zh },
 	];
 }
 
 export default function Privacy() {
-	const { t } = useTranslation();
+	const { t } = useTranslation('privacy');
 	
 	return (
 		<div className="min-h-dvh bg-gray-50">
@@ -65,12 +79,12 @@ export default function Privacy() {
 						</div>
 					</div>
 					<h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-						{t("privacy.hero.title")}
+						{t("hero.title")}
 					</h1>
 					<p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-3 sm:mb-4">
-						{t("privacy.hero.subtitle")}
+						{t("hero.subtitle")}
 					</p>
-					<p className="text-sm text-gray-500">{t("privacy.hero.lastUpdated")}</p>
+					<p className="text-sm text-gray-500">{t("hero.lastUpdated")}</p>
 				</div>
 			</section>
 
@@ -80,32 +94,32 @@ export default function Privacy() {
 					<div className="space-y-6 sm:space-y-8">
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.collection.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.collection.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.collection.description")}
+									{t("sections.collection.description")}
 								</p>
 								<div className="space-y-3 sm:space-y-4">
 									<div>
 										<h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
-											{t("privacy.sections.collection.automatic.title")}
+											{t("sections.collection.automatic.title")}
 										</h4>
 										<ul className="list-disc list-inside space-y-1 text-gray-600 text-sm sm:text-base ml-4">
-											<li>{t("privacy.sections.collection.automatic.items.0")}</li>
-											<li>{t("privacy.sections.collection.automatic.items.1")}</li>
-											<li>{t("privacy.sections.collection.automatic.items.2")}</li>
-											<li>{t("privacy.sections.collection.automatic.items.3")}</li>
-											<li>{t("privacy.sections.collection.automatic.items.4")}</li>
+											<li>{t("sections.collection.automatic.items.0")}</li>
+											<li>{t("sections.collection.automatic.items.1")}</li>
+											<li>{t("sections.collection.automatic.items.2")}</li>
+											<li>{t("sections.collection.automatic.items.3")}</li>
+											<li>{t("sections.collection.automatic.items.4")}</li>
 										</ul>
 									</div>
 									<div>
 										<h4 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">
-											{t("privacy.sections.collection.provided.title")}
+											{t("sections.collection.provided.title")}
 										</h4>
 										<ul className="list-disc list-inside space-y-1 text-gray-600 text-sm sm:text-base ml-4">
-											<li>{t("privacy.sections.collection.provided.items.0")}</li>
-											<li>{t("privacy.sections.collection.provided.items.1")}</li>
+											<li>{t("sections.collection.provided.items.0")}</li>
+											<li>{t("sections.collection.provided.items.1")}</li>
 										</ul>
 									</div>
 								</div>
@@ -114,51 +128,51 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.usage.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.usage.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.usage.description")}
+									{t("sections.usage.description")}
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.usage.items.0.label")}
+											{t("sections.usage.items.0.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.usage.items.0.value")}
+											{t("sections.usage.items.0.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.usage.items.1.label")}
+											{t("sections.usage.items.1.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.usage.items.1.value")}
+											{t("sections.usage.items.1.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.usage.items.2.label")}
+											{t("sections.usage.items.2.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.usage.items.2.value")}
+											{t("sections.usage.items.2.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.usage.items.3.label")}
+											{t("sections.usage.items.3.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.usage.items.3.value")}
+											{t("sections.usage.items.3.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.usage.items.4.label")}
+											{t("sections.usage.items.4.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.usage.items.4.value")}
+											{t("sections.usage.items.4.value")}
 										</span>
 									</div>
 								</div>
@@ -167,43 +181,43 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.protection.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.protection.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.protection.description")}
+									{t("sections.protection.description")}
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.protection.items.0.label")}
+											{t("sections.protection.items.0.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.protection.items.0.value")}
+											{t("sections.protection.items.0.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.protection.items.1.label")}
+											{t("sections.protection.items.1.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.protection.items.1.value")}
+											{t("sections.protection.items.1.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.protection.items.2.label")}
+											{t("sections.protection.items.2.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.protection.items.2.value")}
+											{t("sections.protection.items.2.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.protection.items.3.label")}
+											{t("sections.protection.items.3.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.protection.items.3.value")}
+											{t("sections.protection.items.3.value")}
 										</span>
 									</div>
 								</div>
@@ -212,43 +226,43 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.retention.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.retention.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.retention.description")}
+									{t("sections.retention.description")}
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.retention.items.0.label")}
+											{t("sections.retention.items.0.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.retention.items.0.value")}
+											{t("sections.retention.items.0.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.retention.items.1.label")}
+											{t("sections.retention.items.1.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.retention.items.1.value")}
+											{t("sections.retention.items.1.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.retention.items.2.label")}
+											{t("sections.retention.items.2.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.retention.items.2.value")}
+											{t("sections.retention.items.2.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.retention.items.3.label")}
+											{t("sections.retention.items.3.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.retention.items.3.value")}
+											{t("sections.retention.items.3.value")}
 										</span>
 									</div>
 								</div>
@@ -257,43 +271,43 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.sharing.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.sharing.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.sharing.description")}
+									{t("sections.sharing.description")}
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.sharing.items.0.label")}
+											{t("sections.sharing.items.0.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.sharing.items.0.value")}
+											{t("sections.sharing.items.0.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.sharing.items.1.label")}
+											{t("sections.sharing.items.1.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.sharing.items.1.value")}
+											{t("sections.sharing.items.1.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.sharing.items.2.label")}
+											{t("sections.sharing.items.2.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.sharing.items.2.value")}
+											{t("sections.sharing.items.2.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.sharing.items.3.label")}
+											{t("sections.sharing.items.3.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.sharing.items.3.value")}
+											{t("sections.sharing.items.3.value")}
 										</span>
 									</div>
 								</div>
@@ -302,51 +316,51 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.rights.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.rights.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.rights.description")}
+									{t("sections.rights.description")}
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.rights.items.0.label")}
+											{t("sections.rights.items.0.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.rights.items.0.value")}
+											{t("sections.rights.items.0.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.rights.items.1.label")}
+											{t("sections.rights.items.1.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.rights.items.1.value")}
+											{t("sections.rights.items.1.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.rights.items.2.label")}
+											{t("sections.rights.items.2.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.rights.items.2.value")}
+											{t("sections.rights.items.2.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.rights.items.3.label")}
+											{t("sections.rights.items.3.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.rights.items.3.value")}
+											{t("sections.rights.items.3.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.rights.items.4.label")}
+											{t("sections.rights.items.4.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.rights.items.4.value")}
+											{t("sections.rights.items.4.value")}
 										</span>
 									</div>
 								</div>
@@ -355,40 +369,40 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.cookies.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.cookies.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.cookies.description")}
+									{t("sections.cookies.description")}
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.cookies.items.0.label")}
+											{t("sections.cookies.items.0.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.cookies.items.0.value")}
+											{t("sections.cookies.items.0.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.cookies.items.1.label")}
+											{t("sections.cookies.items.1.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.cookies.items.1.value")}
+											{t("sections.cookies.items.1.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.cookies.items.2.label")}
+											{t("sections.cookies.items.2.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.cookies.items.2.value")}
+											{t("sections.cookies.items.2.value")}
 										</span>
 									</div>
 									<div className="bg-blue-50 p-3 rounded-lg">
 										<p className="text-blue-800 text-sm">
-											{t("privacy.sections.cookies.note")}
+											{t("sections.cookies.note")}
 										</p>
 									</div>
 								</div>
@@ -397,35 +411,35 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.updates.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.updates.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.updates.description")}
+									{t("sections.updates.description")}
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.updates.items.0.label")}
+											{t("sections.updates.items.0.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.updates.items.0.value")}
+											{t("sections.updates.items.0.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.updates.items.1.label")}
+											{t("sections.updates.items.1.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.updates.items.1.value")}
+											{t("sections.updates.items.1.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.updates.items.2.label")}
+											{t("sections.updates.items.2.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.updates.items.2.value")}
+											{t("sections.updates.items.2.value")}
 										</span>
 									</div>
 								</div>
@@ -434,32 +448,32 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("privacy.sections.contact.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">{t("sections.contact.title")}</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-									{t("privacy.sections.contact.description")}
+									{t("sections.contact.description")}
 								</p>
 								<div className="space-y-2">
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.contact.items.0.label")}
+											{t("sections.contact.items.0.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.contact.items.0.value")}
+											{t("sections.contact.items.0.value")}
 										</span>
 									</div>
 									<div className="flex items-start space-x-2">
 										<span className="font-semibold text-gray-900 text-sm sm:text-base min-w-fit">
-											{t("privacy.sections.contact.items.1.label")}
+											{t("sections.contact.items.1.label")}
 										</span>
 										<span className="text-gray-600 text-sm sm:text-base">
-											{t("privacy.sections.contact.items.1.value")}
+											{t("sections.contact.items.1.value")}
 										</span>
 									</div>
 								</div>
 								<p className="text-gray-600 text-sm sm:text-base">
-									{t("privacy.sections.contact.note")}
+									{t("sections.contact.note")}
 								</p>
 							</CardContent>
 						</Card>
@@ -471,14 +485,14 @@ export default function Privacy() {
 			<section className="py-8 sm:py-16 bg-white">
 				<div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto px-3 sm:px-4 text-center">
 					<h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-						{t("privacy.cta.title")}
+						{t("cta.title")}
 					</h2>
 					<p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-						{t("privacy.cta.subtitle")}
+						{t("cta.subtitle")}
 					</p>
 					<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
 						<Button asChild size="lg" className="text-sm sm:text-base">
-							<Link to="/">{t("privacy.cta.buttons.start")}</Link>
+							<Link to="/">{t("cta.buttons.start")}</Link>
 						</Button>
 						<Button
 							asChild
@@ -486,7 +500,7 @@ export default function Privacy() {
 							size="lg"
 							className="text-sm sm:text-base"
 						>
-							<Link to="/contact">{t("privacy.cta.buttons.contact")}</Link>
+							<Link to="/contact">{t("cta.buttons.contact")}</Link>
 						</Button>
 					</div>
 				</div>

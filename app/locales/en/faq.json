@@ -1,46 +1,71 @@
 {
-  "title": "Frequently Asked Questions",
-  "subtitle": "Common questions and answers about Smail temporary email service",
-  "questions": {
-    "whatIs": {
+  "hero": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Common questions and answers about Smail temporary email service"
+  },
+  "items": [
+    {
       "question": "What is a temporary email?",
       "answer": "A temporary email is a disposable email address used to receive emails without exposing your real email address. It's commonly used for website registration, downloading resources, or other scenarios requiring email verification."
     },
-    "howLong": {
+    {
+      "question": "Is Smail free to use?",
+      "answer": "Yes, Smail is completely free. We don't charge any fees and there are no hidden costs."
+    },
+    {
       "question": "How long can I use the email address?",
       "answer": "Each temporary email address is valid for 24 hours. After expiration, the email address will be deleted and cannot receive new emails."
     },
-    "isSafe": {
-      "question": "Is it safe to use temporary email?",
-      "answer": "Yes, temporary email is very safe. We don't store your personal information, and all emails are automatically deleted after 24 hours. We use modern encryption technology to protect data transmission."
-    },
-    "howMany": {
-      "question": "How many email addresses can I create?",
-      "answer": "You can create as many temporary email addresses as you need. Each address is independent and has its own 24-hour validity period."
-    },
-    "canSend": {
+    {
       "question": "Can I send emails?",
       "answer": "Currently, Smail only supports receiving emails, not sending them. This is to prevent spam and abuse."
     },
-    "attachments": {
+    {
+      "question": "Is it safe to use temporary email?",
+      "answer": "Yes, temporary email is very safe. We don't store your personal information, and all emails are automatically deleted after 24 hours. We use modern encryption technology to protect data transmission."
+    },
+    {
+      "question": "What if I don't receive verification emails?",
+      "answer": "Please check if the email was sent to the spam folder, or try refreshing the page. If you still don't receive it, there might be a delay from the sender, please wait a few minutes."
+    },
+    {
+      "question": "Can I create custom email addresses?",
+      "answer": "Currently, we provide randomly generated email addresses to ensure security and privacy. Custom addresses are not supported at this time."
+    },
+    {
+      "question": "Is there a limit on the number of emails I can receive?",
+      "answer": "There's no limit on the number of emails you can receive within the 24-hour validity period. However, we reserve the right to implement reasonable limits to prevent abuse."
+    },
+    {
       "question": "Are attachments supported?",
-      "answer": "Yes, we support receiving emails with attachments. You can view and download attachments directly on the webpage."
+      "answer": "Yes, we support receiving emails with attachments. You can view and download attachments directly on the webpage, but please be cautious with files from unknown sources."
     },
-    "mobile": {
-      "question": "Is mobile device supported?",
-      "answer": "Yes, Smail fully supports mobile devices. Our website uses responsive design and works perfectly on phones and tablets."
-    },
-    "cost": {
-      "question": "Do I need to pay to use Smail?",
-      "answer": "No, Smail is completely free. We don't charge any fees and there are no hidden costs."
-    },
-    "registration": {
-      "question": "Do I need to register an account?",
-      "answer": "No registration required. You can visit the website directly and start using the temporary email service immediately."
-    },
-    "privacy": {
-      "question": "How is my privacy protected?",
-      "answer": "We take user privacy very seriously. We don't collect or store your personal information, and all email data is automatically deleted after 24 hours. We don't share any data with third parties."
+    {
+      "question": "How can I contact support?",
+      "answer": "If you encounter any issues or have questions, you can contact us through the contact page on our website. We'll respond as soon as possible."
     }
+  ],
+  "help": {
+    "title": "Still have questions?",
+    "subtitle": "If you can't find the answer you're looking for, feel free to contact us.",
+    "contactButton": "Contact Us",
+    "startButton": "Start Using"
+  },
+  "quickStart": {
+    "title": "Quick Start Guide",
+    "steps": [
+      {
+        "title": "Visit Homepage",
+        "description": "Open Smail website and get your temporary email address instantly"
+      },
+      {
+        "title": "Use Email Address",
+        "description": "Copy the email address and use it for registration or verification"
+      },
+      {
+        "title": "Check Emails",
+        "description": "Return to the page to check received emails and download attachments"
+      }
+    ]
   }
 }
