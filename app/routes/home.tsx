@@ -177,6 +177,19 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 	const isDeleting =
 		navigation.formData?.get("action") === "delete" && isSubmitting;
 
+	// 安全检查：确保 loaderData 存在
+	if (!loaderData || !loaderData.email) {
+		console.log("can't find email in loaderData");
+		return (
+			<div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50 flex items-center justify-center">
+				<div className="text-center">
+					<Loader2Icon className="h-8 w-8 animate-spin mx-auto mb-4" />
+					<p className="text-gray-600">正在加载邮箱...</p>
+				</div>
+			</div>
+		);
+	}
+
 	// 自动刷新逻辑 - 每30秒自动重新验证数据
 	React.useEffect(() => {
 		const interval = setInterval(() => {

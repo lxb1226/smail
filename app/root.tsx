@@ -5,13 +5,18 @@ import {
 	Scripts,
 	ScrollRestoration,
 	isRouteErrorResponse,
+	useLocation,
 } from "react-router";
+import { useTranslation } from 'react-i18next';
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import "./lib/i18n"; // 初始化i18n
+import { getCurrentLanguage, languageConfig } from "./lib/i18n";
 
 // 全局默认 meta 配置
 export function meta() {
+	// 注意：这里使用默认的中文内容，具体页面会根据语言覆盖
 	return [
 		{
 			title:
@@ -106,38 +111,87 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
-	// 结构化数据 JSON
-	const structuredData = {
-		"@context": "https://schema.org",
-		"@type": "WebApplication",
-		name: "Smail",
-		description: "免费临时邮箱服务，保护隐私，避免垃圾邮件",
-		url: "https://smail.pw",
-		applicationCategory: "UtilityApplication",
-		operatingSystem: "Any",
-		offers: {
-			"@type": "Offer",
-			price: "0",
-			priceCurrency: "USD",
-		},
-		author: {
-			"@type": "Organization",
-			name: "Smail Team",
-		},
-		keywords: "临时邮箱,一次性邮箱,临时邮件,disposable email,temp mail",
-		applicationSubCategory: "Email Service",
-		featureList: [
-			"免费使用",
-			"无需注册",
-			"隐私保护",
-			"24小时有效期",
-			"支持附件",
-			"实时接收邮件",
-		],
+	// 获取当前路径
+	const location = useLocation();
+	// 获取当前语言 - 传递路径参数以确保服务器端和客户端一致
+	const currentLanguage = getCurrentLanguage(location.pathname);
+	const langConfig = languageConfig[currentLanguage];
+	
+	// 根据语言设置HTML lang属性
+	const htmlLang = currentLanguage === 'zh' ? 'zh-CN' : 
+					 currentLanguage === 'en' ? 'en-US' : 
+					 currentLanguage === 'ja' ? 'ja-JP' : 'zh-CN';
+	
+	// 多语言结构化数据
+	const getStructuredData = () => {
+		const baseData = {
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			name: "Smail",
+			url: "https://smail.pw",
+			applicationCategory: "UtilityApplication",
+			operatingSystem: "Any",
+			offers: {
+				"@type": "Offer",
+				price: "0",
+				priceCurrency: "USD",
+			},
+			author: {
+				"@type": "Organization",
+				name: "Smail Team",
+			},
+			applicationSubCategory: "Email Service",
+		};
+		
+		// 根据语言设置描述和关键词
+		switch (currentLanguage) {
+			case 'en':
+				return {
+					...baseData,
+					description: "Free temporary email service to protect your privacy and avoid spam",
+					keywords: "temporary email,disposable email,spam protection,privacy protection,free email",
+					featureList: [
+						"Free to use",
+						"No registration required",
+						"Privacy protection",
+						"24-hour validity",
+						"Attachment support",
+						"Real-time email reception",
+					],
+				};
+			case 'ja':
+				return {
+					...baseData,
+					description: "プライバシーを保護し、スパムを避けるための無料の一時的なメールサービス",
+					keywords: "一時的なメール,使い捨てメール,スパム保護,プライバシー保護,無料メール",
+					featureList: [
+						"無料で使用",
+						"登録不要",
+						"プライバシー保護",
+						"24時間有効",
+						"添付ファイル対応",
+						"リアルタイムメール受信",
+					],
+				};
+			default: // 'zh'
+				return {
+					...baseData,
+					description: "免费临时邮箱服务，保护隐私，避免垃圾邮件",
+					keywords: "临时邮箱,一次性邮箱,临时邮件,disposable email,temp mail",
+					featureList: [
+						"免费使用",
+						"无需注册",
+						"隐私保护",
+						"24小时有效期",
+						"支持附件",
+						"实时接收邮件",
+					],
+				};
+		}
 	};
 
 	return (
-		<html lang="zh-CN">
+		<html lang={htmlLang}>
 			<head>
 				<meta charSet="utf-8" />
 				<meta
@@ -151,7 +205,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<script
 					type="application/ld+json"
 					dangerouslySetInnerHTML={{
-						__html: JSON.stringify(structuredData),
+						__html: JSON.stringify(getStructuredData()),
 					}}
 				/>
 

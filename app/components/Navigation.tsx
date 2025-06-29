@@ -1,16 +1,39 @@
 import { Mail, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
+import { useTranslation } from "react-i18next";
 import { Button } from "~/components/ui/button";
+import { LanguageSwitcher } from "~/components/LanguageSwitcher";
+import { getCurrentLanguage, generateLocalizedPath } from "~/lib/i18n";
 
 export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
+	const { t } = useTranslation();
+	const location = useLocation();
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const currentLanguage = getCurrentLanguage();
 
+	// 生成多语言导航项
 	const navItems = [
-		{ href: "/", label: "首页", description: "获取临时邮箱" },
-		{ href: "/about", label: "关于", description: "了解 Smail" },
-		{ href: "/faq", label: "FAQ", description: "常见问题" },
-		{ href: "/contact", label: "联系", description: "联系我们" },
+		{ 
+			href: generateLocalizedPath("/", currentLanguage), 
+			label: t("navigation.home"), 
+			description: t("home.subtitle") 
+		},
+		{ 
+			href: generateLocalizedPath("/about", currentLanguage), 
+			label: t("navigation.about"), 
+			description: t("about.description") 
+		},
+		{ 
+			href: generateLocalizedPath("/faq", currentLanguage), 
+			label: t("navigation.faq"), 
+			description: t("faq.title") 
+		},
+		{ 
+			href: generateLocalizedPath("/contact", currentLanguage), 
+			label: t("navigation.contact"), 
+			description: t("contact.description") 
+		},
 	];
 
 	return (
@@ -19,7 +42,7 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 				<div className="flex items-center justify-between">
 					{/* Logo */}
 					<Link
-						to="/"
+						to={generateLocalizedPath("/", currentLanguage)}
 						className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
 					>
 						<div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg p-2">
@@ -29,18 +52,18 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 							<h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
 								Smail
 							</h1>
-							<p className="text-sm text-gray-600">临时邮箱服务</p>
+							<p className="text-sm text-gray-600">{t("home.subtitle")}</p>
 						</div>
 					</Link>
 
 					{/* Desktop Navigation */}
-					<nav className="hidden md:flex items-center space-x-8">
+					<nav className="hidden md:flex items-center space-x-6">
 						{navItems.map((item) => (
 							<Link
 								key={item.href}
 								to={item.href}
 								className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-colors hover:text-blue-600 ${
-									currentPath === item.href
+									location.pathname === item.href
 										? "text-blue-600 bg-blue-50"
 										: "text-gray-700 hover:bg-gray-50"
 								}`}
@@ -48,11 +71,15 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 								{item.label}
 							</Link>
 						))}
+						
+						{/* 语言切换器 */}
+						<LanguageSwitcher />
+						
 						<Button
 							asChild
 							className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
 						>
-							<Link to="/">开始使用</Link>
+							<Link to={generateLocalizedPath("/", currentLanguage)}>{t("home.generateEmail")}</Link>
 						</Button>
 					</nav>
 
@@ -61,7 +88,7 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 						type="button"
 						className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
 						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-						aria-label="切换菜单"
+						aria-label={t("common.close")}
 					>
 						{isMobileMenuOpen ? (
 							<X className="h-6 w-6" />
@@ -80,10 +107,10 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 									key={item.href}
 									to={item.href}
 									className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-										currentPath === item.href
-											? "text-blue-600 bg-blue-50"
-											: "text-gray-700 hover:bg-gray-50"
-									}`}
+									location.pathname === item.href
+										? "text-blue-600 bg-blue-50"
+										: "text-gray-700 hover:bg-gray-50"
+								}`}
 									onClick={() => setIsMobileMenuOpen(false)}
 								>
 									<div>
@@ -94,12 +121,18 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 									</div>
 								</Link>
 							))}
+							
+							{/* 移动端语言切换器 */}
+							<div className="px-4 py-2">
+								<LanguageSwitcher className="w-full" />
+							</div>
+							
 							<div className="pt-2">
 								<Button
 									asChild
 									className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
 								>
-									<Link to="/">开始使用</Link>
+									<Link to={generateLocalizedPath("/", currentLanguage)}>{t("home.generateEmail")}</Link>
 								</Button>
 							</div>
 						</div>

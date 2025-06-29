@@ -1,0 +1,86 @@
+{
+  "site": {
+    "title": "Smail - Temporary Email Service",
+    "description": "Free temporary email service to protect your privacy and avoid spam. No registration required, generate temporary email addresses instantly.",
+    "keywords": "temporary email,disposable email,spam protection,privacy protection,free email"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  },
+  "home": {
+    "title": "Temporary Email",
+    "subtitle": "Protect your privacy, avoid spam",
+    "generateEmail": "Generate Email",
+    "copyEmail": "Copy Email",
+    "refreshInbox": "Refresh Inbox",
+    "noEmails": "No emails yet",
+    "emailExpiry": "Email will expire in 24 hours",
+    "copied": "Copied to clipboard"
+  },
+  "about": {
+    "title": "About Smail",
+    "description": "Smail is a free temporary email service that helps you protect your privacy and avoid spam.",
+    "features": {
+      "title": "Features",
+      "privacy": "Privacy Protection",
+      "privacyDesc": "No registration required, protect your real email address",
+      "temporary": "Temporary",
+      "temporaryDesc": "Email addresses expire automatically after 24 hours",
+      "instant": "Instant Generation",
+      "instantDesc": "Generate temporary email addresses with one click",
+      "free": "Completely Free",
+      "freeDesc": "No payment required, free to use forever"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": {
+      "whatIs": {
+        "question": "What is a temporary email?",
+        "answer": "A temporary email is a disposable email address used to receive emails without exposing your real email address. It's commonly used for website registration, downloading resources, or other scenarios requiring email verification."
+      },
+      "howLong": {
+        "question": "How long can I use the email address?",
+        "answer": "Each temporary email address is valid for 24 hours. After expiration, the email address will be deleted and cannot receive new emails."
+      },
+      "isSafe": {
+        "question": "Is it safe to use temporary email?",
+        "answer": "Yes, using temporary email can protect your real email address from being leaked and avoid receiving spam. However, please note that you should not use temporary email to receive important personal information."
+      },
+      "canSend": {
+        "question": "Can I send emails?",
+        "answer": "Currently our service only supports receiving emails, not sending emails. This is to prevent spam generation."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "If you have any questions or suggestions, please contact us through the following ways:",
+    "email": "Email",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© 2024 Smail. All rights reserved.",
+    "madeWith": "Made with ❤️"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close"
+  }
+}
