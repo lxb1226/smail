@@ -31,12 +31,12 @@ export function Navigation({
 		{ 
 			href: generateLocalizedPath("/about", currentLang), 
 			label: t("navigation.about"), 
-			description: t("about:description") 
+			description: t("about:meta.description") 
 		},
 		{ 
 			href: generateLocalizedPath("/faq", currentLang), 
 			label: t("navigation.faq"), 
-			description: t("faq:title") 
+			description: t("faq:hero.subtitle") 
 		},
 		// { 
 		// 	href: generateLocalizedPath("/contact", currentLang), 

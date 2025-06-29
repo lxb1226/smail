@@ -14,7 +14,7 @@ import type { Route } from "./+types/about";
 
 export function meta(_: Route.MetaArgs) {
 	// Note: Meta functions cannot use useTranslation hook directly
-	// For now, keeping Chinese as default. Consider implementing meta i18n solution later
+	// TODO: Consider implementing meta i18n solution later
 	return [
 		{ title: "关于Smail团队 - 致力于打造最安全的临时邮箱平台" },
 		{

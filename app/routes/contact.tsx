@@ -72,11 +72,11 @@ export default function Contact({ loaderData }: ComponentProps) {
 					</div>
 					<h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
 						<span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-							联系我们
+							{t("hero.title")}
 						</span>
 					</h1>
 					<p className="text-base sm:text-lg lg:text-xl text-gray-600">
-						有问题或建议？我们很乐意听取您的意见
+						{t("hero.subtitle")}
 					</p>
 				</div>
 			</section>
