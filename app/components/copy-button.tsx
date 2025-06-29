@@ -1,6 +1,7 @@
 import type { VariantProps } from "class-variance-authority";
 import { CheckIcon, CopyIcon, XIcon } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { Button, type buttonVariants } from "~/components/ui/button";
 
@@ -10,15 +11,16 @@ interface CopyButtonProps extends VariantProps<typeof buttonVariants> {
 }
 
 export function CopyButton({ text, ...props }: CopyButtonProps) {
+	const { t } = useTranslation("common");
 	const icons = {
 		idle: <CopyIcon />,
 		success: <CheckIcon className="text-green-500" />,
 		error: <XIcon className="text-red-500" />,
 	};
 	const texts = {
-		idle: "复制地址",
-		success: "复制成功",
-		error: "复制失败",
+		idle: t("actions.copyAddress"),
+		success: t("actions.copySuccess"),
+		error: t("actions.copyError"),
 	};
 	const [icon, setIcon] = useState<keyof typeof icons>("idle");
 	return (

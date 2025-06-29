@@ -17,7 +17,10 @@
     "copy": "Copy",
     "delete": "Delete",
     "back": "Back",
-    "download": "Download"
+    "download": "Download",
+    "copyAddress": "Copy Address",
+    "copySuccess": "Copied Successfully",
+    "copyError": "Copy Failed"
   },
   "status": {
     "loading": "Loading...",
