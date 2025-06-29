@@ -93,7 +93,7 @@ export function meta(_: Route.MetaArgs) {
 function generateEmail() {
 	const name = randomName();
 	const random = customAlphabet("0123456789", 4)();
-	return `${name}-${random}@smail.pw`;
+	return `${name}-${random}@heyjude.blog`;
 }
 
 export async function loader({ request, context }: Route.LoaderArgs) {
