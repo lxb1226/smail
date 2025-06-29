@@ -26,7 +26,7 @@ export default function Privacy() {
 	return (
 		<div className="min-h-dvh bg-gray-50">
 			{/* Header */}
-			<header className="bg-white border-b">
+			{/* <header className="bg-white border-b">
 				<div className="max-w-screen-xl mx-auto px-3 sm:px-4 py-4 flex items-center justify-between">
 					<Button asChild variant="ghost" size="sm">
 						<Link to="/">
@@ -55,7 +55,7 @@ export default function Privacy() {
 						</Button>
 					</nav>
 				</div>
-			</header>
+			</header> */}
 
 			{/* Hero Section */}
 			<section className="py-8 sm:py-16 bg-white">
