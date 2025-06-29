@@ -24,10 +24,10 @@ export function Navigation({
 	// 生成多语言导航项
 	const navItems = [
 		{ 
-			href: generateLocalizedPath("/", currentLang), 
-			label: t("navigation.home"), 
-			description: t("home:subtitle") 
-		},
+				href: generateLocalizedPath("/", currentLang), 
+				label: t("navigation.home"), 
+				description: t("home:features.subtitle") 
+			},
 		{ 
 			href: generateLocalizedPath("/about", currentLang), 
 			label: t("navigation.about"), 
@@ -41,7 +41,7 @@ export function Navigation({
 		{ 
 			href: generateLocalizedPath("/contact", currentLang), 
 			label: t("navigation.contact"), 
-			description: t("contact:description") 
+			description: t("contact:subtitle") 
 		},
 	];
 
@@ -61,7 +61,7 @@ export function Navigation({
 							<h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
 								Smail
 							</h1>
-							<p className="text-sm text-gray-600">{t("home:subtitle")}</p>
+							<p className="text-sm text-gray-600">{t("home:features.subtitle")}</p>
 						</div>
 					</Link>
 

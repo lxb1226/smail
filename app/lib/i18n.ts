@@ -6,12 +6,21 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import zhCommon from '../locales/zh/common.json';
 import zhHome from '../locales/zh/home.json';
 import zhMail from '../locales/zh/mail.json';
+import zhAbout from '../locales/zh/about.json';
+import zhFaq from '../locales/zh/faq.json';
+import zhContact from '../locales/zh/contact.json';
 import enCommon from '../locales/en/common.json';
 import enHome from '../locales/en/home.json';
 import enMail from '../locales/en/mail.json';
+import enAbout from '../locales/en/about.json';
+import enFaq from '../locales/en/faq.json';
+import enContact from '../locales/en/contact.json';
 import jaCommon from '../locales/ja/common.json';
 import jaHome from '../locales/ja/home.json';
 import jaMail from '../locales/ja/mail.json';
+import jaAbout from '../locales/ja/about.json';
+import jaFaq from '../locales/ja/faq.json';
+import jaContact from '../locales/ja/contact.json';
 
 // 支持的语言列表
 export const supportedLanguages = ['zh', 'en', 'ja'] as const;
@@ -61,17 +70,26 @@ const resources = {
   zh: {
     common: zhCommon,
     home: zhHome,
-    mail: zhMail
+    mail: zhMail,
+    about: zhAbout,
+    faq: zhFaq,
+    contact: zhContact
   },
   en: {
     common: enCommon,
     home: enHome,
-    mail: enMail
+    mail: enMail,
+    about: enAbout,
+    faq: enFaq,
+    contact: enContact
   },
   ja: {
     common: jaCommon,
     home: jaHome,
-    mail: jaMail
+    mail: jaMail,
+    about: jaAbout,
+    faq: jaFaq,
+    contact: jaContact
   }
 };
 
@@ -89,7 +107,7 @@ const i18nConfig = {
   
   // 命名空间
   defaultNS: 'common',
-  ns: ['common', 'home', 'mail'],
+  ns: ['common', 'home', 'mail', 'about', 'faq', 'contact'],
   
   // 插值配置
   interpolation: {
