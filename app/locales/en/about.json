@@ -1,0 +1,45 @@
+{
+  "title": "About Smail",
+  "description": "Smail is a free temporary email service that helps you protect your privacy and avoid spam.",
+  "mission": {
+    "title": "Our Mission",
+    "description": "To provide secure, reliable, and free temporary email services for users worldwide, protecting user privacy and enhancing online security experience."
+  },
+  "features": {
+    "title": "Features",
+    "privacy": {
+      "title": "Privacy Protection",
+      "description": "No registration required, protect your real email address and avoid personal information leaks"
+    },
+    "temporary": {
+      "title": "Temporary",
+      "description": "Email addresses expire automatically after 24 hours, ensuring data security"
+    },
+    "instant": {
+      "title": "Instant Generation",
+      "description": "Generate temporary email addresses with one click, no waiting, immediately available"
+    },
+    "free": {
+      "title": "Completely Free",
+      "description": "No payment required, free to use forever, no ads"
+    },
+    "reliable": {
+      "title": "Stable & Reliable",
+      "description": "Built on Cloudflare's global network, ensuring service stability and availability"
+    },
+    "secure": {
+      "title": "Security Guarantee",
+      "description": "Uses modern encryption technology to protect email transmission and storage security"
+    }
+  },
+  "technology": {
+    "title": "Technology Stack",
+    "description": "Built with modern web technologies to provide fast and secure user experience",
+    "stack": {
+      "frontend": "React Router v7 + TypeScript",
+      "backend": "Cloudflare Workers",
+      "database": "Cloudflare D1",
+      "email": "Cloudflare Email Routing"
+    }
+  }
+}

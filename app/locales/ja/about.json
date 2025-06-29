@@ -1,0 +1,45 @@
+{
+  "title": "Smailについて",
+  "description": "Smailは、プライバシーを保護し、スパムを避けるのに役立つ無料の一時的なメールサービスです。",
+  "mission": {
+    "title": "私たちの使命",
+    "description": "世界中のユーザーに安全で信頼性が高く無料の一時的なメールサービスを提供し、ユーザーのプライバシーを保護し、オンラインセキュリティ体験を向上させることです。"
+  },
+  "features": {
+    "title": "機能",
+    "privacy": {
+      "title": "プライバシー保護",
+      "description": "登録不要で、実際のメールアドレスを保護し、個人情報の漏洩を防ぎます"
+    },
+    "temporary": {
+      "title": "一時的",
+      "description": "メールアドレスは24時間後に自動的に期限切れになり、データセキュリティを確保します"
+    },
+    "instant": {
+      "title": "即座に生成",
+      "description": "ワンクリックで一時的なメールアドレスを生成、待機不要、すぐに利用可能"
+    },
+    "free": {
+      "title": "完全無料",
+      "description": "支払い不要、永続的に無料で使用、広告なし"
+    },
+    "reliable": {
+      "title": "安定・信頼性",
+      "description": "Cloudflareのグローバルネットワーク上に構築され、サービスの安定性と可用性を確保"
+    },
+    "secure": {
+      "title": "セキュリティ保証",
+      "description": "最新の暗号化技術を使用して、メール送信とストレージのセキュリティを保護"
+    }
+  },
+  "technology": {
+    "title": "技術スタック",
+    "description": "最新のWeb技術で構築され、高速で安全なユーザー体験を提供",
+    "stack": {
+      "frontend": "React Router v7 + TypeScript",
+      "backend": "Cloudflare Workers",
+      "database": "Cloudflare D1",
+      "email": "Cloudflare Email Routing"
+    }
+  }
+}

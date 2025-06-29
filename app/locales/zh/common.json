@@ -1,86 +1,43 @@
 {
-  "site": {
-    "title": "Smail - 临时邮箱服务",
-    "description": "免费的临时邮箱服务，保护您的隐私，避免垃圾邮件。无需注册，即时生成临时邮箱地址。",
-    "keywords": "临时邮箱,一次性邮箱,垃圾邮件防护,隐私保护,免费邮箱"
+  "brand": {
+    "name": "Smail",
+    "tagline": "临时邮箱服务"
   },
   "navigation": {
     "home": "首页",
     "about": "关于",
-    "faq": "常见问题",
-    "contact": "联系我们",
-    "privacy": "隐私政策",
-    "terms": "服务条款"
+    "faq": "FAQ",
+    "contact": "联系",
+    "terms": "使用条款",
+    "privacy": "隐私政策"
   },
-  "home": {
-    "title": "临时邮箱",
-    "subtitle": "保护您的隐私，避免垃圾邮件",
-    "generateEmail": "生成邮箱",
-    "copyEmail": "复制邮箱",
-    "refreshInbox": "刷新收件箱",
-    "noEmails": "暂无邮件",
-    "emailExpiry": "邮箱将在 24 小时后过期",
-    "copied": "已复制到剪贴板"
+  "actions": {
+    "generate": "生成邮箱",
+    "refresh": "刷新",
+    "copy": "复制",
+    "delete": "删除",
+    "back": "返回",
+    "download": "下载"
   },
-  "about": {
-    "title": "关于 Smail",
-    "description": "Smail 是一个免费的临时邮箱服务，帮助您保护隐私，避免垃圾邮件。",
-    "features": {
-      "title": "功能特点",
-      "privacy": "隐私保护",
-      "privacyDesc": "无需注册，保护您的真实邮箱地址",
-      "temporary": "临时性",
-      "temporaryDesc": "邮箱地址24小时后自动过期",
-      "instant": "即时生成",
-      "instantDesc": "一键生成临时邮箱地址",
-      "free": "完全免费",
-      "freeDesc": "无需付费，永久免费使用"
-    }
-  },
-  "faq": {
-    "title": "常见问题",
-    "questions": {
-      "whatIs": {
-        "question": "什么是临时邮箱？",
-        "answer": "临时邮箱是一种一次性的电子邮件地址，用于接收邮件而不暴露您的真实邮箱地址。它通常用于注册网站、下载资源或其他需要邮箱验证的场景。"
-      },
-      "howLong": {
-        "question": "邮箱地址能使用多长时间？",
-        "answer": "每个临时邮箱地址的有效期为24小时。过期后，邮箱地址将被删除，无法再接收新邮件。"
-      },
-      "isSafe": {
-        "question": "使用临时邮箱安全吗？",
-        "answer": "是的，使用临时邮箱可以保护您的真实邮箱地址不被泄露，避免收到垃圾邮件。但请注意，不要用临时邮箱接收重要的个人信息。"
-      },
-      "canSend": {
-        "question": "可以发送邮件吗？",
-        "answer": "目前我们的服务只支持接收邮件，不支持发送邮件。这是为了防止垃圾邮件的产生。"
-      }
-    }
-  },
-  "contact": {
-    "title": "联系我们",
-    "description": "如果您有任何问题或建议，请通过以下方式联系我们：",
-    "email": "邮箱",
-    "github": "GitHub"
-  },
-  "footer": {
-    "copyright": "© 2024 Smail. 保留所有权利。",
-    "madeWith": "用 ❤️ 制作"
-  },
-  "common": {
+  "status": {
     "loading": "加载中...",
     "error": "出错了",
-    "retry": "重试",
-    "back": "返回",
-    "next": "下一步",
-    "previous": "上一步",
-    "save": "保存",
-    "cancel": "取消",
-    "confirm": "确认",
-    "delete": "删除",
-    "edit": "编辑",
-    "view": "查看",
-    "close": "关闭"
+    "success": "成功",
+    "empty": "暂无数据"
+  },
+  "time": {
+    "now": "刚刚",
+    "today": "今天",
+    "yesterday": "昨天",
+    "minutesAgo": "{{count}}分钟前",
+    "hoursAgo": "{{count}}小时前",
+    "daysAgo": "{{count}}天前"
+  },
+  "footer": {
+    "quickLinks": "快速链接",
+    "support": "帮助支持",
+    "help": "使用帮助",
+    "copyright": "© 2024 Smail. 保留所有权利.",
+    "features": "免费 · 安全 · 隐私保护"
   }
 }

@@ -1,0 +1,63 @@
+{
+  "title": "Contact Us",
+  "subtitle": "Have questions or suggestions? We'd love to hear from you",
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Enter your name"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Enter your email address"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "Enter email subject"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Please describe your question or suggestion in detail..."
+    },
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! We'll get back to you soon.",
+    "error": "Failed to send. Please try again later."
+  },
+  "info": {
+    "title": "Other Contact Methods",
+    "email": {
+      "title": "Email",
+      "value": "support@smail.pw",
+      "description": "Technical support and general inquiries"
+    },
+    "response": {
+      "title": "Response Time",
+      "value": "Within 24 hours",
+      "description": "We typically respond within 24 hours"
+    },
+    "languages": {
+      "title": "Supported Languages",
+      "value": "Chinese, English, Japanese",
+      "description": "We provide customer service in multiple languages"
+    }
+  },
+  "types": {
+    "title": "Common Issue Types",
+    "technical": {
+      "title": "Technical Issues",
+      "description": "Email not receiving, website access problems, etc."
+    },
+    "feature": {
+      "title": "Feature Suggestions",
+      "description": "New feature suggestions, user experience improvements, etc."
+    },
+    "business": {
+      "title": "Business Cooperation",
+      "description": "Partnership opportunities, API integration, etc."
+    },
+    "other": {
+      "title": "Other Issues",
+      "description": "Any other related questions or feedback"
+    }
+  }
+}

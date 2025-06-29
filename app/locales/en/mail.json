@@ -1,0 +1,17 @@
+{
+  "backToInbox": "Back to Inbox",
+  "back": "Back",
+  "detail": "Email Detail",
+  "noSubject": "(No Subject)",
+  "from": "From",
+  "to": "To",
+  "time": "Time",
+  "read": "Read",
+  "unread": "Unread",
+  "attachments": "Attachments ({{count}})",
+  "unnamedAttachment": "Unnamed Attachment",
+  "downloadAttachment": "Download Attachment",
+  "processing": "Processing",
+  "failed": "Failed",
+  "content": "Email Content"
+}

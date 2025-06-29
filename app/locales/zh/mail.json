@@ -1,0 +1,17 @@
+{
+  "backToInbox": "返回收件箱",
+  "back": "返回",
+  "detail": "邮件详情",
+  "noSubject": "(无主题)",
+  "from": "发件人",
+  "to": "收件人",
+  "time": "时间",
+  "read": "已读",
+  "unread": "未读",
+  "attachments": "附件 ({{count}})",
+  "unnamedAttachment": "未命名附件",
+  "downloadAttachment": "下载附件",
+  "processing": "处理中",
+  "failed": "失败",
+  "content": "邮件内容"
+}

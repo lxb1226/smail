@@ -1,0 +1,45 @@
+{
+  "title": "关于 Smail",
+  "description": "Smail 是一个免费的临时邮箱服务，帮助您保护隐私，避免垃圾邮件。",
+  "mission": {
+    "title": "我们的使命",
+    "description": "为全球用户提供安全、可靠、免费的临时邮箱服务，保护用户隐私，提升网络安全体验。"
+  },
+  "features": {
+    "title": "功能特点",
+    "privacy": {
+      "title": "隐私保护",
+      "description": "无需注册，保护您的真实邮箱地址，避免个人信息泄露"
+    },
+    "temporary": {
+      "title": "临时性",
+      "description": "邮箱地址24小时后自动过期，确保数据安全"
+    },
+    "instant": {
+      "title": "即时生成",
+      "description": "一键生成临时邮箱地址，无需等待，立即可用"
+    },
+    "free": {
+      "title": "完全免费",
+      "description": "无需付费，永久免费使用，无广告干扰"
+    },
+    "reliable": {
+      "title": "稳定可靠",
+      "description": "基于Cloudflare全球网络，确保服务稳定性和可用性"
+    },
+    "secure": {
+      "title": "安全保障",
+      "description": "采用现代加密技术，保护邮件传输和存储安全"
+    }
+  },
+  "technology": {
+    "title": "技术架构",
+    "description": "基于现代Web技术构建，提供快速、安全的用户体验",
+    "stack": {
+      "frontend": "React Router v7 + TypeScript",
+      "backend": "Cloudflare Workers",
+      "database": "Cloudflare D1",
+      "email": "Cloudflare Email Routing"
+    }
+  }
+}

@@ -2,6 +2,7 @@ import randomName from "@scaleway/random-name";
 import { Loader2Icon, Mail, RefreshCcwIcon } from "lucide-react";
 import { customAlphabet } from "nanoid";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
 	Form,
 	Link,
@@ -169,6 +170,7 @@ export async function action({ request, context }: Route.ActionArgs) {
 }
 
 export default function Home({ loaderData }: Route.ComponentProps) {
+	const { t } = useTranslation();
 	const navigation = useNavigation();
 	const revalidator = useRevalidator();
 	const isSubmitting = navigation.state === "submitting";
@@ -184,7 +186,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 			<div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50 flex items-center justify-center">
 				<div className="text-center">
 					<Loader2Icon className="h-8 w-8 animate-spin mx-auto mb-4" />
-					<p className="text-gray-600">正在加载邮箱...</p>
+					<p className="text-gray-600">{t('home.loading')}</p>
 				</div>
 			</div>
 		);
@@ -229,13 +231,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 					{/* Hero Section */}
 					<div className="text-center mb-12">
 						<h2 className="text-4xl font-bold text-gray-800 mb-4">
-							保护您的隐私
+							{t('home.hero.title')}
 							<span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-								临时邮箱
+								{t('home.hero.highlight')}
 							</span>
 						</h2>
 						<p className="text-lg text-gray-600 max-w-2xl mx-auto">
-							无需注册，即时获取临时邮箱地址。24小时有效期，完全免费，保护您的真实邮箱免受垃圾邮件骚扰。
+							{t('home.hero.description')}
 						</p>
 					</div>
 
@@ -246,29 +248,29 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 							<Card className="border-0 shadow-lg bg-white h-full">
 								<CardHeader className="pb-4">
 									<CardTitle className="flex items-center space-x-2 text-xl">
-										<div className="bg-blue-600 rounded-lg p-2">
-											<Mail className="h-5 w-5 text-white" />
-										</div>
-										<span className="text-gray-800">您的临时邮箱地址</span>
-									</CardTitle>
-									<div className="flex flex-wrap items-center gap-2 text-sm">
-										<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-											✓ 24小时有效
-										</span>
-										<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-											⚡ 自动刷新
-										</span>
-										<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-											🎁 完全免费
-										</span>
+									<div className="bg-blue-600 rounded-lg p-2">
+										<Mail className="h-5 w-5 text-white" />
 									</div>
+									<span className="text-gray-800">{t('home.mailbox.title')}</span>
+								</CardTitle>
+								<div className="flex flex-wrap items-center gap-2 text-sm">
+									<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+										✓ {t('home.mailbox.features.validity')}
+									</span>
+									<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+										⚡ {t('home.mailbox.features.autoRefresh')}
+									</span>
+									<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+										🎁 {t('home.mailbox.features.free')}
+									</span>
+								</div>
 								</CardHeader>
 								<CardContent>
 									{/* 邮箱地址显示区域 */}
 									<div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mb-6">
 										<div className="text-center">
 											<p className="text-xs text-gray-500 mb-2 font-medium">
-												您的专属邮箱地址
+												{t('home.mailbox.emailLabel')}
 											</p>
 											<span className="font-mono text-base sm:text-lg font-bold text-gray-900 tracking-wide select-all break-all block">
 												{loaderData.email}
@@ -295,13 +297,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 												className="w-full h-10 border-gray-300 hover:bg-gray-50 hover:border-gray-400 transition-all"
 											>
 												{isDeleting ? (
-													<>
-														<Loader2Icon className="w-4 h-4 animate-spin mr-2" />
-														生成中...
-													</>
-												) : (
-													<>🔄 生成新邮箱</>
-												)}
+																<>
+																	<Loader2Icon className="w-4 h-4 animate-spin mr-2" />
+																	{t('home.mailbox.generating')}
+																</>
+															) : (
+																<>🔄 {t('home.mailbox.generateNew')}</>
+															)}
 											</Button>
 										</Form>
 									</div>
@@ -314,10 +316,10 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 											</div>
 											<div className="text-sm">
 												<p className="font-semibold text-blue-800 mb-1">
-													使用提示
+													{t('home.mailbox.tips.title')}
 												</p>
 												<p className="text-blue-700 leading-relaxed">
-													发送邮件到此地址即可在右侧收件箱查看，邮箱24小时后自动过期。收件箱每10秒自动刷新检查新邮件。
+													{t('home.mailbox.tips.description')}
 												</p>
 											</div>
 										</div>
@@ -333,13 +335,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 									<div className="flex items-center justify-between">
 										<div className="flex items-center gap-2">
 											<CardTitle className="flex items-center space-x-2">
-												<span>收件箱</span>
+												<span>{t('home.inbox.title')}</span>
 											</CardTitle>
 											<span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
-												{loaderData.stats.unread} 未读
+												{loaderData.stats.unread} {t('home.inbox.unread')}
 											</span>
 											<span className="text-gray-500 text-xs">
-												共 {loaderData.stats.total} 封
+												{t('home.inbox.total', { count: loaderData.stats.total })}
 											</span>
 										</div>
 										<Form method="post">
@@ -352,23 +354,23 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 												className="text-xs"
 											>
 												{isRefreshing ? (
-													<>
-														<Loader2Icon className="w-3 h-3 animate-spin mr-1" />
-														刷新中...
-													</>
-												) : (
-													<>
-														<RefreshCcwIcon className="w-3 h-3 mr-1" />
-														手动刷新
-													</>
-												)}
+														<>
+															<Loader2Icon className="w-3 h-3 animate-spin mr-1" />
+															{t('home.inbox.refreshing')}
+														</>
+													) : (
+														<>
+															<RefreshCcwIcon className="w-3 h-3 mr-1" />
+															{t('home.inbox.manualRefresh')}
+														</>
+													)}
 											</Button>
 										</Form>
 									</div>
 									{isAutoRefreshing && (
 										<div className="text-xs text-blue-600 flex items-center gap-1">
 											<Loader2Icon className="w-3 h-3 animate-spin" />
-											自动刷新中...
+											{t('home.inbox.autoRefreshing')}
 										</div>
 									)}
 								</CardHeader>
@@ -384,13 +386,13 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 											<div className="flex flex-col items-center justify-center py-12 text-gray-500 px-4">
 												<div className="text-4xl mb-3">📭</div>
 												<h3 className="text-lg font-semibold mb-2 text-center">
-													收件箱为空
+													{t('home.inbox.empty.title')}
 												</h3>
 												<p className="text-sm text-center">
-													您还没有收到任何邮件
+													{t('home.inbox.empty.description')}
 												</p>
 												<p className="text-xs text-gray-400 mt-2 text-center break-all">
-													发送邮件到 {loaderData.email} 来测试
+													{t('home.inbox.empty.testHint', { email: loaderData.email })}
 												</p>
 											</div>
 										)}
@@ -404,37 +406,37 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 					<div className="mt-16">
 						<div className="text-center mb-8">
 							<h3 className="text-2xl font-bold text-gray-800 mb-2">
-								为什么选择 Smail？
-							</h3>
-							<p className="text-gray-600">
-								专业的临时邮箱服务，保护您的隐私安全
-							</p>
+							{t('home.features.title')}
+						</h3>
+						<p className="text-gray-600">
+							{t('home.features.subtitle')}
+						</p>
 						</div>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							<Card className="text-center">
-								<CardContent className="pt-6">
-									<div className="text-4xl mb-4">🔒</div>
-									<h4 className="text-lg font-semibold mb-2">隐私保护</h4>
-									<p className="text-gray-600 text-sm">
-										保护您的真实邮箱地址，避免垃圾邮件和隐私泄露
-									</p>
-								</CardContent>
-							</Card>
+							<CardContent className="pt-6">
+								<div className="text-4xl mb-4">🔒</div>
+								<h4 className="text-lg font-semibold mb-2">{t('home.features.privacy.title')}</h4>
+								<p className="text-gray-600 text-sm">
+									{t('home.features.privacy.description')}
+								</p>
+							</CardContent>
+						</Card>
 							<Card className="text-center">
 								<CardContent className="pt-6">
 									<div className="text-4xl mb-4">⚡</div>
-									<h4 className="text-lg font-semibold mb-2">即时创建</h4>
+									<h4 className="text-lg font-semibold mb-2">{t('home.features.instant.title')}</h4>
 									<p className="text-gray-600 text-sm">
-										无需注册，一键生成临时邮箱地址，立即开始使用
+										{t('home.features.instant.description')}
 									</p>
 								</CardContent>
 							</Card>
 							<Card className="text-center">
 								<CardContent className="pt-6">
-									<div className="text-4xl mb-4">🌍</div>
-									<h4 className="text-lg font-semibold mb-2">完全免费</h4>
+									<div className="text-4xl mb-4">💰</div>
+									<h4 className="text-lg font-semibold mb-2">{t('home.features.free.title')}</h4>
 									<p className="text-gray-600 text-sm">
-										永久免费使用，无隐藏费用，无广告干扰
+										{t('home.features.free.description')}
 									</p>
 								</CardContent>
 							</Card>

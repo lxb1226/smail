@@ -1,0 +1,63 @@
+{
+  "title": "お問い合わせ",
+  "subtitle": "ご質問やご提案がございましたら、お気軽にお聞かせください",
+  "form": {
+    "name": {
+      "label": "お名前",
+      "placeholder": "お名前を入力してください"
+    },
+    "email": {
+      "label": "メールアドレス",
+      "placeholder": "メールアドレスを入力してください"
+    },
+    "subject": {
+      "label": "件名",
+      "placeholder": "メールの件名を入力してください"
+    },
+    "message": {
+      "label": "メッセージ",
+      "placeholder": "ご質問やご提案を詳しくお聞かせください..."
+    },
+    "submit": "メッセージを送信",
+    "sending": "送信中...",
+    "success": "メッセージが正常に送信されました！お早めにご返信いたします。",
+    "error": "送信に失敗しました。後でもう一度お試しください。"
+  },
+  "info": {
+    "title": "その他の連絡方法",
+    "email": {
+      "title": "メール",
+      "value": "support@smail.pw",
+      "description": "技術サポートと一般的なお問い合わせ"
+    },
+    "response": {
+      "title": "応答時間",
+      "value": "24時間以内",
+      "description": "通常24時間以内にご返信いたします"
+    },
+    "languages": {
+      "title": "対応言語",
+      "value": "中国語、英語、日本語",
+      "description": "複数言語でのカスタマーサービスを提供"
+    }
+  },
+  "types": {
+    "title": "よくある問題の種類",
+    "technical": {
+      "title": "技術的な問題",
+      "description": "メールが受信できない、ウェブサイトアクセスの問題など"
+    },
+    "feature": {
+      "title": "機能の提案",
+      "description": "新機能の提案、ユーザーエクスペリエンスの改善など"
+    },
+    "business": {
+      "title": "ビジネス協力",
+      "description": "パートナーシップの機会、API統合など"
+    },
+    "other": {
+      "title": "その他の問題",
+      "description": "その他の関連する質問やフィードバック"
+    }
+  }
+}

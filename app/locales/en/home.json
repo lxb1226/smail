@@ -1,0 +1,52 @@
+{
+  "loading": "Loading mailbox...",
+  "hero": {
+    "title": "Free Temporary Email",
+    "highlight": "Smail",
+    "description": "Protect your privacy, no registration required, create temporary email addresses instantly"
+  },
+  "mailbox": {
+    "title": "Your Exclusive Email Address",
+    "features": {
+      "validity": "Valid for 24 hours",
+      "autoRefresh": "Auto refresh",
+      "free": "Completely free"
+    },
+    "emailLabel": "Your Exclusive Email Address",
+    "generating": "Generating...",
+    "generateNew": "Generate New Email",
+    "tips": {
+      "title": "Usage Tips",
+      "description": "Expires after 24 hours, auto-refreshes every 10 seconds"
+    }
+  },
+  "inbox": {
+    "title": "Inbox",
+    "unread": "unread",
+    "total": "{{count}} total",
+    "refreshing": "Refreshing...",
+    "manualRefresh": "Manual Refresh",
+    "autoRefreshing": "Auto refreshing...",
+    "empty": {
+      "title": "Inbox is empty",
+      "description": "You haven't received any emails yet",
+      "testHint": "Send an email to {{email}} to test"
+    }
+  },
+  "features": {
+    "title": "Why Choose Smail?",
+    "subtitle": "Professional temporary email service to protect your privacy",
+    "privacy": {
+      "title": "Privacy Protection",
+      "description": "Protect your real email address and avoid spam and privacy leaks"
+    },
+    "instant": {
+      "title": "Instant Creation",
+      "description": "No registration required, generate temporary email addresses with one click"
+    },
+    "free": {
+      "title": "Completely Free",
+      "description": "Free to use forever, no hidden fees, no ads"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "title": "联系我们",
+  "subtitle": "有问题或建议？我们很乐意听取您的意见",
+  "form": {
+    "name": {
+      "label": "姓名",
+      "placeholder": "请输入您的姓名"
+    },
+    "email": {
+      "label": "邮箱地址",
+      "placeholder": "请输入您的邮箱地址"
+    },
+    "subject": {
+      "label": "主题",
+      "placeholder": "请输入邮件主题"
+    },
+    "message": {
+      "label": "消息内容",
+      "placeholder": "请详细描述您的问题或建议..."
+    },
+    "submit": "发送消息",
+    "sending": "发送中...",
+    "success": "消息发送成功！我们会尽快回复您。",
+    "error": "发送失败，请稍后重试。"
+  },
+  "info": {
+    "title": "其他联系方式",
+    "email": {
+      "title": "邮箱",
+      "value": "support@smail.pw",
+      "description": "技术支持和一般咨询"
+    },
+    "response": {
+      "title": "响应时间",
+      "value": "24小时内",
+      "description": "我们通常在24小时内回复"
+    },
+    "languages": {
+      "title": "支持语言",
+      "value": "中文、英文、日文",
+      "description": "我们支持多种语言的客户服务"
+    }
+  },
+  "types": {
+    "title": "常见问题类型",
+    "technical": {
+      "title": "技术问题",
+      "description": "邮箱无法接收、网站访问问题等"
+    },
+    "feature": {
+      "title": "功能建议",
+      "description": "新功能建议、用户体验改进等"
+    },
+    "business": {
+      "title": "商务合作",
+      "description": "合作伙伴关系、API集成等"
+    },
+    "other": {
+      "title": "其他问题",
+      "description": "任何其他相关问题或反馈"
+    }
+  }
+}

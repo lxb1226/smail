@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { useTranslation } from "react-i18next";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
@@ -20,6 +21,7 @@ export function MailItem({
 	date,
 	isRead = true,
 }: MailItemProps) {
+	const { t, i18n } = useTranslation();
 	const domain = email.split("@")[1];
 
 	const formatDate = (dateString: string) => {
@@ -28,10 +30,10 @@ export function MailItem({
 		const diffTime = Math.abs(now.getTime() - date.getTime());
 		const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-		if (diffDays === 1) return "今天";
-		if (diffDays === 2) return "昨天";
-		if (diffDays <= 7) return `${diffDays - 1}天前`;
-		return date.toLocaleDateString("zh-CN", { month: "short", day: "numeric" });
+		if (diffDays === 1) return t('common.time.today');
+		if (diffDays === 2) return t('common.time.yesterday');
+		if (diffDays <= 7) return t('common.time.daysAgo', { count: diffDays - 1 });
+		return date.toLocaleDateString(i18n.language === 'zh' ? 'zh-CN' : i18n.language === 'ja' ? 'ja-JP' : 'en-US', { month: "short", day: "numeric" });
 	};
 
 	return (

@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import React from "react";
 import { Link, data, useNavigation } from "react-router";
+import { useTranslation } from "react-i18next";
 
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
@@ -256,11 +257,13 @@ export async function loader({ params, context }: Route.LoaderArgs) {
 }
 
 export default function MailDetail({ loaderData }: Route.ComponentProps) {
+	const { t, i18n } = useTranslation();
 	const navigation = useNavigation();
 	const { email, attachments, emailHTML } = loaderData;
 
 	// 格式化日期
-	const formattedDate = new Date(email.receivedAt).toLocaleString("zh-CN", {
+	const locale = i18n.language === 'en' ? 'en-US' : i18n.language === 'ja' ? 'ja-JP' : 'zh-CN';
+	const formattedDate = new Date(email.receivedAt).toLocaleString(locale, {
 		year: "numeric",
 		month: "long",
 		day: "numeric",
@@ -300,13 +303,13 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 							className="text-xs sm:text-sm p-1 sm:p-2"
 						>
 							<Link to="/">
-								<ArrowLeft className="w-3 sm:w-4 h-3 sm:h-4" />
-								<span className="hidden sm:inline ml-1">返回收件箱</span>
-								<span className="sm:hidden">返回</span>
-							</Link>
+							<ArrowLeft className="w-3 sm:w-4 h-3 sm:h-4" />
+							<span className="hidden sm:inline ml-1">{t('mail.backToInbox')}</span>
+							<span className="sm:hidden">{t('mail.back')}</span>
+						</Link>
 						</Button>
 						<Separator orientation="vertical" className="h-4 sm:h-6" />
-						<span className="text-xs sm:text-sm text-gray-600">邮件详情</span>
+						<span className="text-xs sm:text-sm text-gray-600">{t('mail.detail')}</span>
 					</div>
 
 					<div className="flex items-center gap-2">
@@ -322,28 +325,28 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 				<div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
 					<div className="flex-1 min-w-0">
 						<h1 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 break-words">
-							{email.subject || "(无主题)"}
-						</h1>
-						<div className="space-y-1 sm:space-y-0 sm:flex sm:flex-wrap sm:gap-4 text-xs sm:text-sm text-gray-600">
-							<div className="truncate">
-								<strong>发件人:</strong> {email.fromAddress}
-							</div>
-							<div className="truncate">
-								<strong>收件人:</strong> {email.toAddress}
-							</div>
-							<div>
-								<strong>时间:</strong> {formattedDate}
-							</div>
+						{email.subject || t('mail.noSubject')}
+					</h1>
+					<div className="space-y-1 sm:space-y-0 sm:flex sm:flex-wrap sm:gap-4 text-xs sm:text-sm text-gray-600">
+						<div className="truncate">
+							<strong>{t('mail.from')}:</strong> {email.fromAddress}
 						</div>
+						<div className="truncate">
+							<strong>{t('mail.to')}:</strong> {email.toAddress}
+						</div>
+						<div>
+							<strong>{t('mail.time')}:</strong> {formattedDate}
+						</div>
+					</div>
 					</div>
 
 					<div className="flex items-center gap-2 flex-shrink-0">
 						<Badge
-							variant={email.isRead ? "secondary" : "default"}
-							className="text-xs"
-						>
-							{email.isRead ? "已读" : "未读"}
-						</Badge>
+						variant={email.isRead ? "secondary" : "default"}
+						className="text-xs"
+					>
+						{email.isRead ? t('mail.read') : t('mail.unread')}
+					</Badge>
 						<span className="text-xs text-gray-500">
 							{formatFileSize(email.size)}
 						</span>
@@ -356,7 +359,7 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 						<div className="flex items-center gap-2 mb-2">
 							<Paperclip className="w-3 sm:w-4 h-3 sm:h-4" />
 							<span className="text-xs sm:text-sm font-medium">
-								附件 ({attachments.length})
+								{t('mail.attachments', { count: attachments.length })}
 							</span>
 						</div>
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -367,28 +370,28 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 								>
 									{getFileIcon(attachment.filename, attachment.contentType)}
 									<div className="flex-1 min-w-0">
-										<div className="truncate font-medium">
-											{attachment.filename || "未命名附件"}
+											<div className="truncate font-medium">
+												{attachment.filename || t('mail.unnamedAttachment')}
+											</div>
+											<div className="text-gray-500 text-xs">
+												{formatFileSize(attachment.size)}
+											</div>
 										</div>
-										<div className="text-gray-500 text-xs">
-											{formatFileSize(attachment.size)}
-										</div>
-									</div>
 									{attachment.uploadStatus === "uploaded" ? (
 										<a
 											href={`/attachment/${attachment.id}`}
 											className="inline-flex items-center justify-center h-6 w-6 p-0 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground flex-shrink-0"
-											title="下载附件"
+													title={t('mail.downloadAttachment')}
 										>
 											<Download className="w-3 h-3" />
 										</a>
 									) : (
-										<span className="text-xs text-gray-400 flex-shrink-0">
-											{attachment.uploadStatus === "pending"
-												? "处理中"
-												: "失败"}
-										</span>
-									)}
+												<span className="text-xs text-gray-400 flex-shrink-0">
+													{attachment.uploadStatus === "pending"
+														? t('mail.processing')
+														: t('mail.failed')}
+												</span>
+											)}
 								</div>
 							))}
 						</div>
@@ -403,7 +406,7 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 					srcDoc={emailHTML}
 					className="w-full h-full border-0"
 					sandbox="allow-same-origin"
-					title="邮件内容"
+					title={t('mail.content')}
 				/>
 			</div>
 		</div>
