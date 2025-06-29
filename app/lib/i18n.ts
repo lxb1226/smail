@@ -267,12 +267,7 @@ export const generateLocalizedPath = (path: string, language: SupportedLanguage)
   // 移除现有的语言前缀
   const cleanPath = path.replace(/^\/(zh|en|ja)/, '') || '/';
   
-  // 如果是默认语言，不添加前缀
-  if (language === defaultLanguage) {
-    return cleanPath;
-  }
-  
-  // 添加语言前缀
+  // 所有语言都添加前缀，确保路径一致性
   return `/${language}${cleanPath === '/' ? '' : cleanPath}`;
 };
 

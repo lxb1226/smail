@@ -6,31 +6,40 @@ import { Button } from "~/components/ui/button";
 import { LanguageSwitcher } from "~/components/LanguageSwitcher";
 import { getCurrentLanguage, generateLocalizedPath } from "~/lib/i18n";
 
-export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
+interface NavigationProps {
+	currentPath?: string;
+	currentLang: string;
+	onLanguageChange: (lang: string) => void;
+}
+
+export function Navigation({ 
+	currentPath = "/", 
+	currentLang,
+	onLanguageChange 
+}: NavigationProps) {
 	const { t } = useTranslation();
 	const location = useLocation();
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-	const currentLanguage = getCurrentLanguage();
 
 	// 生成多语言导航项
 	const navItems = [
 		{ 
-			href: generateLocalizedPath("/", currentLanguage), 
+			href: generateLocalizedPath("/", currentLang), 
 			label: t("navigation.home"), 
 			description: t("home.subtitle") 
 		},
 		{ 
-			href: generateLocalizedPath("/about", currentLanguage), 
+			href: generateLocalizedPath("/about", currentLang), 
 			label: t("navigation.about"), 
 			description: t("about.description") 
 		},
 		{ 
-			href: generateLocalizedPath("/faq", currentLanguage), 
+			href: generateLocalizedPath("/faq", currentLang), 
 			label: t("navigation.faq"), 
 			description: t("faq.title") 
 		},
 		{ 
-			href: generateLocalizedPath("/contact", currentLanguage), 
+			href: generateLocalizedPath("/contact", currentLang), 
 			label: t("navigation.contact"), 
 			description: t("contact.description") 
 		},
@@ -42,9 +51,9 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 				<div className="flex items-center justify-between">
 					{/* Logo */}
 					<Link
-						to={generateLocalizedPath("/", currentLanguage)}
-						className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
-					>
+				to={generateLocalizedPath("/", currentLang)}
+				className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+			>
 						<div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg p-2">
 							<Mail className="h-6 w-6 text-white" />
 						</div>
@@ -73,13 +82,16 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 						))}
 						
 						{/* 语言切换器 */}
-						<LanguageSwitcher />
+					<LanguageSwitcher 
+						currentLang={currentLang}
+						onLanguageChange={onLanguageChange}
+					/>
 						
 						<Button
 							asChild
 							className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
 						>
-							<Link to={generateLocalizedPath("/", currentLanguage)}>{t("home.generateEmail")}</Link>
+							<Link to={generateLocalizedPath("/", currentLang)}>{t("home.generateEmail")}</Link>
 						</Button>
 					</nav>
 
@@ -124,7 +136,11 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 							
 							{/* 移动端语言切换器 */}
 							<div className="px-4 py-2">
-								<LanguageSwitcher className="w-full" />
+								<LanguageSwitcher 
+									className="w-full"
+									currentLang={currentLang}
+									onLanguageChange={onLanguageChange}
+								/>
 							</div>
 							
 							<div className="pt-2">
@@ -132,7 +148,7 @@ export function Navigation({ currentPath = "/" }: { currentPath?: string }) {
 									asChild
 									className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700"
 								>
-									<Link to={generateLocalizedPath("/", currentLanguage)}>{t("home.generateEmail")}</Link>
+									<Link to={generateLocalizedPath("/", currentLang)}>{t("home.generateEmail")}</Link>
 								</Button>
 							</div>
 						</div>

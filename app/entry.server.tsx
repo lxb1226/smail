@@ -2,6 +2,8 @@ import { isbot } from "isbot";
 import { renderToReadableStream } from "react-dom/server";
 import type { AppLoadContext, EntryContext } from "react-router";
 import { ServerRouter } from "react-router";
+import i18n from "./i18n";
+import { getCurrentLanguage } from "./lib/i18n";
 
 export default async function handleRequest(
 	request: Request,
@@ -12,6 +14,11 @@ export default async function handleRequest(
 ) {
 	let shellRendered = false;
 	const userAgent = request.headers.get("user-agent");
+	
+	// 从URL中提取语言并设置i18n
+	const url = new URL(request.url);
+	const currentLang = getCurrentLanguage(url.pathname);
+	await i18n.changeLanguage(currentLang);
 
 	const body = await renderToReadableStream(
 		<ServerRouter context={routerContext} url={request.url} />,

@@ -1,7 +1,7 @@
-import { useParams, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
-import { data, redirect } from "react-router";
+import { data, redirect, useParams } from "react-router";
 import { isSupportedLanguage, getCurrentLanguage, defaultLanguage } from "~/lib/i18n";
 import { commitSession, getSession } from "~/.server/session";
 import {
@@ -113,7 +113,7 @@ export async function action({ request, params }: Route.ActionArgs) {
  * 多语言首页路由组件
  * 用于处理带有语言参数的首页路由
  */
-export default function LangHome({ loaderData }: Route.ComponentProps) {
+export default function LangHome(props: Route.ComponentProps) {
   const { lang } = useParams();
   const { i18n } = useTranslation();
   
@@ -125,5 +125,5 @@ export default function LangHome({ loaderData }: Route.ComponentProps) {
   }, [lang, i18n]);
   
   // 渲染原始首页组件，传递完整的props
-  return <Home loaderData={loaderData} />;
+  return <Home {...props} />;
 }

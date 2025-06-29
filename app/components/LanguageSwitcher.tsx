@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate, useLocation } from 'react-router';
 import {
@@ -12,26 +12,37 @@ import {
 
 interface LanguageSwitcherProps {
   className?: string;
+  currentLang?: SupportedLanguage;
+  onLanguageChange?: (lang: SupportedLanguage) => void;
 }
 
-export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
+export function LanguageSwitcher({ 
+  className = '', 
+  currentLang,
+  onLanguageChange 
+}: LanguageSwitcherProps) {
   const { i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   
-  const currentLanguage = getCurrentLanguage();
+  const currentLanguage = currentLang || getCurrentLanguage() as SupportedLanguage;
   
   const handleLanguageChange = async (newLanguage: SupportedLanguage) => {
     try {
-      // 切换i18n语言
-      await changeLanguage(newLanguage);
-      
-      // 生成新的路径
-      const newPath = generateLocalizedPath(location.pathname, newLanguage);
-      
-      // 导航到新路径
-      navigate(newPath);
+      if (onLanguageChange) {
+        // 使用父组件传入的回调函数
+        onLanguageChange(newLanguage);
+      } else {
+        // 切换i18n语言
+        await changeLanguage(newLanguage);
+        
+        // 生成新的路径
+        const newPath = generateLocalizedPath(location.pathname, newLanguage);
+        
+        // 导航到新路径
+        navigate(newPath);
+      }
       
       // 关闭下拉菜单
       setIsOpen(false);
@@ -122,12 +133,16 @@ export function LanguageSwitcher({ className = '' }: LanguageSwitcherProps) {
 }
 
 // 简化版语言切换器（仅显示标志）
-export function LanguageSwitcherCompact({ className = '' }: LanguageSwitcherProps) {
+export function LanguageSwitcherCompact({ 
+  className = '', 
+  currentLang,
+  onLanguageChange 
+}: LanguageSwitcherProps) {
   const { i18n } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
   
-  const currentLanguage = getCurrentLanguage();
+  const currentLanguage = currentLang || getCurrentLanguage() as SupportedLanguage;
   const currentIndex = supportedLanguages.indexOf(currentLanguage);
   
   const handleToggleLanguage = async () => {
@@ -136,9 +151,14 @@ export function LanguageSwitcherCompact({ className = '' }: LanguageSwitcherProp
     const nextLanguage = supportedLanguages[nextIndex];
     
     try {
-      await changeLanguage(nextLanguage);
-      const newPath = generateLocalizedPath(location.pathname, nextLanguage);
-      navigate(newPath);
+      if (onLanguageChange) {
+        // 使用父组件传入的回调函数
+        onLanguageChange(nextLanguage);
+      } else {
+        await changeLanguage(nextLanguage);
+        const newPath = generateLocalizedPath(location.pathname, nextLanguage);
+        navigate(newPath);
+      }
     } catch (error) {
       console.error('Failed to change language:', error);
     }
@@ -149,9 +169,9 @@ export function LanguageSwitcherCompact({ className = '' }: LanguageSwitcherProp
       type="button"
       className={`inline-flex items-center justify-center w-10 h-10 text-lg bg-white border border-gray-300 rounded-full shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-150 ${className}`}
       onClick={handleToggleLanguage}
-      title={`Switch to ${languageConfig[supportedLanguages[(currentIndex + 1) % supportedLanguages.length]]?.nativeName}`}
+      title={`Switch to ${languageConfig[supportedLanguages[(currentIndex + 1) % supportedLanguages.length] as SupportedLanguage]?.nativeName}`}
     >
-      {languageConfig[currentLanguage]?.flag}
+      {languageConfig[currentLanguage as SupportedLanguage]?.flag}
     </button>
   );
 }
