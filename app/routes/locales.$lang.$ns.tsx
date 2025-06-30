@@ -1,4 +1,4 @@
-import { json, type LoaderFunctionArgs } from 'react-router';
+import { data, type LoaderFunctionArgs } from 'react-router';
 import { supportedLanguages } from '~/lib/i18n';
 
 // 翻译文件映射
@@ -130,7 +130,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
       throw new Error('Translation not found');
     }
     
-    return json(langTranslations[ns], {
+    return data(langTranslations[ns], {
       headers: {
         'Content-Type': 'application/json',
         'Cache-Control': 'public, max-age=3600', // 缓存1小时
