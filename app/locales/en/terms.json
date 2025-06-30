@@ -22,165 +22,83 @@
     },
     "acceptance": {
       "title": "Acceptance of Terms",
-      "description": "Using the service means you agree to these terms",
-      "content1": "By accessing and using Smail services, you confirm that you have read, understood, and agree to be bound by these terms of service. If you do not agree to these terms, please do not use our service.",
-      "content2": "We reserve the right to modify these terms at any time. Modified terms will take effect immediately upon publication. Continued use of the service indicates your acceptance of the modified terms."
+      "content": "By using Smail services, you agree to be bound by the following terms of service and usage rules."
     },
     "usage": {
       "title": "Usage Rules",
       "description": "Rules that must be followed when using the service",
-      "allowed": {
-        "title": "Permitted Use",
-        "items": [
-          "Website registration and email verification",
-          "Receiving temporary email notifications",
-          "Protecting main email privacy",
-          "Testing email system functionality"
-        ]
-      },
-      "prohibited": {
-        "title": "Prohibited Use",
-        "items": [
-          "Illegal activities or unlawful behavior",
-          "Spreading spam or malicious content",
-          "Attempting to damage or interfere with service operation",
-          "Abusing service resources (such as excessive requests)",
-          "Commercial marketing or advertising purposes",
-          "Violating others' privacy or intellectual property"
-        ]
-      }
+      "prohibited": [
+        "Illegal activities or unlawful behavior",
+        "Spreading spam or malicious content",
+        "Attempting to damage or interfere with service operation",
+        "Abusing service resources (such as excessive requests)",
+        "Commercial marketing or advertising purposes"
+      ]
     },
     "limitations": {
       "title": "Service Limitations",
-      "description": "Technical and usage limitations of the service",
       "items": [
-        {
-          "label": "Email validity:",
-          "value": "Temporary emails typically expire automatically after 24 hours"
-        },
-        {
-          "label": "Storage limit:",
-          "value": "Maximum 100 emails per mailbox"
-        },
-        {
-          "label": "Attachment size:",
-          "value": "Supports attachments up to 25MB"
-        },
-        {
-          "label": "Receive only:",
-          "value": "Does not support sending email functionality"
-        },
-        {
-          "label": "Access frequency:",
-          "value": "Maximum 10 refreshes per minute"
-        },
-        {
-          "label": "Data retention:",
-          "value": "Emails are automatically deleted after mailbox expiration"
-        }
+        "Temporary emails typically expire automatically after 24 hours",
+        "Maximum 100 emails per mailbox",
+        "Supports attachments up to 25MB",
+        "Does not support sending email functionality",
+        "Maximum 10 refreshes per minute",
+        "Emails are automatically deleted after mailbox expiration"
       ]
     },
     "privacy": {
       "title": "Privacy and Data",
       "description": "About your data and privacy protection",
-      "content": "Please note that the characteristics of temporary email service determine the following important matters:",
       "items": [
-        {
-          "label": "Data temporality:",
-          "value": "All data is temporary and will be deleted after mailbox expiration"
-        },
-        {
-          "label": "Not suitable for sensitive information:",
-          "value": "Do not use for receiving important or sensitive information"
-        },
-        {
-          "label": "Cannot be recovered:",
-          "value": "Expired and deleted data cannot be recovered"
-        },
-        {
-          "label": "Privacy protection:",
-          "value": "We follow privacy policies to protect your data"
-        }
-      ],
-      "privacyLink": "For detailed privacy protection measures, please refer to our",
-      "privacyLinkText": "Privacy Policy"
+        "All data is temporary and will be deleted after mailbox expiration",
+        "Do not use for receiving important or sensitive information",
+        "Expired and deleted data cannot be recovered",
+        "We follow privacy policies to protect your data",
+        "For detailed privacy protection measures, please refer to our Privacy Policy"
+      ]
     },
     "disclaimer": {
       "title": "Disclaimer",
       "description": "Service disclaimer",
       "items": [
-        {
-          "label": "Service availability:",
-          "value": "We strive to keep the service running normally, but do not guarantee 100% availability"
-        },
-        {
-          "label": "Data loss:",
-          "value": "We are not responsible for any data loss"
-        },
-        {
-          "label": "Third-party content:",
-          "value": "We are not responsible for or endorse received email content"
-        },
-        {
-          "label": "Service interruption:",
-          "value": "Service interruptions due to maintenance, upgrades, or other reasons"
-        },
-        {
-          "label": "Security risks:",
-          "value": "Users should assess the security risks of using temporary email themselves"
-        }
+        "We strive to keep the service running normally, but do not guarantee 100% availability",
+        "We are not responsible for any data loss",
+        "We are not responsible for or endorse received email content",
+        "Service interruptions due to maintenance, upgrades, or other reasons"
       ]
     },
     "intellectual": {
       "title": "Intellectual Property",
       "description": "Intellectual property statement about the service",
-      "content1": "All content of Smail service, including but not limited to:",
       "items": [
         "Website design and interface",
         "Software code and technology",
         "Trademarks and logos",
         "Documentation and instructions"
       ],
-      "content2": "Are owned by us or used under authorization. Without explicit permission, they may not be copied, modified, or used for commercial purposes."
+      "notice": "Are owned by us or used under authorization. Without explicit permission, they may not be copied, modified, or used for commercial purposes."
     },
     "changes": {
       "title": "Service Changes and Termination",
-      "description": "About service changes and termination",
-      "serviceChanges": {
-        "title": "Service Changes",
-        "content": "We reserve the right to modify, suspend, or terminate part or all of the service at any time, including:",
-        "items": [
-          "Feature updates or adjustments",
-          "Technical upgrades or maintenance",
-          "Policy or terms modifications"
-        ]
-      },
-      "termination": {
-        "title": "Service Termination",
-        "content": "We may terminate or restrict user access to the service for the following reasons:",
-        "items": [
-          "Violation of terms of service",
-          "Abuse of service resources",
-          "Technical or business reasons"
-        ]
-      }
+      "items": [
+        "Feature updates or adjustments",
+        "Technical upgrades or maintenance",
+        "Policy or terms modifications"
+      ],
+      "notice": "We may terminate or restrict user access to the service for violation of terms, abuse of resources, or technical/business reasons."
     },
-    "legal": {
+    "law": {
       "title": "Applicable Law",
       "description": "Applicable law and dispute resolution",
-      "content1": "These terms of service are governed by the laws of the service provider's jurisdiction. In case of disputes, both parties should first resolve them through friendly consultation.",
-      "content2": "If disputes cannot be resolved through consultation, either party may seek resolution through appropriate legal channels, including but not limited to:",
       "items": [
         "Online dispute resolution platforms",
         "Arbitration institutions",
         "Courts with jurisdiction"
-      ],
-      "content3": "If any part of these terms is deemed invalid or unenforceable, the remaining parts remain valid."
+      ]
     },
     "contact": {
       "title": "Contact Us",
       "description": "How to contact us about terms of service",
-      "content": "If you have any questions about these terms of service, please contact us through:",
       "items": [
         "Email: legal@smail.pw",
         "Contact form: Through our contact page"
@@ -191,7 +109,7 @@
   "cta": {
     "title": "Agree to Terms and Start Using",
     "subtitle": "By using our service, you confirm that you have read and agree to the above terms of service",
-    "agreeButton": "Agree and Start Using",
+    "startButton": "Agree and Start Using",
     "contactButton": "Have Questions? Contact Us"
   }
 }

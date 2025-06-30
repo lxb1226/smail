@@ -37,6 +37,18 @@ export async function getOrCreateMailbox(
 		return existing[0];
 	}
 
+	// 检查是否有过期的邮箱需要清理
+	const expiredMailbox = await db
+		.select()
+		.from(mailboxes)
+		.where(eq(mailboxes.email, email))
+		.limit(1);
+
+	if (expiredMailbox.length > 0) {
+		// 如果存在过期的邮箱，先删除它（这会由于 CASCADE 删除相关的邮件和附件）
+		await db.delete(mailboxes).where(eq(mailboxes.email, email));
+	}
+
 	// 创建新邮箱（24小时过期）
 	const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24小时后过期
 
