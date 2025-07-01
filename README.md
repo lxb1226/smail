@@ -43,7 +43,7 @@ cp .dev.vars.example .dev.vars
 # 生成 Session 密钥
 openssl rand -base64 32
 
-# 将生成的密钥填入 .dev.vars 文件中的 SESSION_SECRET
+# 将生成的密钥填入 .dev.vars 文件中的 NEXT_PUBLIC_SESSION_SECRET
 ```
 
 ### 设置数据库

@@ -3,7 +3,7 @@ import { createWorkersKVSessionStorage } from "@react-router/cloudflare";
 import { createCookie } from "react-router";
 
 const sessionCookie = createCookie("__session", {
-	secrets: [env.SESSION_SECRET],
+	secrets: [env.NEXT_PUBLIC_SESSION_SECRET],
 	sameSite: true,
 });
 

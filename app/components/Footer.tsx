@@ -32,7 +32,7 @@ export function Footer() {
 							>
 								<MessageSquare className="h-5 w-5" />
 							</Link>
-							<a
+							{/* <a
 								href="https://github.com/akazwz/smail"
 								className="text-gray-400 hover:text-blue-400 transition-colors"
 								aria-label="GitHub"
@@ -47,7 +47,7 @@ export function Footer() {
 								rel="noopener noreferrer"
 							>
 								<Twitter className="h-5 w-5" />
-							</a>
+							</a> */}
 							<Link
 								to="/privacy"
 								className="text-gray-400 hover:text-blue-400 transition-colors"
