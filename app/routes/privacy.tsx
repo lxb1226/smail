@@ -16,15 +16,15 @@ export function meta({ params }: Route.MetaArgs) {
 	const lang = (params as any).lang || 'zh';
 	
 	const titles = {
-		zh: "隐私政策 - Smail",
-		en: "Privacy Policy - Smail",
-		ja: "プライバシーポリシー - Smail"
+		zh: "隐私政策 - TempMail",
+		en: "Privacy Policy - TempMail",
+		ja: "プライバシーポリシー - TempMail"
 	};
 	
 	const descriptions = {
-		zh: "了解 Smail 如何保护您的隐私和数据安全。",
-		en: "Learn how Smail protects your privacy and data security.",
-		ja: "Smail がお客様のプライバシーとデータセキュリティをどのように保護するかをご覧ください。"
+		zh: "了解 TempMail 如何保护您的隐私和数据安全。",
+		en: "Learn how TempMail protects your privacy and data security.",
+		ja: "TempMail がお客様のプライバシーとデータセキュリティをどのように保護するかをご覧ください。"
 	};
 	
 	return [
@@ -43,7 +43,7 @@ export default function Privacy() {
 				<div className="max-w-screen-xl mx-auto px-3 sm:px-4 py-4 flex items-center justify-between">
 					<Button asChild variant="ghost" size="sm">
 						<Link to="/">
-							<span className="font-bold text-xl">Smail</span>
+							<span className="font-bold text-xl">TempMail</span>
 						</Link>
 					</Button>
 					<nav className="flex items-center gap-1 sm:gap-4">

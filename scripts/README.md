@@ -1,6 +1,6 @@
 # 图标生成脚本
 
-这个脚本自动为Smail网站生成所有需要的图标文件。
+这个脚本自动为TempMail网站生成所有需要的图标文件。
 
 ## 使用方法
 
@@ -14,7 +14,7 @@ pnpm run generate-icons
 
 ## 功能
 
-- 🖼️ 自动下载AI生成的Smail图标
+- 🖼️ 自动下载AI生成的TempMail图标
 - 📐 生成多种尺寸的PNG图标:
   - `android-chrome-192x192.png` (192x192)
   - `android-chrome-512x512.png` (512x512) 
@@ -36,4 +36,4 @@ pnpm run generate-icons
 
 ## 图标设计
 
-当前使用的图标是AI生成的蓝色主题的"S"字母图标，符合Smail的品牌形象。 
+当前使用的图标是AI生成的蓝色主题的"S"字母图标，符合TempMail的品牌形象。 

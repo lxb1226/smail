@@ -14,8 +14,8 @@ import type { Route } from "./+types/terms";
 
 export function meta(_: Route.MetaArgs) {
 	return [
-		{ title: "使用条款 - Smail" },
-		{ name: "description", content: "查看Smail临时邮箱的使用条款和服务协议。" },
+		{ title: "使用条款 - TempMail" },
+		{ name: "description", content: "查看TempMail临时邮箱的使用条款和服务协议。" },
 	];
 }
 
@@ -29,7 +29,7 @@ export default function Terms() {
 				<div className="max-w-screen-xl mx-auto px-3 sm:px-4 py-4 flex items-center justify-between">
 					<Button asChild variant="ghost" size="sm">
 						<Link to="/">
-							<span className="font-bold text-xl">Smail</span>
+							<span className="font-bold text-xl">TempMail</span>
 						</Link>
 					</Button>
 					<nav className="flex items-center gap-1 sm:gap-4">

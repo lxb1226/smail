@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Smail - 临时邮箱服务",
+    "title": "TempMail - 临时邮箱服务",
     "description": "免费的临时邮箱服务，保护您的隐私，避免垃圾邮件。无需注册，即时生成临时邮箱地址。",
     "keywords": "临时邮箱,一次性邮箱,垃圾邮件防护,隐私保护,免费邮箱"
   },
@@ -23,8 +23,8 @@
     "copied": "已复制到剪贴板"
   },
   "about": {
-    "title": "关于 Smail",
-    "description": "Smail 是一个免费的临时邮箱服务，帮助您保护隐私，避免垃圾邮件。",
+    "title": "关于 TempMail",
+    "description": "TempMail 是一个免费的临时邮箱服务，帮助您保护隐私，避免垃圾邮件。",
     "features": {
       "title": "功能特点",
       "privacy": "隐私保护",
@@ -65,7 +65,7 @@
     "github": "GitHub"
   },
   "footer": {
-    "copyright": "© 2024 Smail. 保留所有权利。",
+    "copyright": "© 2024 TempMail. 保留所有权利。",
     "madeWith": "用 ❤️ 制作"
   },
   "common": {

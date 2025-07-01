@@ -160,10 +160,10 @@ export function meta({ data }: Route.MetaArgs) {
 	// 这里暂时保留硬编码，或者考虑从data中传递翻译后的文本
 	if (!data?.email) {
 		return [
-			{ title: "邮件详情 - Smail临时邮箱" },
+			{ title: "邮件详情 - TempMail临时邮箱" },
 			{
 				name: "description",
-				content: "查看您在Smail临时邮箱中收到的邮件详情。",
+				content: "查看您在TempMail临时邮箱中收到的邮件详情。",
 			},
 			// 即使是404页面也要阻止索引
 			{
@@ -186,7 +186,7 @@ export function meta({ data }: Route.MetaArgs) {
 	const shortSubject = email.subject?.substring(0, 30) || "无主题";
 
 	return [
-		{ title: `${shortSubject} - 来自${fromDomain}的邮件 | Smail临时邮箱` },
+		{ title: `${shortSubject} - 来自${fromDomain}的邮件 | TempMail临时邮箱` },
 		{
 			name: "description",
 			content: `查看来自${email.fromAddress}的邮件"${email.subject || "无主题"}"。接收时间：${new Date(email.receivedAt).toLocaleDateString("zh-CN")}。`,

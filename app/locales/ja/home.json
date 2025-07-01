@@ -2,7 +2,7 @@
   "loading": "メールボックスを読み込み中...",
   "hero": {
     "title": "無料一時メール",
-    "highlight": "Smail",
+    "highlight": "TempMail",
     "description": "プライバシーを保護し、登録不要で一時的なメールアドレスを即座に作成"
   },
   "mailbox": {
@@ -35,7 +35,7 @@
   },
   "generateEmail": "メール生成",
   "features": {
-    "title": "なぜSmailを選ぶのか？",
+    "title": "なぜTempMailを選ぶのか？",
     "subtitle": "プライバシーを保護する専門的な一時メールサービス",
     "privacy": {
       "title": "プライバシー保護",

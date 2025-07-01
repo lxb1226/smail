@@ -15,16 +15,16 @@ export function meta({ params }: Route.MetaArgs) {
   // 根据语言返回对应的meta信息
   const metaData = {
     zh: {
-      title: "常见问题解答 - Smail临时邮箱使用指南及疑难解答",
-      description: "Smail临时邮箱常见问题全面解答：如何使用一次性邮箱、邮件保存时长、附件下载、隐私安全等。快速找到使用临时邮箱服务的答案，轻松上手免费临时邮件服务。"
+      title: "常见问题解答 - TempMail临时邮箱使用指南及疑难解答",
+      description: "TempMail临时邮箱常见问题全面解答：如何使用一次性邮箱、邮件保存时长、附件下载、隐私安全等。快速找到使用临时邮箱服务的答案，轻松上手免费临时邮件服务。"
     },
     en: {
-      title: "FAQ - Smail Temporary Email Service Guide & Troubleshooting",
-      description: "Comprehensive FAQ for Smail temporary email: How to use disposable email, email retention time, attachment downloads, privacy security, etc. Quickly find answers for using temporary email service."
+      title: "FAQ - TempMail Temporary Email Service Guide & Troubleshooting",
+      description: "Comprehensive FAQ for TempMail temporary email: How to use disposable email, email retention time, attachment downloads, privacy security, etc. Quickly find answers for using temporary email service."
     },
     ja: {
-      title: "よくある質問 - Smail一時メールサービスガイド＆トラブルシューティング",
-      description: "Smail一時メールの包括的なFAQ：使い捨てメールの使用方法、メール保存期間、添付ファイルのダウンロード、プライバシーセキュリティなど。一時メールサービスの使用に関する回答を素早く見つけられます。"
+      title: "よくある質問 - TempMail一時メールサービスガイド＆トラブルシューティング",
+      description: "TempMail一時メールの包括的なFAQ：使い捨てメールの使用方法、メール保存期間、添付ファイルのダウンロード、プライバシーセキュリティなど。一時メールサービスの使用に関する回答を素早く見つけられます。"
     }
   };
   

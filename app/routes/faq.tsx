@@ -16,11 +16,11 @@ export function meta(_: Route.MetaArgs) {
 	// 注意：meta函数在服务器端运行，无法直接使用useTranslation
 	// 这里使用默认的中文内容，多语言版本的meta将在lang.faq.tsx中处理
 	return [
-		{ title: "常见问题解答 - Smail临时邮箱使用指南及疑难解答" },
+		{ title: "常见问题解答 - TempMail临时邮箱使用指南及疑难解答" },
 		{
 			name: "description",
 			content:
-				"Smail临时邮箱常见问题全面解答：如何使用一次性邮箱、邮件保存时长、附件下载、隐私安全等。快速找到使用临时邮箱服务的答案，轻松上手免费临时邮件服务。",
+				"TempMail临时邮箱常见问题全面解答：如何使用一次性邮箱、邮件保存时长、附件下载、隐私安全等。快速找到使用临时邮箱服务的答案，轻松上手免费临时邮件服务。",
 		},
 	];
 }

@@ -15,11 +15,11 @@ import type { Route } from "./+types/contact";
 // TODO: meta函数无法直接使用useTranslation钩子，需要考虑其他国际化解决方案
 export function meta(_: Route.MetaArgs) {
 	return [
-		{ title: "联系我们 - Smail 临时邮箱" },
+		{ title: "联系我们 - TempMail 临时邮箱" },
 		{
 			name: "description",
 			content:
-				"联系 Smail 团队，获取技术支持、反馈问题或商务合作。我们提供多种联系方式，快速响应用户需求。",
+				"联系 TempMail 团队，获取技术支持、反馈问题或商务合作。我们提供多种联系方式，快速响应用户需求。",
 		},
 	];
 }

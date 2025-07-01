@@ -1,4 +1,4 @@
-# Smail - 临时邮箱服务
+# TempMail - 临时邮箱服务
 
 一个基于 React Router v7 和 Cloudflare Workers 构建的现代化临时邮箱服务。
 

@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Smail - 一時的なメールサービス",
+    "title": "TempMail - 一時的なメールサービス",
     "description": "プライバシーを保護し、スパムを避けるための無料の一時的なメールサービス。登録不要で、一時的なメールアドレスを即座に生成できます。",
     "keywords": "一時的なメール,使い捨てメール,スパム保護,プライバシー保護,無料メール"
   },
@@ -23,8 +23,8 @@
     "copied": "クリップボードにコピーしました"
   },
   "about": {
-    "title": "Smailについて",
-    "description": "Smailは、プライバシーを保護し、スパムを避けるのに役立つ無料の一時的なメールサービスです。",
+    "title": "TempMailについて",
+    "description": "TempMailは、プライバシーを保護し、スパムを避けるのに役立つ無料の一時的なメールサービスです。",
     "features": {
       "title": "機能",
       "privacy": "プライバシー保護",
@@ -65,7 +65,7 @@
     "github": "GitHub"
   },
   "footer": {
-    "copyright": "© 2024 Smail. 全著作権所有。",
+    "copyright": "© 2024 TempMail. 全著作権所有。",
     "madeWith": "❤️で作られました"
   },
   "common": {

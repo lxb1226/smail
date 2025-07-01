@@ -1,18 +1,18 @@
 {
   "meta": {
-    "title": "Terms of Service - Smail Temporary Email User Agreement and Usage Guidelines",
-    "description": "Read the complete terms of service for Smail temporary email, including usage rules, service scope, user responsibilities, disclaimers, and more. Understand the fair use policy for free temporary email services to ensure safe and compliant use of disposable email."
+    "title": "Terms of Service - TempMail Temporary Email User Agreement and Usage Guidelines",
+    "description": "Read the complete terms of service for TempMail temporary email, including usage rules, service scope, user responsibilities, disclaimers, and more. Understand the fair use policy for free temporary email services to ensure safe and compliant use of disposable email."
   },
   "hero": {
     "title": "Terms of Service",
-    "subtitle": "Please read the following terms of service carefully before using Smail",
+    "subtitle": "Please read the following terms of service carefully before using TempMail",
     "lastUpdated": "Last updated: January 15, 2025"
   },
   "sections": {
     "overview": {
       "title": "Service Overview",
-      "description": "Content and scope of services provided by Smail",
-      "content": "Smail (hereinafter referred to as \"we\" or \"this service\") is a free temporary email service platform. By using our service, you can:",
+      "description": "Content and scope of services provided by TempMail",
+      "content": "TempMail (hereinafter referred to as \"we\" or \"this service\") is a free temporary email service platform. By using our service, you can:",
       "features": [
         "Obtain temporary email addresses",
         "Receive emails sent to that address",
@@ -22,7 +22,7 @@
     },
     "acceptance": {
       "title": "Acceptance of Terms",
-      "content": "By using Smail services, you agree to be bound by the following terms of service and usage rules."
+      "content": "By using TempMail services, you agree to be bound by the following terms of service and usage rules."
     },
     "usage": {
       "title": "Usage Rules",

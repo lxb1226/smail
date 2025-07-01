@@ -37,12 +37,12 @@ export function meta(_: Route.MetaArgs) {
 	return [
 		{
 			title:
-				"Smail - 免费临时邮箱生成器 | 一次性邮箱地址生成 | 24小时有效保护隐私",
+				"TempMail - 免费临时邮箱生成器 | 一次性邮箱地址生成 | 24小时有效保护隐私",
 		},
 		{
 			name: "description",
 			content:
-				"Smail提供最专业的免费临时邮箱服务，无需注册即可获得一次性邮件地址。24小时有效期，支持附件下载，完全匿名保护隐私。告别垃圾邮件，立即免费使用临时邮箱！",
+				"TempMail提供最专业的免费临时邮箱服务，无需注册即可获得一次性邮件地址。24小时有效期，支持附件下载，完全匿名保护隐私。告别垃圾邮件，立即免费使用临时邮箱！",
 		},
 		{
 			name: "keywords",
@@ -53,7 +53,7 @@ export function meta(_: Route.MetaArgs) {
 		// Open Graph 优化
 		{
 			property: "og:title",
-			content: "Smail - 免费临时邮箱生成器 | 一次性邮件地址",
+			content: "TempMail - 免费临时邮箱生成器 | 一次性邮件地址",
 		},
 		{
 			property: "og:description",
@@ -62,12 +62,12 @@ export function meta(_: Route.MetaArgs) {
 		},
 		{ property: "og:type", content: "website" },
 		{ property: "og:url", content: "https://smail.pw" },
-		{ property: "og:site_name", content: "Smail" },
+		{ property: "og:site_name", content: "TempMail" },
 		{ property: "og:locale", content: "zh_CN" },
 
 		// Twitter Card
 		{ name: "twitter:card", content: "summary_large_image" },
-		{ name: "twitter:title", content: "Smail - 免费临时邮箱生成器" },
+		{ name: "twitter:title", content: "TempMail - 免费临时邮箱生成器" },
 		{
 			name: "twitter:description",
 			content: "保护隐私的免费临时邮箱，无需注册，即时使用。",
@@ -85,8 +85,8 @@ export function meta(_: Route.MetaArgs) {
 		{ name: "theme-color", content: "#2563eb" },
 
 		// 结构化数据
-		{ name: "application-name", content: "Smail" },
-		{ name: "apple-mobile-web-app-title", content: "Smail" },
+		{ name: "application-name", content: "TempMail" },
+		{ name: "apple-mobile-web-app-title", content: "TempMail" },
 		{ name: "msapplication-TileColor", content: "#2563eb" },
 	];
 }

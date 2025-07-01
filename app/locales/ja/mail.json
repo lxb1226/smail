@@ -15,9 +15,9 @@
   "failed": "失敗",
   "content": "メール内容",
   "meta": {
-    "title": "メール詳細 - Smail一時メールボックス",
-    "description": "Smail一時メールボックスで受信したメールの詳細を表示します。",
-    "emailTitle": "{{subject}} - {{domain}}からのメール | Smail一時メールボックス",
+    "title": "メール詳細 - TempMail一時メールボックス",
+    "description": "TempMail一時メールボックスで受信したメールの詳細を表示します。",
+    "emailTitle": "{{subject}} - {{domain}}からのメール | TempMail一時メールボックス",
     "emailDescription": "{{fromAddress}}からのメール\"{{subject}}\"を表示します。受信時刻：{{date}}。",
     "emailContentTitle": "メール内容"
   },

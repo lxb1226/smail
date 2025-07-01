@@ -1,44 +1,44 @@
 {
   "home": {
-    "title": "Smail - 免费临时邮箱服务",
+    "title": "TempMail - 免费临时邮箱服务",
     "description": "免费的临时邮箱服务，保护您的隐私，避免垃圾邮件。无需注册，即时生成临时邮箱地址，24小时有效期。",
     "keywords": "临时邮箱,一次性邮箱,垃圾邮件防护,隐私保护,免费邮箱,临时邮件,匿名邮箱",
-    "ogTitle": "Smail - 免费临时邮箱生成器",
+    "ogTitle": "TempMail - 免费临时邮箱生成器",
     "ogDescription": "保护隐私的免费临时邮箱服务，无需注册，即时生成，24小时有效期。避免垃圾邮件，保护真实邮箱地址。"
   },
   "about": {
-    "title": "关于我们 - Smail临时邮箱",
-    "description": "了解Smail临时邮箱服务的使命、功能特点和技术架构。我们致力于为全球用户提供安全、可靠、免费的临时邮箱服务。",
-    "keywords": "关于Smail,临时邮箱服务,隐私保护,技术架构,Cloudflare,React Router",
-    "ogTitle": "关于Smail - 安全可靠的临时邮箱服务",
-    "ogDescription": "Smail是基于现代Web技术构建的免费临时邮箱服务，保护用户隐私，提供安全可靠的邮件接收体验。"
+    "title": "关于我们 - TempMail临时邮箱",
+    "description": "了解TempMail临时邮箱服务的使命、功能特点和技术架构。我们致力于为全球用户提供安全、可靠、免费的临时邮箱服务。",
+    "keywords": "关于TempMail,临时邮箱服务,隐私保护,技术架构,Cloudflare,React Router",
+    "ogTitle": "关于TempMail - 安全可靠的临时邮箱服务",
+    "ogDescription": "TempMail是基于现代Web技术构建的免费临时邮箱服务，保护用户隐私，提供安全可靠的邮件接收体验。"
   },
   "faq": {
-    "title": "常见问题 - Smail临时邮箱",
-    "description": "关于Smail临时邮箱服务的常见问题解答，包括使用方法、安全性、有效期等详细说明。",
+    "title": "常见问题 - TempMail临时邮箱",
+    "description": "关于TempMail临时邮箱服务的常见问题解答，包括使用方法、安全性、有效期等详细说明。",
     "keywords": "临时邮箱FAQ,使用帮助,安全性,有效期,隐私保护,常见问题",
-    "ogTitle": "Smail常见问题 - 临时邮箱使用指南",
-    "ogDescription": "查看Smail临时邮箱服务的常见问题解答，了解如何安全有效地使用临时邮箱保护您的隐私。"
+    "ogTitle": "TempMail常见问题 - 临时邮箱使用指南",
+    "ogDescription": "查看TempMail临时邮箱服务的常见问题解答，了解如何安全有效地使用临时邮箱保护您的隐私。"
   },
   "contact": {
-    "title": "联系我们 - Smail临时邮箱",
-    "description": "联系Smail团队，获取技术支持、提出功能建议或商务合作。我们提供中文、英文、日文多语言客户服务。",
+    "title": "联系我们 - TempMail临时邮箱",
+    "description": "联系TempMail团队，获取技术支持、提出功能建议或商务合作。我们提供中文、英文、日文多语言客户服务。",
     "keywords": "联系我们,技术支持,客户服务,功能建议,商务合作,多语言支持",
-    "ogTitle": "联系Smail团队 - 技术支持与客户服务",
-    "ogDescription": "联系Smail团队获取帮助，我们提供24小时内响应的多语言客户服务，解决您的技术问题和需求。"
+    "ogTitle": "联系TempMail团队 - 技术支持与客户服务",
+    "ogDescription": "联系TempMail团队获取帮助，我们提供24小时内响应的多语言客户服务，解决您的技术问题和需求。"
   },
   "privacy": {
-    "title": "隐私政策 - Smail临时邮箱",
-    "description": "了解Smail如何保护您的隐私和数据安全。我们不收集个人信息，所有邮件数据24小时后自动删除。",
+    "title": "隐私政策 - TempMail临时邮箱",
+    "description": "了解TempMail如何保护您的隐私和数据安全。我们不收集个人信息，所有邮件数据24小时后自动删除。",
     "keywords": "隐私政策,数据保护,信息安全,GDPR,隐私权,数据删除",
-    "ogTitle": "Smail隐私政策 - 保护您的数据安全",
-    "ogDescription": "Smail严格保护用户隐私，不收集个人信息，所有数据24小时后自动删除，符合国际隐私保护标准。"
+    "ogTitle": "TempMail隐私政策 - 保护您的数据安全",
+    "ogDescription": "TempMail严格保护用户隐私，不收集个人信息，所有数据24小时后自动删除，符合国际隐私保护标准。"
   },
   "terms": {
-    "title": "服务条款 - Smail临时邮箱",
-    "description": "Smail临时邮箱服务的使用条款和服务协议，了解服务范围、用户责任和使用限制。",
+    "title": "服务条款 - TempMail临时邮箱",
+    "description": "TempMail临时邮箱服务的使用条款和服务协议，了解服务范围、用户责任和使用限制。",
     "keywords": "服务条款,使用协议,服务范围,用户责任,使用限制,法律条款",
-    "ogTitle": "Smail服务条款 - 使用协议和服务范围",
-    "ogDescription": "查看Smail临时邮箱服务的使用条款，了解服务范围、用户权利和责任，确保合规使用。"
+    "ogTitle": "TempMail服务条款 - 使用协议和服务范围",
+    "ogDescription": "查看TempMail临时邮箱服务的使用条款，了解服务范围、用户权利和责任，确保合规使用。"
   }
 }
