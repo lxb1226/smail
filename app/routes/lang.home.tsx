@@ -2,7 +2,11 @@ import { useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { data, redirect, useParams } from "react-router";
-import { isSupportedLanguage, getCurrentLanguage, defaultLanguage } from "~/lib/i18n";
+import {
+	isSupportedLanguage,
+	getCurrentLanguage,
+	defaultLanguage,
+} from "~/lib/i18n";
 import { commitSession, getSession } from "~/.server/session";
 import {
 	createDB,
@@ -17,7 +21,16 @@ import type { Route } from "./+types/lang.home";
 import Home from "./home";
 
 function generateEmail() {
-	const names = ["alice", "bob", "charlie", "diana", "eve", "frank", "grace", "henry"];
+	const names = [
+		"alice",
+		"bob",
+		"charlie",
+		"diana",
+		"eve",
+		"frank",
+		"grace",
+		"henry",
+	];
 	const randomName = () => names[Math.floor(Math.random() * names.length)];
 	const random = customAlphabet("0123456789", 4)();
 	return `${randomName()}-${random}@heyjude.blog`;
@@ -25,12 +38,12 @@ function generateEmail() {
 
 export async function loader({ request, params }: Route.LoaderArgs) {
 	const { lang } = params;
-	
+
 	// 验证语言参数
 	if (!lang || !isSupportedLanguage(lang)) {
 		return redirect(`/${defaultLanguage}`);
 	}
-	
+
 	const session = await getSession(request.headers.get("Cookie"));
 	let email = session.get("email");
 
@@ -88,12 +101,12 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 
 export async function action({ request, params }: Route.ActionArgs) {
 	const { lang } = params;
-	
+
 	// 验证语言参数
 	if (!lang || !isSupportedLanguage(lang)) {
 		return redirect(`/${defaultLanguage}`);
 	}
-	
+
 	await new Promise((resolve) => setTimeout(resolve, 1000));
 	const formData = await request.formData();
 	const actionType = formData.get("action");
@@ -114,16 +127,16 @@ export async function action({ request, params }: Route.ActionArgs) {
  * 用于处理带有语言参数的首页路由
  */
 export default function LangHome(props: Route.ComponentProps) {
-  const { lang } = useParams();
-  const { i18n } = useTranslation();
-  
-  // 确保i18n使用正确的语言
-  useEffect(() => {
-    if (lang && isSupportedLanguage(lang) && i18n.language !== lang) {
-      i18n.changeLanguage(lang);
-    }
-  }, [lang, i18n]);
-  
-  // 渲染原始首页组件，传递完整的props
-  return <Home {...props} />;
+	const { lang } = useParams();
+	const { i18n } = useTranslation();
+
+	// 确保i18n使用正确的语言
+	useEffect(() => {
+		if (lang && isSupportedLanguage(lang) && i18n.language !== lang) {
+			i18n.changeLanguage(lang);
+		}
+	}, [lang, i18n]);
+
+	// 渲染原始首页组件，传递完整的props
+	return <Home {...props} />;
 }

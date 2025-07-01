@@ -10,24 +10,24 @@ import Privacy from "./privacy";
  * 多语言隐私政策页面路由组件
  */
 export default function LangPrivacy() {
-  const { lang } = useParams<{ lang: string }>();
-  const navigate = useNavigate();
-  const { i18n } = useTranslation();
-  
-  useEffect(() => {
-    if (!lang || !isSupportedLanguage(lang)) {
-      navigate("/privacy", { replace: true });
-      return;
-    }
-    
-    if (lang !== getCurrentLanguage()) {
-      i18n.changeLanguage(lang);
-    }
-  }, [lang, navigate, i18n]);
-  
-  if (!lang || !isSupportedLanguage(lang)) {
-    return null;
-  }
-  
-  return <Privacy />;
+	const { lang } = useParams<{ lang: string }>();
+	const navigate = useNavigate();
+	const { i18n } = useTranslation();
+
+	useEffect(() => {
+		if (!lang || !isSupportedLanguage(lang)) {
+			navigate("/privacy", { replace: true });
+			return;
+		}
+
+		if (lang !== getCurrentLanguage()) {
+			i18n.changeLanguage(lang);
+		}
+	}, [lang, navigate, i18n]);
+
+	if (!lang || !isSupportedLanguage(lang)) {
+		return null;
+	}
+
+	return <Privacy />;
 }

@@ -14,7 +14,7 @@ export default async function handleRequest(
 ) {
 	let shellRendered = false;
 	const userAgent = request.headers.get("user-agent");
-	
+
 	// 从URL中提取语言并设置i18n
 	const url = new URL(request.url);
 	const currentLang = getCurrentLanguage(url.pathname);

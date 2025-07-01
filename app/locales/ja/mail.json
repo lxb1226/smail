@@ -1,30 +1,30 @@
 {
-  "backToInbox": "受信箱に戻る",
-  "back": "戻る",
-  "detail": "メール詳細",
-  "noSubject": "(件名なし)",
-  "from": "送信者",
-  "to": "宛先",
-  "time": "時間",
-  "read": "既読",
-  "unread": "未読",
-  "attachments": "添付ファイル ({{count}})",
-  "unnamedAttachment": "名前のない添付ファイル",
-  "downloadAttachment": "添付ファイルをダウンロード",
-  "processing": "処理中",
-  "failed": "失敗",
-  "content": "メール内容",
-  "meta": {
-    "title": "メール詳細 - TempMail一時メールボックス",
-    "description": "TempMail一時メールボックスで受信したメールの詳細を表示します。",
-    "emailTitle": "{{subject}} - {{domain}}からのメール | TempMail一時メールボックス",
-    "emailDescription": "{{fromAddress}}からのメール\"{{subject}}\"を表示します。受信時刻：{{date}}。",
-    "emailContentTitle": "メール内容"
-  },
-  "errors": {
-    "idRequired": "メールIDが必要です",
-    "notFound": "メールが見つかりません",
-    "serverError": "サーバーエラー",
-    "unknownSize": "不明なサイズ"
-  }
+	"backToInbox": "受信箱に戻る",
+	"back": "戻る",
+	"detail": "メール詳細",
+	"noSubject": "(件名なし)",
+	"from": "送信者",
+	"to": "宛先",
+	"time": "時間",
+	"read": "既読",
+	"unread": "未読",
+	"attachments": "添付ファイル ({{count}})",
+	"unnamedAttachment": "名前のない添付ファイル",
+	"downloadAttachment": "添付ファイルをダウンロード",
+	"processing": "処理中",
+	"failed": "失敗",
+	"content": "メール内容",
+	"meta": {
+		"title": "メール詳細 - TempMail一時メールボックス",
+		"description": "TempMail一時メールボックスで受信したメールの詳細を表示します。",
+		"emailTitle": "{{subject}} - {{domain}}からのメール | TempMail一時メールボックス",
+		"emailDescription": "{{fromAddress}}からのメール\"{{subject}}\"を表示します。受信時刻：{{date}}。",
+		"emailContentTitle": "メール内容"
+	},
+	"errors": {
+		"idRequired": "メールIDが必要です",
+		"notFound": "メールが見つかりません",
+		"serverError": "サーバーエラー",
+		"unknownSize": "不明なサイズ"
+	}
 }

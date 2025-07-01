@@ -107,12 +107,14 @@ export default function Contact({ loaderData }: ComponentProps) {
 						{/* Contact Form */}
 						<div>
 							<Card>
-							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("form.title")}</CardTitle>
-								<CardDescription className="text-sm sm:text-base">
-									{t("form.description")}
-								</CardDescription>
-							</CardHeader>
+								<CardHeader>
+									<CardTitle className="text-lg sm:text-xl">
+										{t("form.title")}
+									</CardTitle>
+									<CardDescription className="text-sm sm:text-base">
+										{t("form.description")}
+									</CardDescription>
+								</CardHeader>
 								<CardContent>
 									<Form method="post" className="space-y-4">
 										<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -162,12 +164,24 @@ export default function Contact({ loaderData }: ComponentProps) {
 												required
 												className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base"
 											>
-												<option value="">{t("form.subject.options.default")}</option>
-												<option value="bug">{t("form.subject.options.bug")}</option>
-												<option value="feature">{t("form.subject.options.feature")}</option>
-												<option value="help">{t("form.subject.options.help")}</option>
-												<option value="business">{t("form.subject.options.business")}</option>
-												<option value="other">{t("form.subject.options.other")}</option>
+												<option value="">
+													{t("form.subject.options.default")}
+												</option>
+												<option value="bug">
+													{t("form.subject.options.bug")}
+												</option>
+												<option value="feature">
+													{t("form.subject.options.feature")}
+												</option>
+												<option value="help">
+													{t("form.subject.options.help")}
+												</option>
+												<option value="business">
+													{t("form.subject.options.business")}
+												</option>
+												<option value="other">
+													{t("form.subject.options.other")}
+												</option>
 											</select>
 										</div>
 										<div>
@@ -230,16 +244,28 @@ export default function Contact({ loaderData }: ComponentProps) {
 									<CardContent>
 										<div className="space-y-2 text-sm sm:text-base">
 											<div className="flex justify-between">
-												<span className="text-gray-600">{t("contact.response.general")}</span>
-												<span className="font-medium">{t("contact.response.generalTime")}</span>
+												<span className="text-gray-600">
+													{t("contact.response.general")}
+												</span>
+												<span className="font-medium">
+													{t("contact.response.generalTime")}
+												</span>
 											</div>
 											<div className="flex justify-between">
-												<span className="text-gray-600">{t("contact.response.urgent")}</span>
-												<span className="font-medium">{t("contact.response.urgentTime")}</span>
+												<span className="text-gray-600">
+													{t("contact.response.urgent")}
+												</span>
+												<span className="font-medium">
+													{t("contact.response.urgentTime")}
+												</span>
 											</div>
 											<div className="flex justify-between">
-												<span className="text-gray-600">{t("contact.response.business")}</span>
-												<span className="font-medium">{t("contact.response.businessTime")}</span>
+												<span className="text-gray-600">
+													{t("contact.response.business")}
+												</span>
+												<span className="font-medium">
+													{t("contact.response.businessTime")}
+												</span>
 											</div>
 										</div>
 									</CardContent>
@@ -274,13 +300,13 @@ export default function Contact({ loaderData }: ComponentProps) {
 			<section className="py-8 sm:py-16 bg-white">
 				<div className="max-w-screen-xl mx-auto px-3 sm:px-4">
 					<div className="text-center mb-8 sm:mb-12">
-				<h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-					{t("help.title")}
-				</h2>
-				<p className="text-base sm:text-lg text-gray-600">
-					{t("help.subtitle")}
-				</p>
-			</div>
+						<h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
+							{t("help.title")}
+						</h2>
+						<p className="text-base sm:text-lg text-gray-600">
+							{t("help.subtitle")}
+						</p>
+					</div>
 					<div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
 						<Card className="w-full text-center">
 							<CardContent className="pt-4 sm:pt-6">

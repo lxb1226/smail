@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 
 export function Footer() {
-	const { t } = useTranslation(['common', 'home']);
+	const { t } = useTranslation(["common", "home"]);
 	return (
 		<footer className="bg-gray-900 text-white">
 			<div className="container mx-auto px-4 py-12">
@@ -16,19 +16,19 @@ export function Footer() {
 							</div>
 							<div>
 								<h3 className="text-xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-									{t('brand.name')}
-				</h3>
-				<p className="text-sm text-gray-400">{t('brand.tagline')}</p>
+									{t("brand.name")}
+								</h3>
+								<p className="text-sm text-gray-400">{t("brand.tagline")}</p>
 							</div>
 						</div>
 						<p className="text-gray-300 leading-relaxed mb-4">
-							{t('home:hero.description')}
+							{t("home:hero.description")}
 						</p>
 						<div className="flex space-x-4">
 							<Link
 								to="/contact"
 								className="text-gray-400 hover:text-blue-400 transition-colors"
-								aria-label={t('navigation.contact')}
+								aria-label={t("navigation.contact")}
 							>
 								<MessageSquare className="h-5 w-5" />
 							</Link>
@@ -51,7 +51,7 @@ export function Footer() {
 							<Link
 								to="/privacy"
 								className="text-gray-400 hover:text-blue-400 transition-colors"
-								aria-label={t('navigation.privacy')}
+								aria-label={t("navigation.privacy")}
 							>
 								<Shield className="h-5 w-5" />
 							</Link>
@@ -60,14 +60,16 @@ export function Footer() {
 
 					{/* 快速链接 */}
 					<div>
-						<h4 className="text-lg font-semibold mb-4">{t('footer.quickLinks')}</h4>
+						<h4 className="text-lg font-semibold mb-4">
+							{t("footer.quickLinks")}
+						</h4>
 						<ul className="space-y-2">
 							<li>
 								<Link
 									to="/"
 									className="text-gray-300 hover:text-blue-400 transition-colors"
 								>
-									{t('navigation.home')}
+									{t("navigation.home")}
 								</Link>
 							</li>
 							<li>
@@ -75,7 +77,7 @@ export function Footer() {
 									to="/about"
 									className="text-gray-300 hover:text-blue-400 transition-colors"
 								>
-									{t('navigation.about')}
+									{t("navigation.about")}
 								</Link>
 							</li>
 							<li>
@@ -83,7 +85,7 @@ export function Footer() {
 									to="/faq"
 									className="text-gray-300 hover:text-blue-400 transition-colors"
 								>
-									{t('navigation.faq')}
+									{t("navigation.faq")}
 								</Link>
 							</li>
 							<li>
@@ -91,7 +93,7 @@ export function Footer() {
 									to="/terms"
 									className="text-gray-300 hover:text-blue-400 transition-colors"
 								>
-									{t('navigation.terms')}
+									{t("navigation.terms")}
 								</Link>
 							</li>
 						</ul>
@@ -99,7 +101,9 @@ export function Footer() {
 
 					{/* 联系我们 */}
 					<div>
-						<h4 className="text-lg font-semibold mb-4">{t('footer.support')}</h4>
+						<h4 className="text-lg font-semibold mb-4">
+							{t("footer.support")}
+						</h4>
 						<ul className="space-y-2">
 							{/* <li>
 								<Link
@@ -114,7 +118,7 @@ export function Footer() {
 									to="/privacy"
 									className="text-gray-300 hover:text-blue-400 transition-colors"
 								>
-									{t('navigation.privacy')}
+									{t("navigation.privacy")}
 								</Link>
 							</li>
 							<li>
@@ -122,7 +126,7 @@ export function Footer() {
 									to="/faq"
 									className="text-gray-300 hover:text-blue-400 transition-colors"
 								>
-									{t('footer.help')}
+									{t("footer.help")}
 								</Link>
 							</li>
 						</ul>
@@ -132,13 +136,11 @@ export function Footer() {
 				{/* 分割线 */}
 				<div className="border-t border-gray-800 mt-8 pt-8">
 					<div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-					<div className="text-sm text-gray-400">
-						{t('footer.copyright')}
+						<div className="text-sm text-gray-400">{t("footer.copyright")}</div>
+						<div className="flex space-x-6 text-sm text-gray-400">
+							<span className="text-gray-500">{t("footer.features")}</span>
+						</div>
 					</div>
-					<div className="flex space-x-6 text-sm text-gray-400">
-						<span className="text-gray-500">{t('footer.features')}</span>
-					</div>
-				</div>
 				</div>
 			</div>
 		</footer>

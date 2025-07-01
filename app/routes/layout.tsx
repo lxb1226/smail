@@ -3,7 +3,11 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { Navigation } from "~/components/Navigation";
 import { Footer } from "~/components/Footer";
-import { getCurrentLanguage, generateLocalizedPath, type SupportedLanguage } from "~/lib/i18n";
+import {
+	getCurrentLanguage,
+	generateLocalizedPath,
+	type SupportedLanguage,
+} from "~/lib/i18n";
 
 export default function Layout() {
 	const { lang } = useParams();
@@ -11,22 +15,23 @@ export default function Layout() {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const [isHydrated, setIsHydrated] = useState(false);
-	
+
 	// 获取当前语言，如果URL中没有语言参数，使用默认语言
-	const currentLang = (lang as SupportedLanguage) || getCurrentLanguage(location.pathname);
-	
+	const currentLang =
+		(lang as SupportedLanguage) || getCurrentLanguage(location.pathname);
+
 	// 水合化完成后设置标志
 	useEffect(() => {
 		setIsHydrated(true);
 	}, []);
-	
+
 	// 语言切换逻辑 - 只在水合化完成后执行
 	useEffect(() => {
 		if (isHydrated && i18n.language !== currentLang) {
 			i18n.changeLanguage(currentLang);
 		}
 	}, [currentLang, i18n, isHydrated]);
-	
+
 	// 语言切换函数
 	const switchLanguage = (newLang: SupportedLanguage) => {
 		const newPath = generateLocalizedPath(location.pathname, newLang);
@@ -35,8 +40,8 @@ export default function Layout() {
 
 	return (
 		<>
-			<Navigation 
-				currentPath={location.pathname} 
+			<Navigation
+				currentPath={location.pathname}
 				currentLang={currentLang}
 				onLanguageChange={switchLanguage}
 			/>

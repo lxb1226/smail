@@ -26,8 +26,8 @@ export function meta(_: Route.MetaArgs) {
 }
 
 export default function FAQ() {
-	const { t } = useTranslation('faq');
-	
+	const { t } = useTranslation("faq");
+
 	const faqs = [
 		{
 			id: "what-is-temp-email",
@@ -86,19 +86,19 @@ export default function FAQ() {
 			{/* Hero Section */}
 			<section className="py-8 sm:py-16 bg-white">
 				<div className="max-w-screen-xl mx-auto px-3 sm:px-4 text-center">
-				<div className="flex justify-center mb-4 sm:mb-6">
-					<div className="bg-blue-100 p-3 sm:p-4 rounded-full">
-						<HelpCircleIcon className="w-6 sm:w-8 h-6 sm:h-8 text-blue-600" />
+					<div className="flex justify-center mb-4 sm:mb-6">
+						<div className="bg-blue-100 p-3 sm:p-4 rounded-full">
+							<HelpCircleIcon className="w-6 sm:w-8 h-6 sm:h-8 text-blue-600" />
+						</div>
 					</div>
-				</div>
-				<h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
-					<span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-						{t("hero.title")}
-					</span>
-				</h1>
-				<p className="text-base sm:text-lg lg:text-xl text-gray-600">
-					{t("hero.subtitle")}
-				</p>
+					<h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
+						<span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+							{t("hero.title")}
+						</span>
+					</h1>
+					<p className="text-base sm:text-lg lg:text-xl text-gray-600">
+						{t("hero.subtitle")}
+					</p>
 				</div>
 			</section>
 
@@ -129,24 +129,24 @@ export default function FAQ() {
 			<section className="py-8 sm:py-16 bg-white">
 				<div className="max-w-2xl mx-auto px-3 sm:px-4 text-center">
 					<h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-				{t("help.title")}
-			</h2>
-			<p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-				{t("help.subtitle")}
-			</p>
-			<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-				<Button
-					asChild
-					variant="outline"
-					size="lg"
-					className="text-sm sm:text-base"
-				>
-					<Link to="/contact">{t("help.contactButton")}</Link>
-				</Button>
-				<Button asChild size="lg" className="text-sm sm:text-base">
-					<Link to="/">{t("help.startButton")}</Link>
-				</Button>
-			</div>
+						{t("help.title")}
+					</h2>
+					<p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
+						{t("help.subtitle")}
+					</p>
+					<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+						<Button
+							asChild
+							variant="outline"
+							size="lg"
+							className="text-sm sm:text-base"
+						>
+							<Link to="/contact">{t("help.contactButton")}</Link>
+						</Button>
+						<Button asChild size="lg" className="text-sm sm:text-base">
+							<Link to="/">{t("help.startButton")}</Link>
+						</Button>
+					</div>
 				</div>
 			</section>
 
@@ -154,42 +154,42 @@ export default function FAQ() {
 			<section className="py-8 sm:py-16 bg-blue-50">
 				<div className="max-w-screen-xl mx-auto px-3 sm:px-4">
 					<h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-center text-gray-900 mb-8 sm:mb-12">
-					{t("quickStart.title")}
-				</h2>
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-					<div className="w-full text-center">
-						<div className="bg-blue-600 text-white w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">
-							1
+						{t("quickStart.title")}
+					</h2>
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+						<div className="w-full text-center">
+							<div className="bg-blue-600 text-white w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">
+								1
+							</div>
+							<h3 className="text-lg sm:text-xl font-semibold mb-2">
+								{t("quickStart.steps.0.title")}
+							</h3>
+							<p className="text-gray-600 text-sm sm:text-base">
+								{t("quickStart.steps.0.description")}
+							</p>
 						</div>
-						<h3 className="text-lg sm:text-xl font-semibold mb-2">
-							{t("quickStart.steps.0.title")}
-						</h3>
-						<p className="text-gray-600 text-sm sm:text-base">
-							{t("quickStart.steps.0.description")}
-						</p>
-					</div>
-					<div className="w-full text-center">
-						<div className="bg-blue-600 text-white w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">
-							2
+						<div className="w-full text-center">
+							<div className="bg-blue-600 text-white w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">
+								2
+							</div>
+							<h3 className="text-lg sm:text-xl font-semibold mb-2">
+								{t("quickStart.steps.1.title")}
+							</h3>
+							<p className="text-gray-600 text-sm sm:text-base">
+								{t("quickStart.steps.1.description")}
+							</p>
 						</div>
-						<h3 className="text-lg sm:text-xl font-semibold mb-2">
-							{t("quickStart.steps.1.title")}
-						</h3>
-						<p className="text-gray-600 text-sm sm:text-base">
-							{t("quickStart.steps.1.description")}
-						</p>
-					</div>
-					<div className="w-full text-center">
-						<div className="bg-blue-600 text-white w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">
-							3
+						<div className="w-full text-center">
+							<div className="bg-blue-600 text-white w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 text-lg sm:text-xl font-bold">
+								3
+							</div>
+							<h3 className="text-lg sm:text-xl font-semibold mb-2">
+								{t("quickStart.steps.2.title")}
+							</h3>
+							<p className="text-gray-600 text-sm sm:text-base">
+								{t("quickStart.steps.2.description")}
+							</p>
 						</div>
-						<h3 className="text-lg sm:text-xl font-semibold mb-2">
-							{t("quickStart.steps.2.title")}
-						</h3>
-						<p className="text-gray-600 text-sm sm:text-base">
-							{t("quickStart.steps.2.description")}
-						</p>
-					</div>
 					</div>
 				</div>
 			</section>

@@ -24,14 +24,17 @@ import {
 import type { Route } from "./+types/mail.$id";
 
 // 生成邮件 HTML 内容
-function generateEmailHTML(email: {
-	fromAddress: string;
-	toAddress: string;
-	subject?: string | null;
-	htmlContent?: string | null;
-	textContent?: string | null;
-	receivedAt: Date;
-}, title: string = "邮件内容") {
+function generateEmailHTML(
+	email: {
+		fromAddress: string;
+		toAddress: string;
+		subject?: string | null;
+		htmlContent?: string | null;
+		textContent?: string | null;
+		receivedAt: Date;
+	},
+	title: string = "邮件内容",
+) {
 	const content =
 		email.htmlContent || email.textContent?.replace(/\n/g, "<br>") || "";
 
@@ -148,7 +151,7 @@ function getFileIcon(filename?: string | null, contentType?: string | null) {
 
 // 格式化文件大小
 function formatFileSize(bytes?: number | null, t: any) {
-	if (!bytes) return t('mail.errors.unknownSize');
+	if (!bytes) return t("mail.errors.unknownSize");
 	const sizes = ["Bytes", "KB", "MB", "GB"];
 	if (bytes === 0) return "0 Bytes";
 	const i = Math.floor(Math.log(bytes) / Math.log(1024));
@@ -261,12 +264,17 @@ export async function loader({ params, context }: Route.LoaderArgs) {
 }
 
 export default function MailDetail({ loaderData }: Route.ComponentProps) {
-	const { t, i18n } = useTranslation('mail');
+	const { t, i18n } = useTranslation("mail");
 	const navigation = useNavigation();
 	const { email, attachments, emailHTML } = loaderData;
 
 	// 格式化日期
-	const locale = i18n.language === 'en' ? 'en-US' : i18n.language === 'ja' ? 'ja-JP' : 'zh-CN';
+	const locale =
+		i18n.language === "en"
+			? "en-US"
+			: i18n.language === "ja"
+				? "ja-JP"
+				: "zh-CN";
 	const formattedDate = new Date(email.receivedAt).toLocaleString(locale, {
 		year: "numeric",
 		month: "long",
@@ -307,13 +315,17 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 							className="text-xs sm:text-sm p-1 sm:p-2"
 						>
 							<Link to="/">
-							<ArrowLeft className="w-3 sm:w-4 h-3 sm:h-4" />
-							<span className="hidden sm:inline ml-1">{t('backToInbox')}</span>
-						<span className="sm:hidden">{t('back')}</span>
-						</Link>
+								<ArrowLeft className="w-3 sm:w-4 h-3 sm:h-4" />
+								<span className="hidden sm:inline ml-1">
+									{t("backToInbox")}
+								</span>
+								<span className="sm:hidden">{t("back")}</span>
+							</Link>
 						</Button>
 						<Separator orientation="vertical" className="h-4 sm:h-6" />
-						<span className="text-xs sm:text-sm text-gray-600">{t('detail')}</span>
+						<span className="text-xs sm:text-sm text-gray-600">
+							{t("detail")}
+						</span>
 					</div>
 
 					<div className="flex items-center gap-2">
@@ -329,28 +341,28 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 				<div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
 					<div className="flex-1 min-w-0">
 						<h1 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 break-words">
-					{email.subject || t('noSubject')}
-				</h1>
-					<div className="space-y-1 sm:space-y-0 sm:flex sm:flex-wrap sm:gap-4 text-xs sm:text-sm text-gray-600">
-						<div className="truncate">
-							<strong>{t('from')}:</strong> {email.fromAddress}
+							{email.subject || t("noSubject")}
+						</h1>
+						<div className="space-y-1 sm:space-y-0 sm:flex sm:flex-wrap sm:gap-4 text-xs sm:text-sm text-gray-600">
+							<div className="truncate">
+								<strong>{t("from")}:</strong> {email.fromAddress}
+							</div>
+							<div className="truncate">
+								<strong>{t("to")}:</strong> {email.toAddress}
+							</div>
+							<div>
+								<strong>{t("time")}:</strong> {formattedDate}
+							</div>
 						</div>
-						<div className="truncate">
-							<strong>{t('to')}:</strong> {email.toAddress}
-						</div>
-						<div>
-							<strong>{t('time')}:</strong> {formattedDate}
-						</div>
-					</div>
 					</div>
 
 					<div className="flex items-center gap-2 flex-shrink-0">
 						<Badge
-					variant={email.isRead ? "secondary" : "default"}
-					className="text-xs"
-				>
-					{email.isRead ? t('read') : t('unread')}
-				</Badge>
+							variant={email.isRead ? "secondary" : "default"}
+							className="text-xs"
+						>
+							{email.isRead ? t("read") : t("unread")}
+						</Badge>
 						<span className="text-xs text-gray-500">
 							{formatFileSize(email.size, t)}
 						</span>
@@ -363,8 +375,8 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 						<div className="flex items-center gap-2 mb-2">
 							<Paperclip className="w-3 sm:w-4 h-3 sm:h-4" />
 							<span className="text-xs sm:text-sm font-medium">
-							{t('attachments', { count: attachments.length })}
-						</span>
+								{t("attachments", { count: attachments.length })}
+							</span>
 						</div>
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
 							{attachments.map((attachment) => (
@@ -374,28 +386,28 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 								>
 									{getFileIcon(attachment.filename, attachment.contentType)}
 									<div className="flex-1 min-w-0">
-												<div className="truncate font-medium">
-													{attachment.filename || t('unnamedAttachment')}
-												</div>
-												<div className="text-gray-500 text-xs">
-													{formatFileSize(attachment.size, t)}
-												</div>
-											</div>
+										<div className="truncate font-medium">
+											{attachment.filename || t("unnamedAttachment")}
+										</div>
+										<div className="text-gray-500 text-xs">
+											{formatFileSize(attachment.size, t)}
+										</div>
+									</div>
 									{attachment.uploadStatus === "uploaded" ? (
 										<a
 											href={`/attachment/${attachment.id}`}
 											className="inline-flex items-center justify-center h-6 w-6 p-0 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground flex-shrink-0"
-													title={t('downloadAttachment')}
+											title={t("downloadAttachment")}
 										>
 											<Download className="w-3 h-3" />
 										</a>
 									) : (
-													<span className="text-xs text-gray-400 flex-shrink-0">
-														{attachment.uploadStatus === "pending"
-															? t('processing')
-															: t('failed')}
-													</span>
-												)}
+										<span className="text-xs text-gray-400 flex-shrink-0">
+											{attachment.uploadStatus === "pending"
+												? t("processing")
+												: t("failed")}
+										</span>
+									)}
 								</div>
 							))}
 						</div>
@@ -410,7 +422,7 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 					srcDoc={emailHTML}
 					className="w-full h-full border-0"
 					sandbox="allow-same-origin"
-					title={t('content')}
+					title={t("content")}
 				/>
 			</div>
 		</div>

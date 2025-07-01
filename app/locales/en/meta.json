@@ -1,44 +1,44 @@
 {
-  "home": {
-    "title": "TempMail - Free Temporary Email Service",
-    "description": "Free temporary email service to protect your privacy and avoid spam. No registration required, generate temporary email addresses instantly, valid for 24 hours.",
-    "keywords": "temporary email,disposable email,spam protection,privacy protection,free email,temp mail,anonymous email",
-    "ogTitle": "TempMail - Free Temporary Email Generator",
-    "ogDescription": "Privacy-protecting free temporary email service. No registration required, instant generation, 24-hour validity. Avoid spam and protect your real email address."
-  },
-  "about": {
-    "title": "About Us - TempMail Temporary Email",
-    "description": "Learn about TempMail temporary email service's mission, features, and technology stack. We're committed to providing secure, reliable, and free temporary email services for users worldwide.",
-    "keywords": "about TempMail,temporary email service,privacy protection,technology stack,Cloudflare,React Router",
-    "ogTitle": "About TempMail - Secure and Reliable Temporary Email Service",
-    "ogDescription": "TempMail is a free temporary email service built with modern web technologies, protecting user privacy and providing secure email receiving experience."
-  },
-  "faq": {
-    "title": "FAQ - TempMail Temporary Email",
-    "description": "Frequently asked questions about TempMail temporary email service, including usage instructions, security, validity period, and detailed explanations.",
-    "keywords": "temporary email FAQ,usage help,security,validity period,privacy protection,common questions",
-    "ogTitle": "TempMail FAQ - Temporary Email Usage Guide",
-    "ogDescription": "View frequently asked questions about TempMail temporary email service and learn how to safely and effectively use temporary email to protect your privacy."
-  },
-  "contact": {
-    "title": "Contact Us - TempMail Temporary Email",
-    "description": "Contact the TempMail team for technical support, feature suggestions, or business cooperation. We provide multilingual customer service in Chinese, English, and Japanese.",
-    "keywords": "contact us,technical support,customer service,feature suggestions,business cooperation,multilingual support",
-    "ogTitle": "Contact TempMail Team - Technical Support & Customer Service",
-    "ogDescription": "Contact the TempMail team for help. We provide multilingual customer service with 24-hour response time to solve your technical issues and needs."
-  },
-  "privacy": {
-    "title": "Privacy Policy - TempMail Temporary Email",
-    "description": "Learn how TempMail protects your privacy and data security. We don't collect personal information, and all email data is automatically deleted after 24 hours.",
-    "keywords": "privacy policy,data protection,information security,GDPR,privacy rights,data deletion",
-    "ogTitle": "TempMail Privacy Policy - Protecting Your Data Security",
-    "ogDescription": "TempMail strictly protects user privacy, doesn't collect personal information, automatically deletes all data after 24 hours, complying with international privacy protection standards."
-  },
-  "terms": {
-    "title": "Terms of Service - TempMail Temporary Email",
-    "description": "Terms of use and service agreement for TempMail temporary email service. Learn about service scope, user responsibilities, and usage limitations.",
-    "keywords": "terms of service,usage agreement,service scope,user responsibilities,usage limitations,legal terms",
-    "ogTitle": "TempMail Terms of Service - Usage Agreement and Service Scope",
-    "ogDescription": "View the terms of use for TempMail temporary email service, understand service scope, user rights and responsibilities to ensure compliant usage."
-  }
+	"home": {
+		"title": "TempMail - Free Temporary Email Service",
+		"description": "Free temporary email service to protect your privacy and avoid spam. No registration required, generate temporary email addresses instantly, valid for 24 hours.",
+		"keywords": "temporary email,disposable email,spam protection,privacy protection,free email,temp mail,anonymous email",
+		"ogTitle": "TempMail - Free Temporary Email Generator",
+		"ogDescription": "Privacy-protecting free temporary email service. No registration required, instant generation, 24-hour validity. Avoid spam and protect your real email address."
+	},
+	"about": {
+		"title": "About Us - TempMail Temporary Email",
+		"description": "Learn about TempMail temporary email service's mission, features, and technology stack. We're committed to providing secure, reliable, and free temporary email services for users worldwide.",
+		"keywords": "about TempMail,temporary email service,privacy protection,technology stack,Cloudflare,React Router",
+		"ogTitle": "About TempMail - Secure and Reliable Temporary Email Service",
+		"ogDescription": "TempMail is a free temporary email service built with modern web technologies, protecting user privacy and providing secure email receiving experience."
+	},
+	"faq": {
+		"title": "FAQ - TempMail Temporary Email",
+		"description": "Frequently asked questions about TempMail temporary email service, including usage instructions, security, validity period, and detailed explanations.",
+		"keywords": "temporary email FAQ,usage help,security,validity period,privacy protection,common questions",
+		"ogTitle": "TempMail FAQ - Temporary Email Usage Guide",
+		"ogDescription": "View frequently asked questions about TempMail temporary email service and learn how to safely and effectively use temporary email to protect your privacy."
+	},
+	"contact": {
+		"title": "Contact Us - TempMail Temporary Email",
+		"description": "Contact the TempMail team for technical support, feature suggestions, or business cooperation. We provide multilingual customer service in Chinese, English, and Japanese.",
+		"keywords": "contact us,technical support,customer service,feature suggestions,business cooperation,multilingual support",
+		"ogTitle": "Contact TempMail Team - Technical Support & Customer Service",
+		"ogDescription": "Contact the TempMail team for help. We provide multilingual customer service with 24-hour response time to solve your technical issues and needs."
+	},
+	"privacy": {
+		"title": "Privacy Policy - TempMail Temporary Email",
+		"description": "Learn how TempMail protects your privacy and data security. We don't collect personal information, and all email data is automatically deleted after 24 hours.",
+		"keywords": "privacy policy,data protection,information security,GDPR,privacy rights,data deletion",
+		"ogTitle": "TempMail Privacy Policy - Protecting Your Data Security",
+		"ogDescription": "TempMail strictly protects user privacy, doesn't collect personal information, automatically deletes all data after 24 hours, complying with international privacy protection standards."
+	},
+	"terms": {
+		"title": "Terms of Service - TempMail Temporary Email",
+		"description": "Terms of use and service agreement for TempMail temporary email service. Learn about service scope, user responsibilities, and usage limitations.",
+		"keywords": "terms of service,usage agreement,service scope,user responsibilities,usage limitations,legal terms",
+		"ogTitle": "TempMail Terms of Service - Usage Agreement and Service Scope",
+		"ogDescription": "View the terms of use for TempMail temporary email service, understand service scope, user rights and responsibilities to ensure compliant usage."
+	}
 }

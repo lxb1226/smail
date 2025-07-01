@@ -1,47 +1,47 @@
 {
-  "brand": {
-    "name": "TempMail",
-    "tagline": "临时邮箱服务"
-  },
-  "navigation": {
-    "home": "首页",
-    "about": "关于",
-    "faq": "FAQ",
-    "contact": "联系",
-    "terms": "使用条款",
-    "privacy": "隐私政策"
-  },
-  "actions": {
-    "generate": "生成邮箱",
-    "refresh": "刷新",
-    "copy": "复制",
-    "delete": "删除",
-    "back": "返回",
-    "download": "下载",
-    "close": "关闭",
-    "copyAddress": "复制地址",
-    "copySuccess": "复制成功",
-    "copyError": "复制失败"
-  },
-  "status": {
-    "loading": "加载中...",
-    "error": "出错了",
-    "success": "成功",
-    "empty": "暂无数据"
-  },
-  "time": {
-    "now": "刚刚",
-    "today": "今天",
-    "yesterday": "昨天",
-    "minutesAgo": "{{count}}分钟前",
-    "hoursAgo": "{{count}}小时前",
-    "daysAgo": "{{count}}天前"
-  },
-  "footer": {
-    "quickLinks": "快速链接",
-    "support": "帮助支持",
-    "help": "使用帮助",
-    "copyright": "© 2024 TempMail. 保留所有权利.",
-    "features": "免费 · 安全 · 隐私保护"
-  }
+	"brand": {
+		"name": "TempMail",
+		"tagline": "临时邮箱服务"
+	},
+	"navigation": {
+		"home": "首页",
+		"about": "关于",
+		"faq": "FAQ",
+		"contact": "联系",
+		"terms": "使用条款",
+		"privacy": "隐私政策"
+	},
+	"actions": {
+		"generate": "生成邮箱",
+		"refresh": "刷新",
+		"copy": "复制",
+		"delete": "删除",
+		"back": "返回",
+		"download": "下载",
+		"close": "关闭",
+		"copyAddress": "复制地址",
+		"copySuccess": "复制成功",
+		"copyError": "复制失败"
+	},
+	"status": {
+		"loading": "加载中...",
+		"error": "出错了",
+		"success": "成功",
+		"empty": "暂无数据"
+	},
+	"time": {
+		"now": "刚刚",
+		"today": "今天",
+		"yesterday": "昨天",
+		"minutesAgo": "{{count}}分钟前",
+		"hoursAgo": "{{count}}小时前",
+		"daysAgo": "{{count}}天前"
+	},
+	"footer": {
+		"quickLinks": "快速链接",
+		"support": "帮助支持",
+		"help": "使用帮助",
+		"copyright": "© 2024 TempMail. 保留所有权利.",
+		"features": "免费 · 安全 · 隐私保护"
+	}
 }

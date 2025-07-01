@@ -1,46 +1,46 @@
 {
-  "brand": {
-    "name": "TempMail",
-    "tagline": "Temporary Email Service"
-  },
-  "navigation": {
-    "home": "Home",
-    "about": "About",
-    "faq": "FAQ",
-    "contact": "Contact",
-    "terms": "Terms of Service",
-    "privacy": "Privacy Policy"
-  },
-  "actions": {
-    "generate": "Generate Email",
-    "refresh": "Refresh",
-    "copy": "Copy",
-    "delete": "Delete",
-    "back": "Back",
-    "download": "Download",
-    "copyAddress": "Copy Address",
-    "copySuccess": "Copied Successfully",
-    "copyError": "Copy Failed"
-  },
-  "status": {
-    "loading": "Loading...",
-    "error": "Error occurred",
-    "success": "Success",
-    "empty": "No data"
-  },
-  "time": {
-    "now": "Just now",
-    "today": "Today",
-    "yesterday": "Yesterday",
-    "minutesAgo": "{{count}} minutes ago",
-    "hoursAgo": "{{count}} hours ago",
-    "daysAgo": "{{count}} days ago"
-  },
-  "footer": {
-    "quickLinks": "Quick Links",
-    "support": "Help & Support",
-    "help": "Help",
-    "copyright": "© 2024 TempMail. All rights reserved.",
-    "features": "Free · Secure · Privacy Protected"
-  }
+	"brand": {
+		"name": "TempMail",
+		"tagline": "Temporary Email Service"
+	},
+	"navigation": {
+		"home": "Home",
+		"about": "About",
+		"faq": "FAQ",
+		"contact": "Contact",
+		"terms": "Terms of Service",
+		"privacy": "Privacy Policy"
+	},
+	"actions": {
+		"generate": "Generate Email",
+		"refresh": "Refresh",
+		"copy": "Copy",
+		"delete": "Delete",
+		"back": "Back",
+		"download": "Download",
+		"copyAddress": "Copy Address",
+		"copySuccess": "Copied Successfully",
+		"copyError": "Copy Failed"
+	},
+	"status": {
+		"loading": "Loading...",
+		"error": "Error occurred",
+		"success": "Success",
+		"empty": "No data"
+	},
+	"time": {
+		"now": "Just now",
+		"today": "Today",
+		"yesterday": "Yesterday",
+		"minutesAgo": "{{count}} minutes ago",
+		"hoursAgo": "{{count}} hours ago",
+		"daysAgo": "{{count}} days ago"
+	},
+	"footer": {
+		"quickLinks": "Quick Links",
+		"support": "Help & Support",
+		"help": "Help",
+		"copyright": "© 2024 TempMail. All rights reserved.",
+		"features": "Free · Secure · Privacy Protected"
+	}
 }

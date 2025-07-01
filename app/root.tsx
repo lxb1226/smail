@@ -7,7 +7,7 @@ import {
 	isRouteErrorResponse,
 	useLocation,
 } from "react-router";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -115,12 +115,17 @@ export function Layout({ children }: { children: React.ReactNode }) {
 	// 获取当前语言 - 传递路径参数以确保服务器端和客户端一致
 	const currentLanguage = getCurrentLanguage(location.pathname);
 	const langConfig = languageConfig[currentLanguage];
-	
+
 	// 根据语言设置HTML lang属性
-	const htmlLang = currentLanguage === 'zh' ? 'zh-CN' : 
-					 currentLanguage === 'en' ? 'en-US' : 
-					 currentLanguage === 'ja' ? 'ja-JP' : 'zh-CN';
-	
+	const htmlLang =
+		currentLanguage === "zh"
+			? "zh-CN"
+			: currentLanguage === "en"
+				? "en-US"
+				: currentLanguage === "ja"
+					? "ja-JP"
+					: "zh-CN";
+
 	// 多语言结构化数据
 	const getStructuredData = () => {
 		const baseData = {
@@ -141,14 +146,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			},
 			applicationSubCategory: "Email Service",
 		};
-		
+
 		// 根据语言设置描述和关键词
 		switch (currentLanguage) {
-			case 'en':
+			case "en":
 				return {
 					...baseData,
-					description: "Free temporary email service to protect your privacy and avoid spam",
-					keywords: "temporary email,disposable email,spam protection,privacy protection,free email",
+					description:
+						"Free temporary email service to protect your privacy and avoid spam",
+					keywords:
+						"temporary email,disposable email,spam protection,privacy protection,free email",
 					featureList: [
 						"Free to use",
 						"No registration required",
@@ -158,11 +165,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 						"Real-time email reception",
 					],
 				};
-			case 'ja':
+			case "ja":
 				return {
 					...baseData,
-					description: "プライバシーを保護し、スパムを避けるための無料の一時的なメールサービス",
-					keywords: "一時的なメール,使い捨てメール,スパム保護,プライバシー保護,無料メール",
+					description:
+						"プライバシーを保護し、スパムを避けるための無料の一時的なメールサービス",
+					keywords:
+						"一時的なメール,使い捨てメール,スパム保護,プライバシー保護,無料メール",
 					featureList: [
 						"無料で使用",
 						"登録不要",

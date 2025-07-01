@@ -10,24 +10,24 @@ import Terms from "./terms";
  * 多语言服务条款页面路由组件
  */
 export default function LangTerms() {
-  const { lang } = useParams<{ lang: string }>();
-  const navigate = useNavigate();
-  const { i18n } = useTranslation();
-  
-  useEffect(() => {
-    if (!lang || !isSupportedLanguage(lang)) {
-      navigate("/terms", { replace: true });
-      return;
-    }
-    
-    if (lang !== getCurrentLanguage()) {
-      i18n.changeLanguage(lang);
-    }
-  }, [lang, navigate, i18n]);
-  
-  if (!lang || !isSupportedLanguage(lang)) {
-    return null;
-  }
-  
-  return <Terms />;
+	const { lang } = useParams<{ lang: string }>();
+	const navigate = useNavigate();
+	const { i18n } = useTranslation();
+
+	useEffect(() => {
+		if (!lang || !isSupportedLanguage(lang)) {
+			navigate("/terms", { replace: true });
+			return;
+		}
+
+		if (lang !== getCurrentLanguage()) {
+			i18n.changeLanguage(lang);
+		}
+	}, [lang, navigate, i18n]);
+
+	if (!lang || !isSupportedLanguage(lang)) {
+		return null;
+	}
+
+	return <Terms />;
 }

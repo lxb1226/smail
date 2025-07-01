@@ -1,86 +1,86 @@
 {
-  "meta": {
-    "title": "Contact TempMail Team - Technical Support, Feedback, Business Cooperation",
-    "description": "Contact the TempMail team for technical support, feedback, or cooperation inquiries. We provide multiple contact methods and respond quickly to user needs. For temporary email issues, feature suggestions, or business cooperation, feel free to contact us anytime."
-  },
-  "hero": {
-    "title": "Contact Us",
-    "subtitle": "Have questions or suggestions? We'd love to hear from you"
-  },
-  "success": {
-    "title": "Message sent successfully!",
-    "message": "Thank you for your feedback, we will reply to your message as soon as possible."
-  },
-  "form": {
-    "title": "Send Message",
-    "description": "Fill out the form below and we'll get back to you soon",
-    "name": {
-      "label": "Name",
-      "placeholder": "Enter your name"
-    },
-    "email": {
-      "label": "Email",
-      "placeholder": "Enter your email"
-    },
-    "subject": {
-      "label": "Subject",
-      "placeholder": "Select subject",
-      "options": {
-        "default": "Select subject",
-        "bug": "Bug Report",
-        "feature": "Feature Request",
-        "help": "Help & Support",
-        "business": "Business Cooperation",
-        "other": "Other"
-      }
-    },
-    "message": {
-      "label": "Message",
-      "placeholder": "Please describe your question or suggestion in detail..."
-    },
-    "submit": "Send Message",
-    "sending": "Sending...",
-    "success": "Message sent successfully! We'll get back to you soon.",
-    "error": "Failed to send. Please try again later."
-  },
-  "contact": {
-    "email": {
-      "title": "Email Contact",
-      "description": "You can also send us an email directly:",
-      "address": "support@smail.pw"
-    },
-    "response": {
-      "title": "Response Time",
-      "general": "General Issues:",
-      "generalTime": "Within 24 hours",
-      "urgent": "Urgent Issues:",
-      "urgentTime": "Within 12 hours",
-      "business": "Business Cooperation:",
-      "businessTime": "Within 48 hours"
-    },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "description": "Before contacting us, you can check our FAQ page first, you might find the answer you're looking for.",
-      "button": "View FAQ"
-    }
-  },
-  "help": {
-    "title": "Other Ways to Get Help",
-    "subtitle": "We provide multiple ways to support you",
-    "docs": {
-      "title": "Online Documentation",
-      "description": "View detailed usage instructions and help documentation",
-      "button": "View Documentation"
-    },
-    "email": {
-      "title": "Email Support",
-      "description": "Send an email to our support team",
-      "button": "Send Email"
-    },
-    "response": {
-      "title": "Quick Response",
-      "description": "We promise to reply to your questions within 24 hours",
-      "button": "Learn More"
-    }
-  }
+	"meta": {
+		"title": "Contact TempMail Team - Technical Support, Feedback, Business Cooperation",
+		"description": "Contact the TempMail team for technical support, feedback, or cooperation inquiries. We provide multiple contact methods and respond quickly to user needs. For temporary email issues, feature suggestions, or business cooperation, feel free to contact us anytime."
+	},
+	"hero": {
+		"title": "Contact Us",
+		"subtitle": "Have questions or suggestions? We'd love to hear from you"
+	},
+	"success": {
+		"title": "Message sent successfully!",
+		"message": "Thank you for your feedback, we will reply to your message as soon as possible."
+	},
+	"form": {
+		"title": "Send Message",
+		"description": "Fill out the form below and we'll get back to you soon",
+		"name": {
+			"label": "Name",
+			"placeholder": "Enter your name"
+		},
+		"email": {
+			"label": "Email",
+			"placeholder": "Enter your email"
+		},
+		"subject": {
+			"label": "Subject",
+			"placeholder": "Select subject",
+			"options": {
+				"default": "Select subject",
+				"bug": "Bug Report",
+				"feature": "Feature Request",
+				"help": "Help & Support",
+				"business": "Business Cooperation",
+				"other": "Other"
+			}
+		},
+		"message": {
+			"label": "Message",
+			"placeholder": "Please describe your question or suggestion in detail..."
+		},
+		"submit": "Send Message",
+		"sending": "Sending...",
+		"success": "Message sent successfully! We'll get back to you soon.",
+		"error": "Failed to send. Please try again later."
+	},
+	"contact": {
+		"email": {
+			"title": "Email Contact",
+			"description": "You can also send us an email directly:",
+			"address": "support@smail.pw"
+		},
+		"response": {
+			"title": "Response Time",
+			"general": "General Issues:",
+			"generalTime": "Within 24 hours",
+			"urgent": "Urgent Issues:",
+			"urgentTime": "Within 12 hours",
+			"business": "Business Cooperation:",
+			"businessTime": "Within 48 hours"
+		},
+		"faq": {
+			"title": "Frequently Asked Questions",
+			"description": "Before contacting us, you can check our FAQ page first, you might find the answer you're looking for.",
+			"button": "View FAQ"
+		}
+	},
+	"help": {
+		"title": "Other Ways to Get Help",
+		"subtitle": "We provide multiple ways to support you",
+		"docs": {
+			"title": "Online Documentation",
+			"description": "View detailed usage instructions and help documentation",
+			"button": "View Documentation"
+		},
+		"email": {
+			"title": "Email Support",
+			"description": "Send an email to our support team",
+			"button": "Send Email"
+		},
+		"response": {
+			"title": "Quick Response",
+			"description": "We promise to reply to your questions within 24 hours",
+			"button": "Learn More"
+		}
+	}
 }

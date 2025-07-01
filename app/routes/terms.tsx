@@ -15,13 +15,16 @@ import type { Route } from "./+types/terms";
 export function meta(_: Route.MetaArgs) {
 	return [
 		{ title: "使用条款 - TempMail" },
-		{ name: "description", content: "查看TempMail临时邮箱的使用条款和服务协议。" },
+		{
+			name: "description",
+			content: "查看TempMail临时邮箱的使用条款和服务协议。",
+		},
 	];
 }
 
 export default function Terms() {
-	const { t } = useTranslation('terms');
-	
+	const { t } = useTranslation("terms");
+
 	return (
 		<div className="min-h-dvh bg-gray-50">
 			{/* Header */}
@@ -80,7 +83,9 @@ export default function Terms() {
 					<div className="space-y-6 sm:space-y-8">
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.overview.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.overview.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -91,7 +96,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.acceptance.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.acceptance.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -102,7 +109,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.usage.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.usage.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<ul className="list-disc list-inside space-y-2 text-gray-600 text-sm sm:text-base ml-4">
@@ -117,7 +126,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.limitations.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.limitations.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<ul className="list-disc list-inside space-y-2 text-gray-600 text-sm sm:text-base ml-4">
@@ -132,7 +143,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.privacy.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.privacy.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<ul className="list-disc list-inside space-y-2 text-gray-600 text-sm sm:text-base ml-4">
@@ -147,7 +160,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.disclaimer.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.disclaimer.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<ul className="list-disc list-inside space-y-2 text-gray-600 text-sm sm:text-base ml-4">
@@ -161,7 +176,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.intellectual.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.intellectual.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<ul className="list-disc list-inside space-y-2 text-gray-600 text-sm sm:text-base ml-4">
@@ -178,7 +195,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.changes.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.changes.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<ul className="list-disc list-inside space-y-2 text-gray-600 text-sm sm:text-base ml-4">
@@ -195,7 +214,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.law.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.law.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<ul className="list-disc list-inside space-y-2 text-gray-600 text-sm sm:text-base ml-4">
@@ -208,7 +229,9 @@ export default function Terms() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.contact.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.contact.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<ul className="list-disc list-inside space-y-2 text-gray-600 text-sm sm:text-base ml-4">
@@ -228,19 +251,23 @@ export default function Terms() {
 			<section className="py-8 sm:py-16 bg-white">
 				<div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto px-3 sm:px-4 text-center">
 					<h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
-					{t("cta.title")}
-				</h2>
-				<p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
-					{t("cta.subtitle")}
-				</p>
-				<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-					<Button asChild size="lg" className="text-sm sm:text-base px-4 sm:px-6">
-						<Link to="/">{t("cta.startButton")}</Link>
-					</Button>
-					{/* <Button asChild variant="outline" size="lg" className="text-sm sm:text-base px-4 sm:px-6">
+						{t("cta.title")}
+					</h2>
+					<p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
+						{t("cta.subtitle")}
+					</p>
+					<div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+						<Button
+							asChild
+							size="lg"
+							className="text-sm sm:text-base px-4 sm:px-6"
+						>
+							<Link to="/">{t("cta.startButton")}</Link>
+						</Button>
+						{/* <Button asChild variant="outline" size="lg" className="text-sm sm:text-base px-4 sm:px-6">
 						<Link to="/contact">{t("cta.contactButton")}</Link>
 					</Button> */}
-				</div>
+					</div>
 				</div>
 			</section>
 		</div>

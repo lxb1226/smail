@@ -1,115 +1,115 @@
 {
-  "meta": {
-    "title": "Terms of Service - TempMail Temporary Email User Agreement and Usage Guidelines",
-    "description": "Read the complete terms of service for TempMail temporary email, including usage rules, service scope, user responsibilities, disclaimers, and more. Understand the fair use policy for free temporary email services to ensure safe and compliant use of disposable email."
-  },
-  "hero": {
-    "title": "Terms of Service",
-    "subtitle": "Please read the following terms of service carefully before using TempMail",
-    "lastUpdated": "Last updated: January 15, 2025"
-  },
-  "sections": {
-    "overview": {
-      "title": "Service Overview",
-      "description": "Content and scope of services provided by TempMail",
-      "content": "TempMail (hereinafter referred to as \"we\" or \"this service\") is a free temporary email service platform. By using our service, you can:",
-      "features": [
-        "Obtain temporary email addresses",
-        "Receive emails sent to that address",
-        "View email content and attachments",
-        "Use mailbox functions normally before expiration"
-      ]
-    },
-    "acceptance": {
-      "title": "Acceptance of Terms",
-      "content": "By using TempMail services, you agree to be bound by the following terms of service and usage rules."
-    },
-    "usage": {
-      "title": "Usage Rules",
-      "description": "Rules that must be followed when using the service",
-      "prohibited": [
-        "Illegal activities or unlawful behavior",
-        "Spreading spam or malicious content",
-        "Attempting to damage or interfere with service operation",
-        "Abusing service resources (such as excessive requests)",
-        "Commercial marketing or advertising purposes"
-      ]
-    },
-    "limitations": {
-      "title": "Service Limitations",
-      "items": [
-        "Temporary emails typically expire automatically after 24 hours",
-        "Maximum 100 emails per mailbox",
-        "Supports attachments up to 25MB",
-        "Does not support sending email functionality",
-        "Maximum 10 refreshes per minute",
-        "Emails are automatically deleted after mailbox expiration"
-      ]
-    },
-    "privacy": {
-      "title": "Privacy and Data",
-      "description": "About your data and privacy protection",
-      "items": [
-        "All data is temporary and will be deleted after mailbox expiration",
-        "Do not use for receiving important or sensitive information",
-        "Expired and deleted data cannot be recovered",
-        "We follow privacy policies to protect your data",
-        "For detailed privacy protection measures, please refer to our Privacy Policy"
-      ]
-    },
-    "disclaimer": {
-      "title": "Disclaimer",
-      "description": "Service disclaimer",
-      "items": [
-        "We strive to keep the service running normally, but do not guarantee 100% availability",
-        "We are not responsible for any data loss",
-        "We are not responsible for or endorse received email content",
-        "Service interruptions due to maintenance, upgrades, or other reasons"
-      ]
-    },
-    "intellectual": {
-      "title": "Intellectual Property",
-      "description": "Intellectual property statement about the service",
-      "items": [
-        "Website design and interface",
-        "Software code and technology",
-        "Trademarks and logos",
-        "Documentation and instructions"
-      ],
-      "notice": "Are owned by us or used under authorization. Without explicit permission, they may not be copied, modified, or used for commercial purposes."
-    },
-    "changes": {
-      "title": "Service Changes and Termination",
-      "items": [
-        "Feature updates or adjustments",
-        "Technical upgrades or maintenance",
-        "Policy or terms modifications"
-      ],
-      "notice": "We may terminate or restrict user access to the service for violation of terms, abuse of resources, or technical/business reasons."
-    },
-    "law": {
-      "title": "Applicable Law",
-      "description": "Applicable law and dispute resolution",
-      "items": [
-        "Online dispute resolution platforms",
-        "Arbitration institutions",
-        "Courts with jurisdiction"
-      ]
-    },
-    "contact": {
-      "title": "Contact Us",
-      "description": "How to contact us about terms of service",
-      "items": [
-        "Email: legal@smail.pw",
-        "Contact form: Through our contact page"
-      ],
-      "response": "We will reply to your inquiry as soon as possible."
-    }
-  },
-  "cta": {
-    "title": "Agree to Terms and Start Using",
-    "subtitle": "By using our service, you confirm that you have read and agree to the above terms of service",
-    "startButton": "Agree and Start Using",
-    "contactButton": "Have Questions? Contact Us"
-  }
+	"meta": {
+		"title": "Terms of Service - TempMail Temporary Email User Agreement and Usage Guidelines",
+		"description": "Read the complete terms of service for TempMail temporary email, including usage rules, service scope, user responsibilities, disclaimers, and more. Understand the fair use policy for free temporary email services to ensure safe and compliant use of disposable email."
+	},
+	"hero": {
+		"title": "Terms of Service",
+		"subtitle": "Please read the following terms of service carefully before using TempMail",
+		"lastUpdated": "Last updated: January 15, 2025"
+	},
+	"sections": {
+		"overview": {
+			"title": "Service Overview",
+			"description": "Content and scope of services provided by TempMail",
+			"content": "TempMail (hereinafter referred to as \"we\" or \"this service\") is a free temporary email service platform. By using our service, you can:",
+			"features": [
+				"Obtain temporary email addresses",
+				"Receive emails sent to that address",
+				"View email content and attachments",
+				"Use mailbox functions normally before expiration"
+			]
+		},
+		"acceptance": {
+			"title": "Acceptance of Terms",
+			"content": "By using TempMail services, you agree to be bound by the following terms of service and usage rules."
+		},
+		"usage": {
+			"title": "Usage Rules",
+			"description": "Rules that must be followed when using the service",
+			"prohibited": [
+				"Illegal activities or unlawful behavior",
+				"Spreading spam or malicious content",
+				"Attempting to damage or interfere with service operation",
+				"Abusing service resources (such as excessive requests)",
+				"Commercial marketing or advertising purposes"
+			]
+		},
+		"limitations": {
+			"title": "Service Limitations",
+			"items": [
+				"Temporary emails typically expire automatically after 24 hours",
+				"Maximum 100 emails per mailbox",
+				"Supports attachments up to 25MB",
+				"Does not support sending email functionality",
+				"Maximum 10 refreshes per minute",
+				"Emails are automatically deleted after mailbox expiration"
+			]
+		},
+		"privacy": {
+			"title": "Privacy and Data",
+			"description": "About your data and privacy protection",
+			"items": [
+				"All data is temporary and will be deleted after mailbox expiration",
+				"Do not use for receiving important or sensitive information",
+				"Expired and deleted data cannot be recovered",
+				"We follow privacy policies to protect your data",
+				"For detailed privacy protection measures, please refer to our Privacy Policy"
+			]
+		},
+		"disclaimer": {
+			"title": "Disclaimer",
+			"description": "Service disclaimer",
+			"items": [
+				"We strive to keep the service running normally, but do not guarantee 100% availability",
+				"We are not responsible for any data loss",
+				"We are not responsible for or endorse received email content",
+				"Service interruptions due to maintenance, upgrades, or other reasons"
+			]
+		},
+		"intellectual": {
+			"title": "Intellectual Property",
+			"description": "Intellectual property statement about the service",
+			"items": [
+				"Website design and interface",
+				"Software code and technology",
+				"Trademarks and logos",
+				"Documentation and instructions"
+			],
+			"notice": "Are owned by us or used under authorization. Without explicit permission, they may not be copied, modified, or used for commercial purposes."
+		},
+		"changes": {
+			"title": "Service Changes and Termination",
+			"items": [
+				"Feature updates or adjustments",
+				"Technical upgrades or maintenance",
+				"Policy or terms modifications"
+			],
+			"notice": "We may terminate or restrict user access to the service for violation of terms, abuse of resources, or technical/business reasons."
+		},
+		"law": {
+			"title": "Applicable Law",
+			"description": "Applicable law and dispute resolution",
+			"items": [
+				"Online dispute resolution platforms",
+				"Arbitration institutions",
+				"Courts with jurisdiction"
+			]
+		},
+		"contact": {
+			"title": "Contact Us",
+			"description": "How to contact us about terms of service",
+			"items": [
+				"Email: legal@smail.pw",
+				"Contact form: Through our contact page"
+			],
+			"response": "We will reply to your inquiry as soon as possible."
+		}
+	},
+	"cta": {
+		"title": "Agree to Terms and Start Using",
+		"subtitle": "By using our service, you confirm that you have read and agree to the above terms of service",
+		"startButton": "Agree and Start Using",
+		"contactButton": "Have Questions? Contact Us"
+	}
 }

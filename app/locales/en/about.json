@@ -1,53 +1,53 @@
 {
-  "meta": {
-    "title": "About TempMail Team - Dedicated to Building the Most Secure Temporary Email Platform",
-    "description": "Learn about the TempMail team and our mission: providing free, secure, ad-free temporary email services for global users. Focused on privacy protection, helping users stay away from spam, building the most reliable disposable email platform."
-  },
-  "hero": {
-    "title": "About",
-    "subtitle": "TempMail is a free, secure, and easy-to-use temporary email service that helps you protect your privacy and avoid spam",
-    "description": "TempMail is a free, secure, and easy-to-use temporary email service that helps you protect your privacy and avoid spam"
-  },
-  "features": {
-    "title": "Why Choose TempMail?",
-    "instant": {
-      "title": "Instant Creation",
-      "description": "No registration required, generate temporary email addresses with one click, start using immediately"
-    },
-    "privacy": {
-      "title": "Privacy Protection",
-      "description": "Protect your real email address, avoid spam and privacy leaks"
-    },
-    "global": {
-      "title": "Global Access",
-      "description": "Support global user access, no geographical restrictions, use anytime, anywhere"
-    },
-    "free": {
-      "title": "Completely Free",
-      "description": "Free to use forever, no hidden fees, no ads"
-    }
-  },
-  "mission": {
-    "title": "Our Mission",
-    "description": "In the digital age, privacy protection is becoming increasingly important. We are committed to providing users with simple and secure temporary email services, allowing everyone to easily protect their privacy.",
-    "steps": {
-      "simple": {
-        "title": "Simple and Easy",
-        "description": "No complex registration process, get a temporary mailbox with one click"
-      },
-      "secure": {
-        "title": "Safe and Reliable",
-        "description": "Using the latest security technology to protect your email content"
-      },
-      "improve": {
-        "title": "Continuous Improvement",
-        "description": "We continuously optimize our services to provide users with a better experience"
-      }
-    }
-  },
-  "cta": {
-    "title": "Ready to Get Started?",
-    "subtitle": "Get your temporary mailbox now and start protecting your privacy",
-    "button": "Get Started"
-  }
+	"meta": {
+		"title": "About TempMail Team - Dedicated to Building the Most Secure Temporary Email Platform",
+		"description": "Learn about the TempMail team and our mission: providing free, secure, ad-free temporary email services for global users. Focused on privacy protection, helping users stay away from spam, building the most reliable disposable email platform."
+	},
+	"hero": {
+		"title": "About",
+		"subtitle": "TempMail is a free, secure, and easy-to-use temporary email service that helps you protect your privacy and avoid spam",
+		"description": "TempMail is a free, secure, and easy-to-use temporary email service that helps you protect your privacy and avoid spam"
+	},
+	"features": {
+		"title": "Why Choose TempMail?",
+		"instant": {
+			"title": "Instant Creation",
+			"description": "No registration required, generate temporary email addresses with one click, start using immediately"
+		},
+		"privacy": {
+			"title": "Privacy Protection",
+			"description": "Protect your real email address, avoid spam and privacy leaks"
+		},
+		"global": {
+			"title": "Global Access",
+			"description": "Support global user access, no geographical restrictions, use anytime, anywhere"
+		},
+		"free": {
+			"title": "Completely Free",
+			"description": "Free to use forever, no hidden fees, no ads"
+		}
+	},
+	"mission": {
+		"title": "Our Mission",
+		"description": "In the digital age, privacy protection is becoming increasingly important. We are committed to providing users with simple and secure temporary email services, allowing everyone to easily protect their privacy.",
+		"steps": {
+			"simple": {
+				"title": "Simple and Easy",
+				"description": "No complex registration process, get a temporary mailbox with one click"
+			},
+			"secure": {
+				"title": "Safe and Reliable",
+				"description": "Using the latest security technology to protect your email content"
+			},
+			"improve": {
+				"title": "Continuous Improvement",
+				"description": "We continuously optimize our services to provide users with a better experience"
+			}
+		}
+	},
+	"cta": {
+		"title": "Ready to Get Started?",
+		"subtitle": "Get your temporary mailbox now and start protecting your privacy",
+		"button": "Get Started"
+	}
 }

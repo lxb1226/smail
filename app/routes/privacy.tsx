@@ -13,29 +13,33 @@ import {
 import type { Route } from "./+types/privacy";
 
 export function meta({ params }: Route.MetaArgs) {
-	const lang = (params as any).lang || 'zh';
-	
+	const lang = (params as any).lang || "zh";
+
 	const titles = {
 		zh: "隐私政策 - TempMail",
 		en: "Privacy Policy - TempMail",
-		ja: "プライバシーポリシー - TempMail"
+		ja: "プライバシーポリシー - TempMail",
 	};
-	
+
 	const descriptions = {
 		zh: "了解 TempMail 如何保护您的隐私和数据安全。",
 		en: "Learn how TempMail protects your privacy and data security.",
-		ja: "TempMail がお客様のプライバシーとデータセキュリティをどのように保護するかをご覧ください。"
+		ja: "TempMail がお客様のプライバシーとデータセキュリティをどのように保護するかをご覧ください。",
 	};
-	
+
 	return [
 		{ title: titles[lang as keyof typeof titles] || titles.zh },
-		{ name: "description", content: descriptions[lang as keyof typeof descriptions] || descriptions.zh },
+		{
+			name: "description",
+			content:
+				descriptions[lang as keyof typeof descriptions] || descriptions.zh,
+		},
 	];
 }
 
 export default function Privacy() {
-	const { t } = useTranslation('privacy');
-	
+	const { t } = useTranslation("privacy");
+
 	return (
 		<div className="min-h-dvh bg-gray-50">
 			{/* Header */}
@@ -94,7 +98,9 @@ export default function Privacy() {
 					<div className="space-y-6 sm:space-y-8">
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.collection.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.collection.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -128,7 +134,9 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.usage.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.usage.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -181,7 +189,9 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.protection.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.protection.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -226,7 +236,9 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.retention.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.retention.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -271,7 +283,9 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.sharing.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.sharing.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -316,7 +330,9 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.rights.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.rights.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -369,7 +385,9 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.cookies.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.cookies.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -411,7 +429,9 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.updates.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.updates.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
@@ -448,7 +468,9 @@ export default function Privacy() {
 
 						<Card>
 							<CardHeader>
-								<CardTitle className="text-lg sm:text-xl">{t("sections.contact.title")}</CardTitle>
+								<CardTitle className="text-lg sm:text-xl">
+									{t("sections.contact.title")}
+								</CardTitle>
 							</CardHeader>
 							<CardContent className="space-y-3 sm:space-y-4">
 								<p className="text-gray-600 text-sm sm:text-base leading-relaxed">
