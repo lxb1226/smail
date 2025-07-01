@@ -7,6 +7,7 @@ declare namespace Cloudflare {
 		ATTACHMENTS: R2Bucket;
 		DB: D1Database;
 		EMAIL: SendEmail;
+		EMAIL_DOMAIN?: string;
 	}
 }
 interface Env extends Cloudflare.Env {}

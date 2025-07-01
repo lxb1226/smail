@@ -20,7 +20,7 @@ import type { Route } from "./+types/lang.home";
 // 导入原始首页组件
 import Home from "./home";
 
-function generateEmail() {
+function generateEmail(domain: string = "tmpmail.online") {
 	const names = [
 		"alice",
 		"bob",
@@ -33,10 +33,10 @@ function generateEmail() {
 	];
 	const randomName = () => names[Math.floor(Math.random() * names.length)];
 	const random = customAlphabet("0123456789", 4)();
-	return `${randomName()}-${random}@heyjude.blog`;
+	return `${randomName()}-${random}@${domain}`;
 }
 
-export async function loader({ request, params }: Route.LoaderArgs) {
+export async function loader({ request, params, context }: Route.LoaderArgs) {
 	const { lang } = params;
 
 	// 验证语言参数
@@ -48,7 +48,8 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 	let email = session.get("email");
 
 	if (!email) {
-		email = generateEmail();
+		const emailDomain = env.EMAIL_DOMAIN || "tmpmail.online";
+		email = generateEmail(emailDomain);
 		session.set("email", email);
 		return data(
 			{
@@ -99,7 +100,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 	}
 }
 
-export async function action({ request, params }: Route.ActionArgs) {
+export async function action({ request, params, context }: Route.ActionArgs) {
 	const { lang } = params;
 
 	// 验证语言参数
@@ -115,7 +116,8 @@ export async function action({ request, params }: Route.ActionArgs) {
 	}
 	if (actionType === "delete") {
 		const session = await getSession(request.headers.get("Cookie"));
-		session.set("email", generateEmail());
+		const emailDomain = env.EMAIL_DOMAIN || "tmpmail.online";
+		session.set("email", generateEmail(emailDomain));
 		await commitSession(session);
 		return redirect(`/${lang}`);
 	}
@@ -137,6 +139,6 @@ export default function LangHome(props: Route.ComponentProps) {
 		}
 	}, [lang, i18n]);
 
-	// 渲染原始首页组件，传递完整的props
-	return <Home {...props} />;
+	// 渲染原始首页组件，只传递loaderData
+	return <Home loaderData={props.loaderData} />;
 }

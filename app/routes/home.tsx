@@ -91,10 +91,10 @@ export function meta(_: Route.MetaArgs) {
 	];
 }
 
-function generateEmail() {
+function generateEmail(domain: string = "tmpmail.online") {
 	const name = randomName();
 	const random = customAlphabet("0123456789", 4)();
-	return `${name}-${random}@heyjude.blog`;
+	return `${name}-${random}@${domain}`;
 }
 
 export async function loader({ request, context }: Route.LoaderArgs) {
@@ -102,7 +102,8 @@ export async function loader({ request, context }: Route.LoaderArgs) {
 	let email = session.get("email");
 
 	if (!email) {
-		email = generateEmail();
+		const emailDomain = env.EMAIL_DOMAIN || "tmpmail.online";
+		email = generateEmail(emailDomain);
 		session.set("email", email);
 		return data(
 			{
@@ -162,7 +163,8 @@ export async function action({ request, context }: Route.ActionArgs) {
 	}
 	if (action === "delete") {
 		const session = await getSession(request.headers.get("Cookie"));
-		session.set("email", generateEmail());
+		const emailDomain = env.EMAIL_DOMAIN || "tmpmail.online";
+		session.set("email", generateEmail(emailDomain));
 		await commitSession(session);
 		return redirect("/");
 	}
