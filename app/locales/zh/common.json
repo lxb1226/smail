@@ -1,47 +1,152 @@
 {
 	"brand": {
-		"name": "TempMail",
-		"tagline": "临时邮箱服务"
+		"name": "Smail",
+		"fullName": "Smail临时邮箱",
+		"tagline": "安全可靠的临时邮箱服务",
+		"description": "保护隐私，免费使用"
 	},
 	"navigation": {
 		"home": "首页",
-		"about": "关于",
-		"faq": "FAQ",
-		"contact": "联系",
-		"terms": "使用条款",
-		"privacy": "隐私政策"
+		"about": "关于我们",
+		"faq": "常见问题",
+		"contact": "联系我们",
+		"terms": "服务条款",
+		"privacy": "隐私政策",
+		"help": "使用帮助",
+		"docs": "文档",
+		"status": "服务状态"
 	},
 	"actions": {
 		"generate": "生成邮箱",
+		"regenerate": "重新生成",
 		"refresh": "刷新",
 		"copy": "复制",
+		"copied": "已复制",
 		"delete": "删除",
 		"back": "返回",
 		"download": "下载",
 		"close": "关闭",
+		"open": "打开",
+		"view": "查看",
+		"edit": "编辑",
+		"save": "保存",
+		"cancel": "取消",
+		"confirm": "确认",
+		"submit": "提交",
+		"send": "发送",
+		"retry": "重试",
 		"copyAddress": "复制地址",
-		"copySuccess": "复制成功",
-		"copyError": "复制失败"
+		"copySuccess": "复制成功！",
+		"copyError": "复制失败，请重试",
+		"getStarted": "开始使用",
+		"learnMore": "了解更多",
+		"readMore": "阅读更多",
+		"showMore": "显示更多",
+		"showLess": "显示更少"
 	},
 	"status": {
 		"loading": "加载中...",
+		"generating": "生成中...",
+		"processing": "处理中...",
+		"sending": "发送中...",
+		"downloading": "下载中...",
 		"error": "出错了",
-		"success": "成功",
-		"empty": "暂无数据"
+		"success": "操作成功",
+		"failed": "操作失败",
+		"empty": "暂无数据",
+		"noResults": "没有找到结果",
+		"offline": "网络连接断开",
+		"online": "网络连接正常",
+		"maintenance": "系统维护中",
+		"unavailable": "服务暂不可用"
 	},
 	"time": {
 		"now": "刚刚",
 		"today": "今天",
 		"yesterday": "昨天",
+		"tomorrow": "明天",
+		"secondsAgo": "{{count}}秒前",
 		"minutesAgo": "{{count}}分钟前",
 		"hoursAgo": "{{count}}小时前",
-		"daysAgo": "{{count}}天前"
+		"daysAgo": "{{count}}天前",
+		"weeksAgo": "{{count}}周前",
+		"monthsAgo": "{{count}}个月前",
+		"yearsAgo": "{{count}}年前",
+		"in": "{{time}}后",
+		"at": "于{{time}}",
+		"duration": {
+			"seconds": "{{count}}秒",
+			"minutes": "{{count}}分钟",
+			"hours": "{{count}}小时",
+			"days": "{{count}}天"
+		}
+	},
+	"size": {
+		"bytes": "{{count}} B",
+		"kb": "{{count}} KB",
+		"mb": "{{count}} MB",
+		"gb": "{{count}} GB",
+		"tb": "{{count}} TB"
+	},
+	"validation": {
+		"required": "此字段为必填项",
+		"email": "请输入有效的邮箱地址",
+		"minLength": "至少需要{{count}}个字符",
+		"maxLength": "最多{{count}}个字符",
+		"pattern": "格式不正确",
+		"numeric": "请输入数字",
+		"url": "请输入有效的网址"
+	},
+	"messages": {
+		"welcome": "欢迎使用Smail临时邮箱！",
+		"goodbye": "感谢使用Smail服务！",
+		"error": {
+			"general": "发生了未知错误，请稍后重试",
+			"network": "网络连接错误，请检查网络设置",
+			"timeout": "请求超时，请重试",
+			"notFound": "请求的资源不存在",
+			"forbidden": "没有权限访问此资源",
+			"serverError": "服务器错误，请稍后重试"
+		},
+		"success": {
+			"saved": "保存成功！",
+			"deleted": "删除成功！",
+			"updated": "更新成功！",
+			"sent": "发送成功！",
+			"generated": "生成成功！"
+		}
+	},
+	"accessibility": {
+		"skipToContent": "跳转到主要内容",
+		"openMenu": "打开菜单",
+		"closeMenu": "关闭菜单",
+		"loading": "正在加载内容",
+		"error": "发生错误",
+		"success": "操作成功"
 	},
 	"footer": {
 		"quickLinks": "快速链接",
 		"support": "帮助支持",
 		"help": "使用帮助",
-		"copyright": "© 2024 TempMail. 保留所有权利.",
-		"features": "免费 · 安全 · 隐私保护"
+		"legal": "法律信息",
+		"social": "关注我们",
+		"copyright": "© 2024 Smail. 保留所有权利.",
+		"features": "免费 · 安全 · 隐私保护 · 全球可用",
+		"poweredBy": "技术支持",
+		"version": "版本 {{version}}",
+		"lastUpdated": "最后更新：{{date}}"
+	},
+	"theme": {
+		"light": "浅色模式",
+		"dark": "深色模式",
+		"auto": "跟随系统",
+		"toggle": "切换主题"
+	},
+	"language": {
+		"current": "中文",
+		"switch": "切换语言",
+		"zh": "中文",
+		"en": "English",
+		"ja": "日本語"
 	}
 }

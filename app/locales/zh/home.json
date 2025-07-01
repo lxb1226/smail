@@ -1,53 +1,73 @@
 {
-	"loading": "正在加载邮箱...",
+	"loading": "正在生成邮箱...",
 	"hero": {
 		"title": "免费临时邮箱",
-		"highlight": "TempMail",
-		"description": "保护您的隐私，无需注册，即时创建临时邮箱地址"
+		"highlight": "Smail",
+		"description": "保护您的隐私安全，无需注册，即时生成临时邮箱地址"
 	},
 	"mailbox": {
-		"title": "您的专属邮箱地址",
+		"title": "您的临时邮箱地址",
 		"features": {
 			"validity": "24小时有效",
 			"autoRefresh": "自动刷新",
 			"free": "完全免费"
 		},
-		"emailLabel": "您的专属邮箱地址",
+		"emailLabel": "您的临时邮箱地址",
 		"generating": "生成中...",
 		"generateNew": "生成新邮箱",
 		"tips": {
 			"title": "使用提示",
-			"description": "24小时后自动过期，每10秒自动刷新"
+			"description": "邮箱24小时后自动过期，页面每10秒自动刷新收件箱"
 		}
 	},
 	"inbox": {
 		"title": "收件箱",
 		"unread": "未读",
-		"total": "共 {{count}} 封",
+		"total": "共 {{count}} 封邮件",
 		"refreshing": "刷新中...",
 		"manualRefresh": "手动刷新",
 		"autoRefreshing": "自动刷新中...",
 		"empty": {
 			"title": "收件箱为空",
 			"description": "您还没有收到任何邮件",
-			"testHint": "发送邮件到 {{email}} 来测试"
+			"testHint": "发送邮件到 {{email}} 来测试服务"
 		}
 	},
 	"generateEmail": "生成邮箱",
 	"features": {
-		"title": "为什么选择 TempMail？",
-		"subtitle": "专业的临时邮箱服务，保护您的隐私安全",
+		"title": "为什么选择 Smail？",
+		"subtitle": "专业的临时邮箱服务，全方位保护您的隐私安全",
 		"privacy": {
 			"title": "隐私保护",
-			"description": "保护您的真实邮箱地址，避免垃圾邮件和隐私泄露"
+			"description": "有效保护您的真实邮箱地址，防止垃圾邮件和个人信息泄露"
 		},
 		"instant": {
-			"title": "即时创建",
-			"description": "无需注册，一键生成临时邮箱地址，立即开始使用"
+			"title": "即时生成",
+			"description": "无需注册账号，一键即可生成临时邮箱地址，立即投入使用"
 		},
 		"free": {
-			"title": "完全免费",
-			"description": "永久免费使用，无隐藏费用，无广告干扰"
+			"title": "永久免费",
+			"description": "完全免费使用，无隐藏费用，无广告干扰，纯净的使用体验"
+		},
+		"secure": {
+			"title": "安全可靠",
+			"description": "采用SSL加密传输，24小时后自动删除数据，确保信息安全"
+		}
+	},
+	"howItWorks": {
+		"title": "如何使用",
+		"subtitle": "三步即可开始使用临时邮箱服务",
+		"step1": {
+			"title": "生成邮箱",
+			"description": "访问网站即可自动生成临时邮箱地址"
+		},
+		"step2": {
+			"title": "使用邮箱",
+			"description": "复制邮箱地址到需要的地方进行注册或验证"
+		},
+		"step3": {
+			"title": "查收邮件",
+			"description": "返回页面查看收到的邮件，支持查看附件"
 		}
 	}
 }

@@ -1,47 +1,67 @@
 {
 	"meta": {
-		"title": "关于TempMail团队 - 致力于打造最安全的临时邮箱平台",
-		"description": "了解TempMail团队和我们的使命：为全球用户提供免费、安全、无广告的临时邮箱服务。专注隐私保护，助力用户远离垃圾邮件困扰，打造最可靠的一次性邮箱平台。"
+		"title": "关于Smail - 专业的临时邮箱服务平台",
+		"description": "了解Smail临时邮箱服务的使命与愿景：为全球用户提供免费、安全、便捷的一次性邮箱服务。保护隐私，远离垃圾邮件，让您的真实邮箱更安全。"
 	},
 	"hero": {
-		"title": "关于",
-		"subtitle": "TempMail 是一个免费、安全、易用的临时邮箱服务，帮助您保护隐私，避免垃圾邮件"
+		"title": "关于 Smail",
+		"subtitle": "专业的临时邮箱服务，保护您的隐私安全，让网络生活更安心"
 	},
 	"features": {
-		"title": "为什么选择 TempMail？",
+		"title": "为什么选择 Smail？",
 		"instant": {
-			"title": "即时创建",
-			"description": "无需注册，一键生成临时邮箱地址，立即开始使用"
+			"title": "即时生成",
+			"description": "无需注册账号，一键即可生成临时邮箱地址，立即投入使用"
 		},
 		"privacy": {
-			"title": "隐私保护",
-			"description": "保护您的真实邮箱地址，避免垃圾邮件和隐私泄露"
+			"title": "隐私优先",
+			"description": "保护您的真实邮箱地址，有效防止垃圾邮件和个人信息泄露"
 		},
 		"global": {
-			"title": "全球访问",
-			"description": "支持全球用户访问，无地域限制，随时随地使用"
+			"title": "全球可用",
+			"description": "支持全球用户访问，无地域限制，24小时随时可用"
 		},
 		"free": {
-			"title": "完全免费",
-			"description": "永久免费使用，无隐藏费用，无广告干扰"
+			"title": "永久免费",
+			"description": "完全免费使用，无隐藏费用，无广告干扰，纯净的使用体验"
 		}
 	},
 	"mission": {
 		"title": "我们的使命",
-		"description": "在数字化时代，隐私保护变得越来越重要。我们致力于为用户提供简单、安全的临时邮箱服务，让每个人都能轻松保护自己的隐私。",
+		"description": "在数字化时代，个人隐私保护变得尤为重要。Smail致力于为用户提供简单、安全、可靠的临时邮箱服务，让每个人都能轻松保护自己的网络隐私，享受更安全的数字生活。",
 		"steps": {
 			"simple": {
 				"title": "简单易用",
-				"description": "无需复杂的注册流程，一键即可获得临时邮箱"
+				"description": "极简的操作流程，无需复杂设置，一键获得临时邮箱"
 			},
 			"secure": {
 				"title": "安全可靠",
-				"description": "采用最新的安全技术，保护您的邮件内容安全"
+				"description": "采用先进的安全技术，确保邮件内容和用户数据的安全性"
 			},
 			"improve": {
-				"title": "持续改进",
-				"description": "我们不断优化服务，为用户提供更好的体验"
+				"title": "持续优化",
+				"description": "不断改进服务质量，为用户提供更好的使用体验"
 			}
+		}
+	},
+	"useCases": {
+		"title": "适用场景",
+		"subtitle": "Smail临时邮箱在多种场景下都能为您提供帮助",
+		"registration": {
+			"title": "网站注册",
+			"description": "注册各类网站和应用时，避免真实邮箱被滥用"
+		},
+		"download": {
+			"title": "资源下载",
+			"description": "下载软件、文档等资源时，保护个人邮箱不被骚扰"
+		},
+		"testing": {
+			"title": "功能测试",
+			"description": "开发者测试邮件功能时的理想选择"
+		},
+		"verification": {
+			"title": "邮箱验证",
+			"description": "需要邮箱验证但不想暴露真实邮箱的场景"
 		}
 	},
 	"cta": {
