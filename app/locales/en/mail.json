@@ -13,5 +13,18 @@
   "downloadAttachment": "Download Attachment",
   "processing": "Processing",
   "failed": "Failed",
-  "content": "Email Content"
+  "content": "Email Content",
+  "meta": {
+    "title": "Email Details - Smail Temporary Email",
+    "description": "View the details of emails received in your Smail temporary mailbox.",
+    "emailTitle": "{{subject}} - Email from {{domain}} | Smail Temporary Email",
+    "emailDescription": "View email \"{{subject}}\" from {{fromAddress}}. Received at: {{date}}.",
+    "emailContentTitle": "Email Content"
+  },
+  "errors": {
+    "idRequired": "Email ID is required",
+    "notFound": "Email not found",
+    "serverError": "Server error",
+    "unknownSize": "Unknown size"
+  }
 }

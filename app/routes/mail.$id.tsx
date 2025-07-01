@@ -31,7 +31,7 @@ function generateEmailHTML(email: {
 	htmlContent?: string | null;
 	textContent?: string | null;
 	receivedAt: Date;
-}) {
+}, title: string = "邮件内容") {
 	const content =
 		email.htmlContent || email.textContent?.replace(/\n/g, "<br>") || "";
 
@@ -41,7 +41,7 @@ function generateEmailHTML(email: {
 		<head>
 			<meta charset="UTF-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
-			<title>邮件内容</title>
+			<title>${title}</title>
 			<style>
 				body {
 					font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -147,8 +147,8 @@ function getFileIcon(filename?: string | null, contentType?: string | null) {
 }
 
 // 格式化文件大小
-function formatFileSize(bytes?: number | null) {
-	if (!bytes) return "Unknown size";
+function formatFileSize(bytes?: number | null, t: any) {
+	if (!bytes) return t('mail.errors.unknownSize');
 	const sizes = ["Bytes", "KB", "MB", "GB"];
 	if (bytes === 0) return "0 Bytes";
 	const i = Math.floor(Math.log(bytes) / Math.log(1024));
@@ -156,6 +156,8 @@ function formatFileSize(bytes?: number | null) {
 }
 
 export function meta({ data }: Route.MetaArgs) {
+	// Note: meta函数无法直接使用useTranslation，需要在应用层面处理i18n
+	// 这里暂时保留硬编码，或者考虑从data中传递翻译后的文本
 	if (!data?.email) {
 		return [
 			{ title: "邮件详情 - Smail临时邮箱" },
@@ -215,6 +217,8 @@ export function meta({ data }: Route.MetaArgs) {
 export async function loader({ params, context }: Route.LoaderArgs) {
 	const { id } = params;
 
+	// Note: loader函数无法直接使用useTranslation，错误消息暂时保留硬编码
+	// 或者考虑从context中获取语言设置来选择错误消息
 	if (!id) {
 		throw new Response("邮件 ID 是必需的", { status: 400 });
 	}
@@ -257,7 +261,7 @@ export async function loader({ params, context }: Route.LoaderArgs) {
 }
 
 export default function MailDetail({ loaderData }: Route.ComponentProps) {
-	const { t, i18n } = useTranslation();
+	const { t, i18n } = useTranslation('mail');
 	const navigation = useNavigation();
 	const { email, attachments, emailHTML } = loaderData;
 
@@ -304,12 +308,12 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 						>
 							<Link to="/">
 							<ArrowLeft className="w-3 sm:w-4 h-3 sm:h-4" />
-							<span className="hidden sm:inline ml-1">{t('mail.backToInbox')}</span>
-							<span className="sm:hidden">{t('mail.back')}</span>
+							<span className="hidden sm:inline ml-1">{t('backToInbox')}</span>
+						<span className="sm:hidden">{t('back')}</span>
 						</Link>
 						</Button>
 						<Separator orientation="vertical" className="h-4 sm:h-6" />
-						<span className="text-xs sm:text-sm text-gray-600">{t('mail.detail')}</span>
+						<span className="text-xs sm:text-sm text-gray-600">{t('detail')}</span>
 					</div>
 
 					<div className="flex items-center gap-2">
@@ -325,30 +329,30 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 				<div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3">
 					<div className="flex-1 min-w-0">
 						<h1 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 break-words">
-						{email.subject || t('mail.noSubject')}
-					</h1>
+					{email.subject || t('noSubject')}
+				</h1>
 					<div className="space-y-1 sm:space-y-0 sm:flex sm:flex-wrap sm:gap-4 text-xs sm:text-sm text-gray-600">
 						<div className="truncate">
-							<strong>{t('mail.from')}:</strong> {email.fromAddress}
+							<strong>{t('from')}:</strong> {email.fromAddress}
 						</div>
 						<div className="truncate">
-							<strong>{t('mail.to')}:</strong> {email.toAddress}
+							<strong>{t('to')}:</strong> {email.toAddress}
 						</div>
 						<div>
-							<strong>{t('mail.time')}:</strong> {formattedDate}
+							<strong>{t('time')}:</strong> {formattedDate}
 						</div>
 					</div>
 					</div>
 
 					<div className="flex items-center gap-2 flex-shrink-0">
 						<Badge
-						variant={email.isRead ? "secondary" : "default"}
-						className="text-xs"
-					>
-						{email.isRead ? t('mail.read') : t('mail.unread')}
-					</Badge>
+					variant={email.isRead ? "secondary" : "default"}
+					className="text-xs"
+				>
+					{email.isRead ? t('read') : t('unread')}
+				</Badge>
 						<span className="text-xs text-gray-500">
-							{formatFileSize(email.size)}
+							{formatFileSize(email.size, t)}
 						</span>
 					</div>
 				</div>
@@ -359,8 +363,8 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 						<div className="flex items-center gap-2 mb-2">
 							<Paperclip className="w-3 sm:w-4 h-3 sm:h-4" />
 							<span className="text-xs sm:text-sm font-medium">
-								{t('mail.attachments', { count: attachments.length })}
-							</span>
+							{t('attachments', { count: attachments.length })}
+						</span>
 						</div>
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
 							{attachments.map((attachment) => (
@@ -370,28 +374,28 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 								>
 									{getFileIcon(attachment.filename, attachment.contentType)}
 									<div className="flex-1 min-w-0">
-											<div className="truncate font-medium">
-												{attachment.filename || t('mail.unnamedAttachment')}
+												<div className="truncate font-medium">
+													{attachment.filename || t('unnamedAttachment')}
+												</div>
+												<div className="text-gray-500 text-xs">
+													{formatFileSize(attachment.size, t)}
+												</div>
 											</div>
-											<div className="text-gray-500 text-xs">
-												{formatFileSize(attachment.size)}
-											</div>
-										</div>
 									{attachment.uploadStatus === "uploaded" ? (
 										<a
 											href={`/attachment/${attachment.id}`}
 											className="inline-flex items-center justify-center h-6 w-6 p-0 rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground flex-shrink-0"
-													title={t('mail.downloadAttachment')}
+													title={t('downloadAttachment')}
 										>
 											<Download className="w-3 h-3" />
 										</a>
 									) : (
-												<span className="text-xs text-gray-400 flex-shrink-0">
-													{attachment.uploadStatus === "pending"
-														? t('mail.processing')
-														: t('mail.failed')}
-												</span>
-											)}
+													<span className="text-xs text-gray-400 flex-shrink-0">
+														{attachment.uploadStatus === "pending"
+															? t('processing')
+															: t('failed')}
+													</span>
+												)}
 								</div>
 							))}
 						</div>
@@ -406,7 +410,7 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 					srcDoc={emailHTML}
 					className="w-full h-full border-0"
 					sandbox="allow-same-origin"
-					title={t('mail.content')}
+					title={t('content')}
 				/>
 			</div>
 		</div>
