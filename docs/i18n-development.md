@@ -1,10 +1,10 @@
-# TempMail 国际化(i18n)开发方案
+# TmpMail 国际化(i18n)开发方案
 
-本文档详细描述了为TempMail临时邮箱服务实施国际化的技术方案。
+本文档详细描述了为TmpMail临时邮箱服务实施国际化的技术方案。
 
 ## 🌍 概述
 
-TempMail是一个基于React Router v7和Cloudflare Workers构建的现代化临时邮箱服务。为了服务全球用户，我们需要实施完整的国际化解决方案。
+TmpMail是一个基于React Router v7和Cloudflare Workers构建的现代化临时邮箱服务。为了服务全球用户，我们需要实施完整的国际化解决方案。
 
 ## 📋 目标语言
 
@@ -313,7 +313,7 @@ export function Navigation({
 ```json
 {
   "brand": {
-    "name": "TempMail",
+    "name": "TmpMail",
     "tagline": "临时邮箱服务"
   },
   "navigation": {
@@ -349,7 +349,7 @@ export function Navigation({
 ```json
 {
   "brand": {
-    "name": "TempMail",
+    "name": "TmpMail",
     "tagline": "Temporary Email Service"
   },
   "navigation": {
@@ -727,4 +727,4 @@ test('should translate correctly', () => {
 
 ---
 
-本方案提供了完整的国际化解决方案，确保TempMail能够为全球用户提供优质的多语言服务体验。
+本方案提供了完整的国际化解决方案，确保TmpMail能够为全球用户提供优质的多语言服务体验。

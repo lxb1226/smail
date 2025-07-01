@@ -19,19 +19,19 @@ export function meta() {
 	return [
 		{
 			title:
-				"TempMail - 免费临时邮箱服务 | 一次性邮件地址生成器，无需注册即时使用，24小时有效保护隐私",
+				"TmpMail - 免费临时邮箱服务 | 一次性邮件地址生成器，无需注册即时使用，24小时有效保护隐私",
 		},
 		{
 			name: "description",
 			content:
-				"TempMail提供免费、安全、无广告的临时邮箱服务。无需注册，即时获取临时邮箱地址，保护您的隐私，避免垃圾邮件。24小时有效期，支持附件，完全免费。",
+				"TmpMail提供免费、安全、无广告的临时邮箱服务。无需注册，即时获取临时邮箱地址，保护您的隐私，避免垃圾邮件。24小时有效期，支持附件，完全免费。",
 		},
 		{
 			name: "keywords",
 			content:
 				"临时邮箱,一次性邮箱,临时邮件,disposable email,temp mail,临时email,免费邮箱,隐私保护,垃圾邮件防护",
 		},
-		{ name: "author", content: "TempMail Team" },
+		{ name: "author", content: "TmpMail Team" },
 		{ name: "robots", content: "index, follow" },
 		{ name: "googlebot", content: "index, follow" },
 
@@ -39,20 +39,20 @@ export function meta() {
 		{ property: "og:type", content: "website" },
 		{
 			property: "og:title",
-			content: "TempMail - 免费临时邮箱服务 | 一次性邮件地址生成器",
+			content: "TmpMail - 免费临时邮箱服务 | 一次性邮件地址生成器",
 		},
 		{
 			property: "og:description",
 			content: "保护隐私的免费临时邮箱服务，无需注册，即时使用，24小时有效。",
 		},
-		{ property: "og:site_name", content: "TempMail" },
+		{ property: "og:site_name", content: "TmpMail" },
 		{ property: "og:locale", content: "zh_CN" },
 
 		// Twitter Card
 		{ name: "twitter:card", content: "summary_large_image" },
 		{
 			name: "twitter:title",
-			content: "TempMail - 免费临时邮箱服务 | 一次性邮件地址生成器",
+			content: "TmpMail - 免费临时邮箱服务 | 一次性邮件地址生成器",
 		},
 		{
 			name: "twitter:description",
@@ -64,7 +64,7 @@ export function meta() {
 		{ name: "mobile-web-app-capable", content: "yes" },
 		{ name: "apple-mobile-web-app-capable", content: "yes" },
 		{ name: "apple-mobile-web-app-status-bar-style", content: "default" },
-		{ name: "apple-mobile-web-app-title", content: "TempMail" },
+		{ name: "apple-mobile-web-app-title", content: "TmpMail" },
 	];
 }
 
@@ -131,7 +131,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 		const baseData = {
 			"@context": "https://schema.org",
 			"@type": "WebApplication",
-			name: "TempMail",
+			name: "TmpMail",
 			url: "https://smail.pw",
 			applicationCategory: "UtilityApplication",
 			operatingSystem: "Any",
@@ -142,7 +142,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			},
 			author: {
 				"@type": "Organization",
-				name: "TempMail Team",
+				name: "TmpMail Team",
 			},
 			applicationSubCategory: "Email Service",
 		};

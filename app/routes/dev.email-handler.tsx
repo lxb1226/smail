@@ -116,7 +116,7 @@ export async function action({ request, context }: ActionFunctionArgs) {
 
 export function meta() {
 	return [
-		{ title: "开发环境邮件处理器 - TempMail" },
+		{ title: "开发环境邮件处理器 - TmpMail" },
 		{
 			name: "description",
 			content:

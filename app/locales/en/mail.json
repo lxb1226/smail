@@ -15,9 +15,9 @@
 	"failed": "Failed",
 	"content": "Email Content",
 	"meta": {
-		"title": "Email Details - TempMail Temporary Email",
-		"description": "View the details of emails received in your TempMail temporary mailbox.",
-		"emailTitle": "{{subject}} - Email from {{domain}} | TempMail Temporary Email",
+		"title": "Email Details - TmpMail Temporary Email",
+		"description": "View the details of emails received in your TmpMail temporary mailbox.",
+		"emailTitle": "{{subject}} - Email from {{domain}} | TmpMail Temporary Email",
 		"emailDescription": "View email \"{{subject}}\" from {{fromAddress}}. Received at: {{date}}.",
 		"emailContentTitle": "Email Content"
 	},

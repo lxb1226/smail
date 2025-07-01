@@ -63,7 +63,7 @@ export function Navigation({
 						</div>
 						<div>
 							<h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-								TempMail
+								TmpMail
 							</h1>
 							<p className="text-sm text-gray-600">
 								{t("home:features.subtitle")}

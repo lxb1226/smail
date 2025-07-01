@@ -15,9 +15,9 @@
 	"failed": "失败",
 	"content": "邮件内容",
 	"meta": {
-		"title": "邮件详情 - TempMail临时邮箱",
-		"description": "查看您在TempMail临时邮箱中收到的邮件详情。",
-		"emailTitle": "{{subject}} - 来自{{domain}}的邮件 | TempMail临时邮箱",
+		"title": "邮件详情 - TmpMail临时邮箱",
+		"description": "查看您在TmpMail临时邮箱中收到的邮件详情。",
+		"emailTitle": "{{subject}} - 来自{{domain}}的邮件 | TmpMail临时邮箱",
 		"emailDescription": "查看来自{{fromAddress}}的邮件\"{{subject}}\"。接收时间：{{date}}。",
 		"emailContentTitle": "邮件内容"
 	},

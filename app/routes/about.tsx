@@ -16,11 +16,11 @@ export function meta(_: Route.MetaArgs) {
 	// Note: Meta functions cannot use useTranslation hook directly
 	// TODO: Consider implementing meta i18n solution later
 	return [
-		{ title: "关于TempMail团队 - 致力于打造最安全的临时邮箱平台" },
+		{ title: "关于TmpMail团队 - 致力于打造最安全的临时邮箱平台" },
 		{
 			name: "description",
 			content:
-				"了解TempMail团队和我们的使命：为全球用户提供免费、安全、无广告的临时邮箱服务。专注隐私保护，助力用户远离垃圾邮件困扰，打造最可靠的一次性邮箱平台。",
+				"了解TmpMail团队和我们的使命：为全球用户提供免费、安全、无广告的临时邮箱服务。专注隐私保护，助力用户远离垃圾邮件困扰，打造最可靠的一次性邮箱平台。",
 		},
 	];
 }
@@ -59,7 +59,7 @@ export default function About() {
 					<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-800 mb-4 sm:mb-6">
 						{t("hero.title")}{" "}
 						<span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-							TempMail
+							TmpMail
 						</span>
 					</h1>
 					<p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8">

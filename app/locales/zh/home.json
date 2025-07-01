@@ -2,7 +2,7 @@
 	"loading": "正在生成邮箱...",
 	"hero": {
 		"title": "免费临时邮箱",
-		"highlight": "Smail",
+		"highlight": "TmpMail",
 		"description": "保护您的隐私安全，无需注册，即时生成临时邮箱地址"
 	},
 	"mailbox": {
@@ -35,7 +35,7 @@
 	},
 	"generateEmail": "生成邮箱",
 	"features": {
-		"title": "为什么选择 Smail？",
+		"title": "为什么选择 TmpMail？",
 		"subtitle": "专业的临时邮箱服务，全方位保护您的隐私安全",
 		"privacy": {
 			"title": "隐私保护",

@@ -1,7 +1,7 @@
 {
 	"hero": {
 		"title": "Frequently Asked Questions",
-		"subtitle": "Common questions and answers about Smail temporary email service"
+		"subtitle": "Common questions and answers about TmpMail temporary email service"
 	},
 	"items": [
 		{
@@ -9,8 +9,8 @@
 			"answer": "A temporary email is a disposable email address used to receive emails without exposing your real email address. It's commonly used for website registration, downloading resources, or other scenarios requiring email verification."
 		},
 		{
-			"question": "Is Smail free to use?",
-			"answer": "Yes, Smail is completely free. We don't charge any fees and there are no hidden costs."
+			"question": "Is TmpMail free to use?",
+			"answer": "Yes, TmpMail is completely free. We don't charge any fees and there are no hidden costs."
 		},
 		{
 			"question": "How long can I use the email address?",
@@ -18,7 +18,7 @@
 		},
 		{
 			"question": "Can I send emails?",
-			"answer": "Currently, Smail only supports receiving emails, not sending them. This is to prevent spam and abuse."
+			"answer": "Currently, TmpMail only supports receiving emails, not sending them. This is to prevent spam and abuse."
 		},
 		{
 			"question": "Is it safe to use temporary email?",
@@ -56,7 +56,7 @@
 		"steps": [
 			{
 				"title": "Visit Homepage",
-				"description": "Open Smail website and get your temporary email address instantly"
+				"description": "Open TmpMail website and get your temporary email address instantly"
 			},
 			{
 				"title": "Use Email Address",

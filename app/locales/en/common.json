@@ -1,6 +1,6 @@
 {
 	"brand": {
-		"name": "TempMail",
+		"name": "TmpMail",
 		"tagline": "Temporary Email Service"
 	},
 	"navigation": {
@@ -40,7 +40,7 @@
 		"quickLinks": "Quick Links",
 		"support": "Help & Support",
 		"help": "Help",
-		"copyright": "© 2024 TempMail. All rights reserved.",
+		"copyright": "© 2024 TmpMail. All rights reserved.",
 		"features": "Free · Secure · Privacy Protected"
 	}
 }

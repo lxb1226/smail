@@ -15,19 +15,19 @@ export function meta({ params }: Route.MetaArgs) {
 	// 根据语言返回对应的meta信息
 	const metaData = {
 		zh: {
-			title: "关于我们 - TempMail临时邮箱服务介绍",
+			title: "关于我们 - TmpMail临时邮箱服务介绍",
 			description:
-				"了解TempMail临时邮箱服务：免费、安全、便捷的一次性邮箱解决方案。保护您的隐私，避免垃圾邮件，适用于注册验证、测试等场景。",
+				"了解TmpMail临时邮箱服务：免费、安全、便捷的一次性邮箱解决方案。保护您的隐私，避免垃圾邮件，适用于注册验证、测试等场景。",
 		},
 		en: {
-			title: "About Us - TempMail Temporary Email Service Introduction",
+			title: "About Us - TmpMail Temporary Email Service Introduction",
 			description:
-				"Learn about TempMail temporary email service: Free, secure, and convenient disposable email solution. Protect your privacy, avoid spam, perfect for registration verification and testing.",
+				"Learn about TmpMail temporary email service: Free, secure, and convenient disposable email solution. Protect your privacy, avoid spam, perfect for registration verification and testing.",
 		},
 		ja: {
-			title: "私たちについて - TempMail一時メールサービス紹介",
+			title: "私たちについて - TmpMail一時メールサービス紹介",
 			description:
-				"TempMail一時メールサービスについて：無料、安全、便利な使い捨てメールソリューション。プライバシーを保護し、スパムを回避し、登録確認やテストに最適です。",
+				"TmpMail一時メールサービスについて：無料、安全、便利な使い捨てメールソリューション。プライバシーを保護し、スパムを回避し、登録確認やテストに最適です。",
 		},
 	};
 

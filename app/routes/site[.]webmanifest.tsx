@@ -2,8 +2,8 @@ import type { LoaderFunctionArgs } from "react-router";
 
 export function loader(_: LoaderFunctionArgs) {
 	const manifest = {
-		name: "TempMail - 临时邮箱服务",
-		short_name: "TempMail",
+		name: "TmpMail - 临时邮箱服务",
+		short_name: "TmpMail",
 		description: "免费、安全、无广告的临时邮箱服务",
 		start_url: "/",
 		display: "standalone",

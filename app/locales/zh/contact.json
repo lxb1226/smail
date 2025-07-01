@@ -1,7 +1,7 @@
 {
 	"meta": {
-		"title": "联系我们 - Smail临时邮箱客服支持和意见反馈",
-		"description": "联系Smail临时邮箱团队，获取技术支持、提交意见反馈或商务合作。我们提供多种联系方式，承诺24小时内回复，为您提供优质的客户服务体验。"
+		"title": "联系我们 - TmpMail临时邮箱客服支持和意见反馈",
+		"description": "联系TmpMail临时邮箱团队，获取技术支持、提交意见反馈或商务合作。我们提供多种联系方式，承诺24小时内回复，为您提供优质的客户服务体验。"
 	},
 	"hero": {
 		"title": "联系我们",
@@ -160,9 +160,9 @@
 	},
 	"office": {
 		"title": "团队信息",
-		"subtitle": "了解Smail团队",
+		"subtitle": "了解TmpMail团队",
 		"info": {
-			"company": "Smail团队",
+			"company": "TmpMail团队",
 			"description": "我们是一个专注于隐私保护和用户体验的技术团队，致力于为全球用户提供安全、可靠的临时邮箱服务。",
 			"founded": "成立时间：2024年",
 			"mission": "使命：保护用户隐私，提供便捷的临时邮箱服务",
@@ -225,7 +225,7 @@
 	},
 	"cta": {
 		"title": "准备好开始了吗？",
-		"subtitle": "立即体验Smail临时邮箱服务",
+		"subtitle": "立即体验TmpMail临时邮箱服务",
 		"startButton": "开始使用",
 		"learnButton": "了解更多"
 	}

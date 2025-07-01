@@ -1,6 +1,6 @@
 {
 	"site": {
-		"title": "TempMail - Temporary Email Service",
+		"title": "TmpMail - Temporary Email Service",
 		"description": "Free temporary email service to protect your privacy and avoid spam. No registration required, generate temporary email addresses instantly.",
 		"keywords": "temporary email,disposable email,spam protection,privacy protection,free email"
 	},
@@ -23,8 +23,8 @@
 		"copied": "Copied to clipboard"
 	},
 	"about": {
-		"title": "About TempMail",
-		"description": "TempMail is a free temporary email service that helps you protect your privacy and avoid spam.",
+		"title": "About TmpMail",
+		"description": "TmpMail is a free temporary email service that helps you protect your privacy and avoid spam.",
 		"features": {
 			"title": "Features",
 			"privacy": "Privacy Protection",
@@ -65,7 +65,7 @@
 		"github": "GitHub"
 	},
 	"footer": {
-		"copyright": "© 2024 TempMail. All rights reserved.",
+		"copyright": "© 2024 TmpMail. All rights reserved.",
 		"madeWith": "Made with ❤️"
 	},
 	"common": {

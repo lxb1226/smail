@@ -1,7 +1,7 @@
 {
 	"brand": {
-		"name": "Smail",
-		"fullName": "Smail临时邮箱",
+		"name": "TmpMail",
+		"fullName": "TmpMail临时邮箱",
 		"tagline": "安全可靠的临时邮箱服务",
 		"description": "保护隐私，免费使用"
 	},
@@ -98,8 +98,8 @@
 		"url": "请输入有效的网址"
 	},
 	"messages": {
-		"welcome": "欢迎使用Smail临时邮箱！",
-		"goodbye": "感谢使用Smail服务！",
+		"welcome": "欢迎使用TmpMail临时邮箱！",
+		"goodbye": "感谢使用TmpMail服务！",
 		"error": {
 			"general": "发生了未知错误，请稍后重试",
 			"network": "网络连接错误，请检查网络设置",
@@ -130,7 +130,7 @@
 		"help": "使用帮助",
 		"legal": "法律信息",
 		"social": "关注我们",
-		"copyright": "© 2024 Smail. 保留所有权利.",
+		"copyright": "© 2024 TmpMail. 保留所有权利.",
 		"features": "免费 · 安全 · 隐私保护 · 全球可用",
 		"poweredBy": "技术支持",
 		"version": "版本 {{version}}",

@@ -1,6 +1,6 @@
 {
 	"brand": {
-		"name": "TempMail",
+		"name": "TmpMail",
 		"tagline": "一時的なメールサービス"
 	},
 	"navigation": {
@@ -40,7 +40,7 @@
 		"quickLinks": "クイックリンク",
 		"support": "ヘルプ・サポート",
 		"help": "ヘルプ",
-		"copyright": "© 2024 TempMail. 全著作権所有.",
+		"copyright": "© 2024 TmpMail. 全著作権所有.",
 		"features": "無料 · 安全 · プライバシー保護"
 	}
 }

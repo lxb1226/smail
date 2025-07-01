@@ -2,7 +2,7 @@
 	"loading": "Loading mailbox...",
 	"hero": {
 		"title": "Free Temporary Email",
-		"highlight": "TempMail",
+		"highlight": "TmpMail",
 		"description": "Protect your privacy, no registration required, create temporary email addresses instantly"
 	},
 	"mailbox": {
@@ -35,7 +35,7 @@
 	},
 	"generateEmail": "Generate Email",
 	"features": {
-		"title": "Why Choose TempMail?",
+		"title": "Why Choose TmpMail?",
 		"subtitle": "Professional temporary email service to protect your privacy",
 		"privacy": {
 			"title": "Privacy Protection",
