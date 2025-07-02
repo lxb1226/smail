@@ -217,12 +217,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					}}
 				/>
 
-				{/* 统计脚本 */}
-				<script
-					defer
-					src="https://u.pexni.com/script.js"
-					data-website-id="09979220-99e5-4973-b1b2-5e46163fe2d2"
-				/>
+
+		{/* Google Analytics */}
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-08XPR2XL39"
+		/>
+		<script
+			dangerouslySetInnerHTML={{
+				__html: `
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', 'G-08XPR2XL39');
+				`,
+			}}
+		/>
 			</head>
 			<body>
 				{children}
