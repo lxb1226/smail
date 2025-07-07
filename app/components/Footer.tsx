@@ -1,15 +1,16 @@
 import { Github, Mail, MessageSquare, Shield, Twitter } from "lucide-react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
+import friendlyLinksData from "../data/friendly-links.json";
 
 export function Footer() {
 	const { t } = useTranslation(["common", "home"]);
 	return (
 		<footer className="bg-gray-900 text-white">
 			<div className="container mx-auto px-4 py-12">
-				<div className="grid md:grid-cols-4 gap-8">
-					{/* 品牌信息 */}
-					<div className="col-span-1 md:col-span-2">
+				<div className="grid md:grid-cols-5 gap-8">
+				{/* 品牌信息 */}
+				<div className="col-span-1 md:col-span-2">
 						<div className="flex items-center space-x-3 mb-4">
 							<div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg p-2">
 								<Mail className="h-6 w-6 text-white" />
@@ -99,11 +100,33 @@ export function Footer() {
 						</ul>
 					</div>
 
-					{/* 联系我们 */}
-					<div>
-						<h4 className="text-lg font-semibold mb-4">
-							{t("footer.support")}
-						</h4>
+					{/* 友情链接 */}
+				<div>
+					<h4 className="text-lg font-semibold mb-4">
+						{t("footer.friendlyLinks")}
+					</h4>
+					<ul className="space-y-2">
+						{friendlyLinksData.links.map((link) => (
+							<li key={link.id}>
+								<a
+									href={link.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-gray-300 hover:text-blue-400 transition-colors"
+									title={link.description}
+								>
+									{link.name}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+
+				{/* 联系我们 */}
+				<div>
+					<h4 className="text-lg font-semibold mb-4">
+						{t("footer.support")}
+					</h4>
 						<ul className="space-y-2">
 							{/* <li>
 								<Link

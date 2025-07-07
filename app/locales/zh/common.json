@@ -126,7 +126,8 @@
 	},
 	"footer": {
 		"quickLinks": "快速链接",
-		"support": "帮助支持",
+		"support": "帮助与支持",
+		"friendlyLinks": "友情链接",
 		"help": "使用帮助",
 		"legal": "法律信息",
 		"social": "关注我们",

@@ -3,4 +3,7 @@
 
 # Session 密钥 - 用于用户会话加密
 # 使用以下命令生成：openssl rand -base64 32
-SESSION_SECRET=your_session_secret_here_use_openssl_rand_base64_32_to_generate 
+NEXT_PUBLIC_SESSION_SECRET=your_session_secret_here_use_openssl_rand_base64_32_to_generate
+
+# 邮箱域名配置
+NEXT_PUBLIC_EMAIL_DOMAIN=tmpemail.online
