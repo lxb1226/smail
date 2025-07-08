@@ -49,54 +49,112 @@ function generateEmailHTML(
 				body {
 					font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 					line-height: 1.6;
-					margin: 20px;
-					color: #333;
-					background: white;
+					color: #1f2937;
+					margin: 0;
+					padding: 0;
+					min-height: 100vh;
+					background: linear-gradient(to bottom right, #dbeafe, #cffafe, #dbeafe);
+				}
+				.container {
+					max-width: 800px;
+					margin: 0 auto;
+					padding: 2rem 1rem;
 				}
 				.email-content {
-					max-width: 100%;
+					background: white;
+					padding: 2rem;
+					border-radius: 0.625rem;
+					box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+					border: 0;
 					word-wrap: break-word;
+				}
+				h1, h2, h3, h4, h5, h6 {
+					color: #1f2937;
+					margin-top: 1.5rem;
+					margin-bottom: 1rem;
+					font-weight: 600;
+				}
+				p {
+					margin-bottom: 1rem;
+					color: #374151;
 				}
 				img {
 					max-width: 100%;
 					height: auto;
+					border-radius: 0.5rem;
+					margin: 1rem 0;
 				}
 				a {
 					color: #2563eb;
+					text-decoration: none;
+					font-weight: 500;
+				}
+				a:hover {
+					color: #1d4ed8;
 					text-decoration: underline;
 				}
 				blockquote {
-					border-left: 4px solid #e5e7eb;
-					margin: 1em 0;
-					padding: 0 1em;
-					color: #6b7280;
+					border-left: 4px solid #2563eb;
+					padding: 1rem 1.5rem;
+					margin: 1.5rem 0;
+					color: #4b5563;
+					background: #f8fafc;
+					border-radius: 0.5rem;
+					font-style: italic;
 				}
-				pre {
-					background: #f3f4f6;
-					padding: 1em;
-					border-radius: 6px;
+				pre, code {
+					background: #f1f5f9;
+					padding: 1rem;
+					border-radius: 0.5rem;
 					overflow-x: auto;
+					font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+					color: #334155;
+					border: 1px solid #e2e8f0;
 					white-space: pre-wrap;
 				}
+				code {
+					padding: 0.25rem 0.5rem;
+					display: inline;
+					font-size: 0.875rem;
+				}
 				table {
-					border-collapse: collapse;
 					width: 100%;
-					margin: 1em 0;
+					border-collapse: collapse;
+					margin: 1rem 0;
+					border-radius: 0.5rem;
+					overflow: hidden;
+					box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 				}
 				th, td {
-					border: 1px solid #e5e7eb;
-					padding: 8px 12px;
+					padding: 0.75rem;
 					text-align: left;
+					border-bottom: 1px solid #e5e7eb;
 				}
 				th {
 					background: #f9fafb;
 					font-weight: 600;
+					color: #374151;
+				}
+				ul, ol {
+					padding-left: 1.5rem;
+					margin: 1rem 0;
+				}
+				li {
+					margin-bottom: 0.5rem;
+					color: #374151;
+				}
+				hr {
+					border: none;
+					border-top: 1px solid #e5e7eb;
+					margin: 2rem 0;
 				}
 			</style>
 		</head>
 		<body>
-			<div class="email-content">
-				${content}
+			<div class="container">
+				<div class="email-content">
+					${content}
+				</div>
 			</div>
 			<script>
 				// 自动调整 iframe 高度
@@ -150,7 +208,7 @@ function getFileIcon(filename?: string | null, contentType?: string | null) {
 }
 
 // 格式化文件大小
-function formatFileSize(bytes?: number | null, t: any) {
+function formatFileSize(t: any, bytes?: number | null) {
 	if (!bytes) return t("mail.errors.unknownSize");
 	const sizes = ["Bytes", "KB", "MB", "GB"];
 	if (bytes === 0) return "0 Bytes";
@@ -303,7 +361,7 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 	}, [handleIframeMessage]);
 
 	return (
-		<div className="h-screen bg-gray-50 flex flex-col">
+		<div className="h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50 flex flex-col">
 			{/* Header */}
 			<header className="bg-white border-b px-3 sm:px-4 py-3 shrink-0">
 				<div className="w-full flex items-center justify-between">
@@ -364,7 +422,7 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 							{email.isRead ? t("read") : t("unread")}
 						</Badge>
 						<span className="text-xs text-gray-500">
-							{formatFileSize(email.size, t)}
+							{formatFileSize(t, email.size)}
 						</span>
 					</div>
 				</div>
@@ -381,16 +439,16 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 						<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
 							{attachments.map((attachment) => (
 								<div
-									key={attachment.id}
-									className="flex items-center gap-2 px-2 py-1.5 bg-gray-50 border rounded text-xs"
-								>
+								key={attachment.id}
+								className="flex items-center gap-2 px-3 py-2 bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-shadow text-xs"
+							>
 									{getFileIcon(attachment.filename, attachment.contentType)}
 									<div className="flex-1 min-w-0">
 										<div className="truncate font-medium">
 											{attachment.filename || t("unnamedAttachment")}
 										</div>
 										<div className="text-gray-500 text-xs">
-											{formatFileSize(attachment.size, t)}
+											{formatFileSize(t, attachment.size)}
 										</div>
 									</div>
 									{attachment.uploadStatus === "uploaded" ? (
@@ -416,14 +474,16 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 			</div>
 
 			{/* Email Content - Full Height */}
-			<div className="flex-1 min-h-0 bg-white">
-				<iframe
-					id="email-content-iframe"
-					srcDoc={emailHTML}
-					className="w-full h-full border-0"
-					sandbox="allow-same-origin"
-					title={t("content")}
-				/>
+			<div className="flex-1 min-h-0 p-4">
+				<div className="h-full bg-white rounded-lg shadow-lg border-0 overflow-hidden">
+					<iframe
+						id="email-content-iframe"
+						srcDoc={emailHTML}
+						className="w-full h-full border-0"
+						sandbox="allow-same-origin"
+						title={t("content")}
+					/>
+				</div>
 			</div>
 		</div>
 	);

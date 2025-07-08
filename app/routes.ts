@@ -29,6 +29,7 @@ export default [
 	// 系统路由（无语言前缀）
 	route("/attachment/:id", "routes/attachment.$id.tsx"),
 	route("/dev/email-handler", "routes/dev.email-handler.tsx"),
+	route("/debug/email-preview", "routes/debug.email-preview.tsx"),
 	route("/locales/:lang/:ns", "routes/locales.$lang.$ns.tsx"),
 	route("/sitemap.xml", "routes/sitemap[.]xml.tsx"),
 	route("/robots.txt", "routes/robots[.]txt.tsx"),
