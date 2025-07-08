@@ -29,6 +29,12 @@
       "name": "iui.su",
       "url": "https://iui.su",
       "description": "iui.su"
+    },
+    {
+      "id": "dang",
+      "name": "Dang.ai",
+      "url": "https://dang.ai/",
+      "description": "Dang.ai"
     }
   ]
 }
