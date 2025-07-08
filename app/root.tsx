@@ -105,8 +105,8 @@ export const links: Route.LinksFunction = () => [
 	{ rel: "manifest", href: "/site.webmanifest" },
 
 	// SEO 相关
-	{ rel: "canonical", href: "https://smail.pw" },
-	{ rel: "alternate", hrefLang: "zh-CN", href: "https://smail.pw" },
+	{ rel: "canonical", href: "https://www.tmpmail.online" },
+	{ rel: "alternate", hrefLang: "zh-CN", href: "https://www.tmpmail.online/" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -132,7 +132,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			"@context": "https://schema.org",
 			"@type": "WebApplication",
 			name: "TmpMail",
-			url: "https://smail.pw",
+			url: "https://www.tmpmail.online/",
 			applicationCategory: "UtilityApplication",
 			operatingSystem: "Any",
 			offers: {

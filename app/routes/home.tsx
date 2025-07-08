@@ -61,7 +61,7 @@ export function meta(_: Route.MetaArgs) {
 				"保护隐私的免费临时邮箱，无需注册，即时使用，24小时有效，支持附件下载。",
 		},
 		{ property: "og:type", content: "website" },
-		{ property: "og:url", content: "https://smail.pw" },
+		{ property: "og:url", content: "https://www.tmpmail.online/" },
 		{ property: "og:site_name", content: "TmpMail" },
 		{ property: "og:locale", content: "zh_CN" },
 

@@ -10,7 +10,7 @@
 	},
 	"success": {
 		"title": "消息发送成功！",
-		"message": "感谢您的联系，我们已收到您的消息，将在24小时内回复您。如有紧急问题，请直接发送邮件至 support@smail.pw。",
+		"message": "感谢您的联系，我们已收到您的消息，将在24小时内回复您。如有紧急问题，请直接发送邮件至 heyjude1817@gmail.com。",
 		"backButton": "返回首页"
 	},
 	"form": {
@@ -70,7 +70,7 @@
 				"type": "email",
 				"title": "邮件支持",
 				"description": "发送邮件获取技术支持和问题解答",
-				"value": "support@smail.pw",
+				"value": "heyjude1817@gmail.com",
 				"responseTime": "24小时内回复",
 				"icon": "mail",
 				"action": "发送邮件"
@@ -79,7 +79,7 @@
 				"type": "business",
 				"title": "商务合作",
 				"description": "商务合作、广告投放、API接入等商业事务",
-				"value": "business@smail.pw",
+				"value": "heyjude1817@gmail.com",
 				"responseTime": "48小时内回复",
 				"icon": "briefcase",
 				"action": "发送邮件"
@@ -88,7 +88,7 @@
 				"type": "privacy",
 				"title": "隐私问题",
 				"description": "数据保护、隐私政策、GDPR相关问题",
-				"value": "privacy@smail.pw",
+				"value": "heyjude1817@gmail.com",
 				"responseTime": "48小时内回复",
 				"icon": "shield",
 				"action": "发送邮件"
@@ -97,7 +97,7 @@
 				"type": "legal",
 				"title": "法律事务",
 				"description": "服务条款、知识产权、法律合规等问题",
-				"value": "legal@smail.pw",
+				"value": "heyjude1817@gmail.com",
 				"responseTime": "72小时内回复",
 				"icon": "scale",
 				"action": "发送邮件"
@@ -118,11 +118,11 @@
 			},
 			{
 				"question": "如何报告安全问题？",
-				"answer": "如果您发现安全漏洞或隐私问题，请直接发送邮件至 security@smail.pw。我们会优先处理安全相关问题，通常在6小时内回复。"
+				"answer": "如果您发现安全漏洞或隐私问题，请直接发送邮件至 heyjude1817@gmail.com。我们会优先处理安全相关问题，通常在6小时内回复。"
 			},
 			{
 				"question": "可以申请API接入吗？",
-				"answer": "目前我们暂不提供公开API服务。如有商业合作需求，请联系 business@smail.pw 详细说明您的需求和使用场景。"
+				"answer": "目前我们暂不提供公开API服务。如有商业合作需求，请联系 heyjude1817@gmail.com 详细说明您的需求和使用场景。"
 			},
 			{
 				"question": "如何提交功能建议？",

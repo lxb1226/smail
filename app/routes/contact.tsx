@@ -226,7 +226,7 @@ export default function Contact({ loaderData }: ComponentProps) {
 											{t("contact.email.description")}
 										</p>
 										<a
-											href="mailto:support@smail.pw"
+											href="mailto:heyjude1817@gmail.com"
 											className="text-blue-600 font-medium hover:underline text-sm sm:text-base break-all"
 										>
 											{t("contact.email.address")}
