@@ -361,10 +361,12 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 	}, [handleIframeMessage]);
 
 	return (
-		<div className="h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50 flex flex-col">
-			{/* Header */}
-			<header className="bg-white border-b px-3 sm:px-4 py-3 shrink-0">
-				<div className="w-full flex items-center justify-between">
+		<div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-blue-50">
+			<div className="container mx-auto px-4 py-8 max-w-6xl">
+				<div className="h-[calc(100vh-8rem)] bg-white rounded-lg shadow-lg border-0 overflow-hidden flex flex-col">
+					{/* Header */}
+					<header className="bg-white border-b px-3 sm:px-4 py-3 shrink-0">
+						<div className="w-full flex items-center justify-between">
 					<div className="flex items-center gap-2 sm:gap-3">
 						<Button
 							asChild
@@ -473,16 +475,18 @@ export default function MailDetail({ loaderData }: Route.ComponentProps) {
 				)}
 			</div>
 
-			{/* Email Content - Full Height */}
-			<div className="flex-1 min-h-0 p-4">
-				<div className="h-full bg-white rounded-lg shadow-lg border-0 overflow-hidden">
-					<iframe
-						id="email-content-iframe"
-						srcDoc={emailHTML}
-						className="w-full h-full border-0"
-						sandbox="allow-same-origin"
-						title={t("content")}
-					/>
+					{/* Email Content - Full Height */}
+					<div className="flex-1 min-h-0 p-4">
+						<div className="h-full bg-white rounded-lg shadow-lg border-0 overflow-hidden">
+							<iframe
+								id="email-content-iframe"
+								srcDoc={emailHTML}
+								className="w-full h-full border-0"
+								sandbox="allow-same-origin"
+								title={t("content")}
+							/>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
