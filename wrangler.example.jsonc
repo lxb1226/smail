@@ -35,5 +35,9 @@
 	],
 	"assets": {
 		"directory": "./build/client"
+	},
+	"vars": {
+		"VITE_UMAMI_WEBSITE_ID": "your_umami_website_id_here",
+		"VITE_UMAMI_SCRIPT_URL": "https://analytics.umami.is/script.js"
 	}
 }

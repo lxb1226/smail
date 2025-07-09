@@ -7,8 +7,8 @@ import {
 	isRouteErrorResponse,
 	useLocation,
 } from "react-router";
-import { useTranslation } from "react-i18next";
 
+import { env } from "cloudflare:workers";
 import type { Route } from "./+types/root";
 import "./app.css";
 import { getCurrentLanguage, languageConfig } from "./lib/i18n";
@@ -233,6 +233,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				`,
 			}}
 		/>
+
+		{/* Umami Analytics - 只在生产环境加载 */}
+		{import.meta.env.PROD && import.meta.env.VITE_UMAMI_WEBSITE_ID && (
+			<script
+				async
+				src={import.meta.env.VITE_UMAMI_SCRIPT_URL || "https://analytics.umami.is/script.js"}
+				data-website-id={import.meta.env.VITE_UMAMI_WEBSITE_ID}
+			/>
+		)}
 			</head>
 			<body>
 				{children}
