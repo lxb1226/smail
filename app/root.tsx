@@ -235,13 +235,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 		/>
 
 		{/* Umami Analytics - 只在生产环境加载 */}
-		{import.meta.env.PROD && import.meta.env.VITE_UMAMI_WEBSITE_ID && (
 			<script
 				async
-				src={import.meta.env.VITE_UMAMI_SCRIPT_URL || "https://analytics.umami.is/script.js"}
-				data-website-id={import.meta.env.VITE_UMAMI_WEBSITE_ID}
+				src="https://umami-steel-one.vercel.app/script.js"
+				data-website-id="6b575a07-6f26-421f-abd4-6ab22cf2627f"
 			/>
-		)}
+
 			</head>
 			<body>
 				{children}
