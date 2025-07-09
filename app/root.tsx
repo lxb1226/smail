@@ -7,8 +7,8 @@ import {
 	isRouteErrorResponse,
 	useLocation,
 } from "react-router";
+import { useTranslation } from "react-i18next";
 
-import { env } from "cloudflare:workers";
 import type { Route } from "./+types/root";
 import "./app.css";
 import { getCurrentLanguage, languageConfig } from "./lib/i18n";
