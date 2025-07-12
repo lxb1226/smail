@@ -68,8 +68,6 @@ const detectionOptions = {
 	// Cookie配置
 	caches: ["cookie"],
 	cookieMinutes: 60 * 24 * 30, // 30天
-	cookieDomain:
-		typeof window !== "undefined" ? window.location.hostname : undefined,
 
 	// 检查白名单
 	checkWhitelist: true,
@@ -135,25 +133,25 @@ const i18nConfig = {
 	// 内置资源
 	resources,
 
-	// 语言检测配置 - 仅在客户端启用
-	detection: typeof window !== "undefined" ? detectionOptions : undefined,
-
 	// React配置
 	react: {
 		useSuspense: false, // 禁用Suspense，避免SSR问题
 	},
-
-	// 在服务器端始终使用默认语言
-	lng: typeof window === "undefined" ? defaultLanguage : undefined,
 };
 
-// 初始化i18n
+// 初始化i18n - 使用统一的配置来避免SSR/CSR不匹配
 if (typeof window !== "undefined") {
 	// 客户端：使用语言检测器
-	i18n.use(LanguageDetector).use(initReactI18next).init(i18nConfig);
+	i18n.use(LanguageDetector).use(initReactI18next).init({
+		...i18nConfig,
+		detection: detectionOptions,
+	});
 } else {
-	// 服务器端：不使用语言检测器
-	i18n.use(initReactI18next).init(i18nConfig);
+	// 服务器端：使用默认语言，不使用语言检测器
+	i18n.use(initReactI18next).init({
+		...i18nConfig,
+		lng: defaultLanguage,
+	});
 }
 
 export default i18n;

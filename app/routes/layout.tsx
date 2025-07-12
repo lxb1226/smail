@@ -1,6 +1,6 @@
 import { Outlet, useLocation, useParams, useNavigate } from "react-router";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Navigation } from "~/components/Navigation";
 import { Footer } from "~/components/Footer";
 import {
@@ -14,23 +14,17 @@ export default function Layout() {
 	const { i18n } = useTranslation();
 	const location = useLocation();
 	const navigate = useNavigate();
-	const [isHydrated, setIsHydrated] = useState(false);
 
 	// 获取当前语言，如果URL中没有语言参数，使用默认语言
 	const currentLang =
 		(lang as SupportedLanguage) || getCurrentLanguage(location.pathname);
 
-	// 水合化完成后设置标志
+	// 语言切换逻辑 - 直接同步，避免水合化不匹配
 	useEffect(() => {
-		setIsHydrated(true);
-	}, []);
-
-	// 语言切换逻辑 - 只在水合化完成后执行
-	useEffect(() => {
-		if (isHydrated && i18n.language !== currentLang) {
+		if (i18n.language !== currentLang) {
 			i18n.changeLanguage(currentLang);
 		}
-	}, [currentLang, i18n, isHydrated]);
+	}, [currentLang, i18n]);
 
 	// 语言切换函数
 	const switchLanguage = (newLang: SupportedLanguage) => {

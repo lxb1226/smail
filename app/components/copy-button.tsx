@@ -27,19 +27,39 @@ export function CopyButton({ text, ...props }: CopyButtonProps) {
 		<Button
 			variant="outline"
 			onClick={() => {
-				navigator.clipboard
-					.writeText(text)
-					.then(() => {
+				// 确保在浏览器环境中才使用 clipboard API
+				if (typeof window !== "undefined" && navigator.clipboard) {
+					navigator.clipboard
+						.writeText(text)
+						.then(() => {
+							setIcon("success");
+						})
+						.catch(() => {
+							setIcon("error");
+						})
+						.finally(() => {
+							setTimeout(() => {
+								setIcon("idle");
+							}, 2000);
+						});
+				} else {
+					// 备用方案：使用传统的选择和复制方法
+					try {
+						const textArea = document.createElement("textarea");
+						textArea.value = text;
+						document.body.appendChild(textArea);
+						textArea.select();
+						document.execCommand("copy");
+						document.body.removeChild(textArea);
 						setIcon("success");
-					})
-					.catch(() => {
+					} catch {
 						setIcon("error");
-					})
-					.finally(() => {
+					} finally {
 						setTimeout(() => {
 							setIcon("idle");
 						}, 2000);
-					});
+					}
+				}
 			}}
 			{...props}
 		>
