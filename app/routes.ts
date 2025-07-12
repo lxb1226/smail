@@ -16,6 +16,10 @@ export default [
 		route("/contact", "routes/contact.tsx"),
 		route("/mail/:id", "routes/mail.$id.tsx"),
 
+		// Blog 路由
+		route("/blog", "routes/blog._index.tsx"),
+		route("/blog/:slug", "routes/blog.$slug.tsx"),
+
 		// 多语言路由（使用可选语言参数）
 		route("/:lang", "routes/lang.home.tsx"),
 		route("/:lang/about", "routes/lang.about.tsx"),
@@ -24,6 +28,8 @@ export default [
 		route("/:lang/faq", "routes/lang.faq.tsx"),
 		route("/:lang/contact", "routes/lang.contact.tsx"),
 		route("/:lang/mail/:id", "routes/lang.mail.$id.tsx"),
+		route("/:lang/blog", "routes/lang.blog._index.tsx"),
+		route("/:lang/blog/:slug", "routes/lang.blog.$slug.tsx"),
 	]),
 
 	// 系统路由（无语言前缀）

@@ -21,7 +21,7 @@ export function Navigation({
 	currentLang,
 	onLanguageChange,
 }: NavigationProps) {
-	const { t } = useTranslation(["common", "home", "about", "faq", "contact"]);
+	const { t } = useTranslation(["common", "home", "about", "faq", "contact", "blog"]);
 	const location = useLocation();
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -46,6 +46,11 @@ export function Navigation({
 			href: generateLocalizedPath("/contact", currentLang),
 			label: t("navigation.contact"),
 			description: t("contact:subtitle"),
+		},
+		{
+			href: generateLocalizedPath("/blog", currentLang),
+			label: t("navigation.blog"),
+			description: t("blog:description"),
 		},
 		{
 			href: generateLocalizedPath("/privacy", currentLang),

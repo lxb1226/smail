@@ -1,0 +1,31 @@
+{
+  "title": "TmpMail Blog",
+  "highlight": "Knowledge Sharing",
+  "description": "Learn about email security, privacy protection, and temporary email best practices",
+  "featured": {
+    "title": "Featured Articles",
+    "badge": "Featured"
+  },
+  "latest": {
+    "title": "Latest Articles"
+  },
+  "sidebar": {
+    "tags": "Popular Tags",
+    "categories": "Categories",
+    "backHome": "Back to Home"
+  },
+  "backToBlog": "Back to Blog",
+  "share": "Share",
+  "related": {
+    "title": "Related Articles"
+  },
+  "toc": {
+    "title": "Table of Contents"
+  },
+  "articleInfo": {
+    "title": "Article Info",
+    "category": "Category",
+    "publishDate": "Published",
+    "readingTime": "Reading Time"
+  }
+}

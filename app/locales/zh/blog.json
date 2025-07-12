@@ -1,0 +1,31 @@
+{
+  "title": "TmpMail 博客",
+  "highlight": "知识分享",
+  "description": "了解邮箱安全、隐私保护和临时邮箱的最佳实践",
+  "featured": {
+    "title": "推荐文章",
+    "badge": "精选"
+  },
+  "latest": {
+    "title": "最新文章"
+  },
+  "sidebar": {
+    "tags": "热门标签",
+    "categories": "文章分类",
+    "backHome": "返回首页"
+  },
+  "backToBlog": "返回博客",
+  "share": "分享",
+  "related": {
+    "title": "相关文章"
+  },
+  "toc": {
+    "title": "文章目录"
+  },
+  "articleInfo": {
+    "title": "文章信息",
+    "category": "分类",
+    "publishDate": "发布日期", 
+    "readingTime": "阅读时长"
+  }
+}

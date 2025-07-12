@@ -1,0 +1,31 @@
+{
+  "title": "TmpMail ブログ",
+  "highlight": "知識共有",
+  "description": "メールセキュリティ、プライバシー保護、一時的なメールのベストプラクティスについて学ぶ",
+  "featured": {
+    "title": "おすすめ記事",
+    "badge": "注目"
+  },
+  "latest": {
+    "title": "最新記事"
+  },
+  "sidebar": {
+    "tags": "人気タグ",
+    "categories": "カテゴリー",
+    "backHome": "ホームに戻る"
+  },
+  "backToBlog": "ブログに戻る",
+  "share": "共有",
+  "related": {
+    "title": "関連記事"
+  },
+  "toc": {
+    "title": "目次"
+  },
+  "articleInfo": {
+    "title": "記事情報",
+    "category": "カテゴリー",
+    "publishDate": "公開日",
+    "readingTime": "読了時間"
+  }
+}
