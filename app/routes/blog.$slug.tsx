@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import React from "react";
-import { Link, useLocation } from "react-router";
+import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { MDXProvider } from "@mdx-js/react";
 import type { Route } from "./+types/blog.$slug";
@@ -10,7 +9,6 @@ import { getCurrentLanguage } from "~/lib/i18n";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
-import { ScrollArea } from "~/components/ui/scroll-area";
 import { ArrowLeft, Clock, User, Calendar, Share2 } from "lucide-react";
 import { getMDXComponent } from "~/blog/utils/mdx-loader";
 
@@ -137,33 +135,9 @@ export async function loader({ params, request }: Route.LoaderArgs) {
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
   const { t } = useTranslation("blog");
   const { post, relatedPosts, currentLanguage } = loaderData;
-  const location = useLocation();
-  const [headings, setHeadings] = useState<Array<{ id: string; text: string; level: number }>>([]);
-  const [isClient, setIsClient] = useState(false);
 
-  // 确保只在客户端渲染 MDX 内容
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  // 在客户端获取 MDX 组件
-  const MDXContent = isClient ? getMDXComponent(currentLanguage, post.slug) : null;
-
-  // 提取文章目录
-  useEffect(() => {
-    const extractHeadings = () => {
-      const headingElements = document.querySelectorAll('h2, h3, h4');
-      const headingsData = Array.from(headingElements).map((heading) => ({
-        id: heading.id || heading.textContent?.toLowerCase().replace(/\\s+/g, '-') || '',
-        text: heading.textContent || '',
-        level: parseInt(heading.tagName.charAt(1)),
-      }));
-      setHeadings(headingsData);
-    };
-
-    // 延迟执行，确保 MDX 内容已渲染
-    setTimeout(extractHeadings, 100);
-  }, [MDXContent]);
+  // 直接获取 MDX 组件，支持 SSR
+  const MDXContent = getMDXComponent(currentLanguage, post.slug);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -217,98 +191,74 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
             </Link>
           </div>
 
-          <div className="grid lg:grid-cols-4 gap-8">
-            {/* 主内容 */}
-            <div className="lg:col-span-3">
-              <article>
-                {/* 文章头部 */}
-                <header className="mb-8">
-                  <Card className="border-0 shadow-lg bg-white">
-                    <CardHeader className="pb-4">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {post.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary">
-                            {tag}
-                          </Badge>
-                        ))}
+          <div className="max-w-4xl mx-auto">
+            <article>
+              {/* 文章头部 */}
+              <header className="mb-8">
+                <Card className="border-0 shadow-lg bg-white">
+                  <CardHeader className="pb-4">
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.map((tag) => (
+                        <Badge key={tag} variant="secondary">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    
+                    <CardTitle className="text-3xl font-bold text-gray-900 mb-4">
+                      {post.title}
+                    </CardTitle>
+                    
+                    <p className="text-lg text-gray-600 leading-relaxed">
+                      {post.description}
+                    </p>
+                    
+                    <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 pt-4 border-t">
+                      <div className="flex items-center gap-2">
+                        <User className="h-4 w-4" />
+                        <span>{post.author}</span>
                       </div>
-                      
-                      <CardTitle className="text-3xl font-bold text-gray-900 mb-4">
-                        {post.title}
-                      </CardTitle>
-                      
-                      <p className="text-lg text-gray-600 leading-relaxed">
-                        {post.description}
-                      </p>
-                      
-                      <div className="flex flex-wrap items-center gap-6 text-sm text-gray-500 pt-4 border-t">
-                        <div className="flex items-center gap-2">
-                          <User className="h-4 w-4" />
-                          <span>{post.author}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4" />
-                          <span>{formatDate(post.date)}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="h-4 w-4" />
-                          <span>{post.readingTime}</span>
-                        </div>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={handleShare}
-                          className="flex items-center gap-2"
-                        >
-                          <Share2 className="h-4 w-4" />
-                          {t("share")}
-                        </Button>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="h-4 w-4" />
+                        <span>{formatDate(post.date)}</span>
                       </div>
-                    </CardHeader>
+                      <div className="flex items-center gap-2">
+                        <Clock className="h-4 w-4" />
+                        <span>{post.readingTime}</span>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={handleShare}
+                        className="flex items-center gap-2"
+                      >
+                        <Share2 className="h-4 w-4" />
+                        {t("share")}
+                      </Button>
+                    </div>
+                  </CardHeader>
                   </Card>
                 </header>
 
-                {/* 文章内容 */}
-                <Card className="border-0 shadow-lg bg-white">
-                  <CardContent className="pt-8">
-                    <div className="prose prose-lg max-w-none">
-                      {isClient && MDXContent ? (
-                        <MDXProvider components={allMdxComponents}>
-                          {React.createElement(MDXContent)}
-                        </MDXProvider>
-                      ) : (
-                        <>
-                          <h2 className="text-xl font-semibold mb-4">文章内容开发中</h2>
-                          <p className="text-gray-600 mb-4">
-                            这是一个示例文章页面。完整的 MDX 内容将在后续添加。
-                          </p>
-                          <div className="text-left">
-                            <h3>临时邮箱的重要性</h3>
-                            <p>
-                              在数字化时代，保护个人隐私变得越来越重要。临时邮箱是一个很好的工具，
-                              可以帮助您在注册网站、下载文件或参与活动时保护您的真实邮箱地址。
-                            </p>
-                            
-                            <h3>主要优势</h3>
-                            <ul>
-                              <li>保护隐私安全</li>
-                              <li>避免垃圾邮件</li>
-                              <li>无需注册</li>
-                              <li>自动过期</li>
-                            </ul>
-                            
-                            <h3>使用建议</h3>
-                            <p>
-                              虽然临时邮箱很有用，但请避免在重要账户注册时使用，
-                              如银行账户、工作邮箱等。
-                            </p>
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </article>
+              {/* 文章内容 */}
+              <Card className="border-0 shadow-lg bg-white">
+                <CardContent className="pt-8">
+                  <div className="prose prose-lg max-w-none">
+                    {MDXContent ? (
+                      <MDXProvider components={allMdxComponents}>
+                        {React.createElement(MDXContent)}
+                      </MDXProvider>
+                    ) : (
+                      <div className="text-center py-8">
+                        <h2 className="text-xl font-semibold mb-4 text-gray-700">文章未找到</h2>
+                        <p className="text-gray-600">
+                          抱歉，所请求的文章内容暂时无法加载。
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
 
               {/* 相关文章 */}
               {relatedPosts.length > 0 && (
@@ -342,62 +292,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
                   </div>
                 </section>
               )}
-            </div>
-
-            {/* 侧边栏 */}
-            <div className="lg:col-span-1">
-              <div className="sticky top-8 space-y-6">
-                {/* 目录 */}
-                {headings.length > 0 && (
-                  <Card className="border-0 shadow-lg bg-white">
-                    <CardHeader>
-                      <CardTitle className="text-lg">{t("toc.title")}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <ScrollArea className="h-64">
-                        <nav className="space-y-2">
-                          {headings.map((heading) => (
-                            <a
-                              key={heading.id}
-                              href={`#${heading.id}`}
-                              className={`block text-sm hover:text-blue-600 transition-colors ${
-                                heading.level === 2 ? 'font-medium' : 
-                                heading.level === 3 ? 'ml-4 text-gray-600' : 'ml-8 text-gray-500'
-                              }`}
-                            >
-                              {heading.text}
-                            </a>
-                          ))}
-                        </nav>
-                      </ScrollArea>
-                    </CardContent>
-                  </Card>
-                )}
-
-                {/* 文章信息 */}
-                <Card className="border-0 shadow-lg bg-white">
-                  <CardHeader>
-                    <CardTitle className="text-lg">{t("articleInfo.title")}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-3">
-                    <div>
-                      <span className="text-sm text-gray-500">{t("articleInfo.category")}:</span>
-                      <Badge variant="outline" className="ml-2">
-                        {post.category}
-                      </Badge>
-                    </div>
-                    <div>
-                      <span className="text-sm text-gray-500">{t("articleInfo.publishDate")}:</span>
-                      <span className="ml-2 text-sm">{formatDate(post.date)}</span>
-                    </div>
-                    <div>
-                      <span className="text-sm text-gray-500">{t("articleInfo.readingTime")}:</span>
-                      <span className="ml-2 text-sm">{post.readingTime}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </main>
