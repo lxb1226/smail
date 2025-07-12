@@ -102,7 +102,7 @@ export async function loader({ request, context }: Route.LoaderArgs) {
 	let email = session.get("email");
 
 	if (!email) {
-		const emailDomain = process.env.EMAIL_DOMAIN || "tmpmail.online";
+		const emailDomain = "tmpmail.online";
 		email = generateEmail(emailDomain);
 		session.set("email", email);
 		return data(
@@ -163,7 +163,7 @@ export async function action({ request, context }: Route.ActionArgs) {
 	}
 	if (action === "delete") {
 		const session = await getSession(request.headers.get("Cookie"));
-		const emailDomain = process.env.EMAIL_DOMAIN || "tmpmail.online";
+		const emailDomain = "tmpmail.online";
 		session.set("email", generateEmail(emailDomain));
 		await commitSession(session);
 		return redirect("/");

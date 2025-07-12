@@ -1,35 +1,60 @@
 import { useEffect } from "react";
-import { useParams, useNavigate } from "react-router";
+import { data, redirect, useParams } from "react-router";
 import { useTranslation } from "react-i18next";
-import { isSupportedLanguage, getCurrentLanguage } from "~/lib/i18n";
+import { isSupportedLanguage, getCurrentLanguage, defaultLanguage } from "~/lib/i18n";
+import { createDB, getEmailById } from "~/lib/db";
 import type { Route } from "./+types/lang.mail.$id";
 
 // 导入原始邮件详情页面组件
 import MailDetail from "./mail.$id";
 
+export async function loader({ params, context }: Route.LoaderArgs) {
+	const { lang, id } = params;
+
+	// 验证语言参数
+	if (!lang || !isSupportedLanguage(lang)) {
+		return redirect(`/${defaultLanguage}/mail/${id}`);
+	}
+
+	if (!id) {
+		return redirect(`/${lang}`);
+	}
+
+	try {
+		const db = createDB();
+		const email = await getEmailById(db, id);
+
+		if (!email) {
+			return redirect(`/${lang}`);
+		}
+
+		// 将 rawEmail 解析为 HTML
+		const emailHTML = email.htmlContent || email.textContent || "";
+
+		return {
+			email,
+			attachments: [], // 假设没有附件处理逻辑
+			emailHTML,
+		};
+	} catch (error) {
+		console.error("Error loading email:", error);
+		return redirect(`/${lang}`);
+	}
+}
+
 /**
  * 多语言邮件详情页面路由组件
  */
-export default function LangMailDetail() {
-	const { lang, id } = useParams<{ lang: string; id: string }>();
-	const navigate = useNavigate();
+export default function LangMailDetail(props: Route.ComponentProps) {
+	const { lang } = useParams();
 	const { i18n } = useTranslation();
 
 	useEffect(() => {
-		if (!lang || !isSupportedLanguage(lang)) {
-			navigate(`/mail/${id}`, { replace: true });
-			return;
-		}
-
-		if (lang !== getCurrentLanguage()) {
+		if (lang && isSupportedLanguage(lang) && i18n.language !== lang) {
 			i18n.changeLanguage(lang);
 		}
-	}, [lang, id, navigate, i18n]);
+	}, [lang, i18n]);
 
-	if (!lang || !isSupportedLanguage(lang)) {
-		return null;
-	}
-
-	// 使用空的props，实际上应该从loader中获取数据
-	return <MailDetail loaderData={{}} params={{ id: id || "" }} matches={[]} />;
+	// 渲染原始邮件详情组件，传递所有loader数据
+	return <MailDetail loaderData={props.loaderData} />;
 }

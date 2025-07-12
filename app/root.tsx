@@ -208,43 +208,43 @@ export function Layout({ children }: { children: React.ReactNode }) {
 			}
 		};
 
-		// 根据语言设置描述和关键词
-		switch (currentLanguage) {
-			case "en":
-				return {
-					...baseData,
-					description:
-						"Free temporary email service to protect your privacy and avoid spam",
-					keywords:
-						"temporary email,disposable email,spam protection,privacy protection,free email",
-					featureList: [
-						"Free to use",
-						"No registration required",
-						"Privacy protection",
-						"24-hour validity",
-						"Attachment support",
-						"Real-time email reception",
-					],
-				};
-			case "ja":
-				return {
-					...baseData,
-					description:
-						"プライバシーを保護し、スパムを避けるための無料の一時的なメールサービス",
-					keywords:
-						"一時的なメール,使い捨てメール,スパム保護,プライバシー保護,無料メール",
-					featureList: [
-						"無料で使用",
-						"登録不要",
-						"プライバシー保護",
-						"24時間有効",
-						"添付ファイル対応",
-						"リアルタイムメール受信",
-					],
-				};
-			default: // 'zh'
-				return [baseData, serviceData];
-		}
+	// 根据语言设置描述和关键词
+	switch (currentLanguage) {
+		case "en":
+			return [{
+				...baseData,
+				description:
+					"Free temporary email service to protect your privacy and avoid spam",
+				keywords:
+					"temporary email,disposable email,spam protection,privacy protection,free email",
+				featureList: [
+					"Free to use",
+					"No registration required",
+					"Privacy protection",
+					"24-hour validity",
+					"Attachment support",
+					"Real-time email reception",
+				],
+			}, serviceData];
+		case "ja":
+			return [{
+				...baseData,
+				description:
+					"プライバシーを保護し、スパムを避けるための無料の一時的なメールサービス",
+				keywords:
+					"一時的なメール,使い捨てメール,スパム保護,プライバシー保護,無料メール",
+				featureList: [
+					"無料で使用",
+					"登録不要",
+					"プライバシー保護",
+					"24時間有効",
+					"添付ファイル対応",
+					"リアルタイムメール受信",
+				],
+			}, serviceData];
+		default: // 'zh'
+			return [baseData, serviceData];
+	}
 	};
 
 	return (
@@ -259,24 +259,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<Links />
 
 				{/* JSON-LD 结构化数据 */}
-				{Array.isArray(getStructuredData()) ? (
-					getStructuredData().map((schema, index) => (
-						<script
-							key={index}
-							type="application/ld+json"
-							dangerouslySetInnerHTML={{
-								__html: JSON.stringify(schema),
-							}}
-						/>
-					))
-				) : (
+				{getStructuredData().map((schema, index) => (
 					<script
+						key={index}
 						type="application/ld+json"
 						dangerouslySetInnerHTML={{
-							__html: JSON.stringify(getStructuredData()),
+							__html: JSON.stringify(schema),
 						}}
 					/>
-				)}
+				))}
 
 
 		{/* Google Analytics */}

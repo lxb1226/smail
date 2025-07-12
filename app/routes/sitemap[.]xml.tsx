@@ -27,8 +27,16 @@ export function loader({ request }: LoaderFunctionArgs) {
 		{ path: "/terms", priority: "0.5", changefreq: "yearly" },
 	];
 
+	// 定义页面接口
+	interface SitemapPage {
+		url: string;
+		changefreq: string;
+		priority: string;
+		lastmod: string;
+	}
+
 	// 生成所有页面 - 包含多语言版本
-	const pages = [];
+	const pages: SitemapPage[] = [];
 	
 	// 添加默认中文页面（根路径）
 	pageRoutes.forEach(route => {
