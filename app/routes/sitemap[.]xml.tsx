@@ -1,6 +1,7 @@
 import type { LoaderFunctionArgs } from "react-router";
+import { getAllPosts } from "~/blog/utils/posts";
 
-export function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request }: LoaderFunctionArgs) {
 	const host =
 		request.headers.get("X-Forwarded-Host") ?? request.headers.get("host");
 
@@ -25,6 +26,7 @@ export function loader({ request }: LoaderFunctionArgs) {
 		{ path: "/faq", priority: "0.7", changefreq: "monthly" },
 		{ path: "/privacy", priority: "0.5", changefreq: "yearly" },
 		{ path: "/terms", priority: "0.5", changefreq: "yearly" },
+		{ path: "/blog", priority: "0.9", changefreq: "weekly" },
 	];
 
 	// 定义页面接口
@@ -62,6 +64,38 @@ export function loader({ request }: LoaderFunctionArgs) {
 			});
 		}
 	});
+
+	// 添加博客文章页面
+	for (const lang of languages) {
+		try {
+			const posts = await getAllPosts(lang);
+			
+			posts.forEach(post => {
+				// 转换文章日期为 ISO 格式
+				const postDate = new Date(post.date).toISOString().split("T")[0];
+				
+				if (lang === "zh") {
+					// 中文默认路径
+					pages.push({
+						url: `/blog/${post.slug}`,
+						changefreq: "monthly",
+						priority: post.featured ? "0.8" : "0.7",
+						lastmod: postDate,
+					});
+				} else {
+					// 其他语言带语言前缀
+					pages.push({
+						url: `/${lang}/blog/${post.slug}`,
+						changefreq: "monthly", 
+						priority: post.featured ? "0.8" : "0.7",
+						lastmod: postDate,
+					});
+				}
+			});
+		} catch (error) {
+			console.error(`Error loading posts for language ${lang}:`, error);
+		}
+	}
 
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
