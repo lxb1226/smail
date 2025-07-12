@@ -54,10 +54,7 @@ export function meta({ location }: Route.MetaArgs) {
 
 export async function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
-  const langParam = url.searchParams.get('lang');
-  const currentLanguage = langParam && ['zh', 'en', 'ja'].includes(langParam) 
-    ? langParam as 'zh' | 'en' | 'ja'
-    : getCurrentLanguage(url.pathname);
+  const currentLanguage = getCurrentLanguage(url.pathname);
   
   try {
     const [allPosts, featuredPosts, tags, categories] = await Promise.all([

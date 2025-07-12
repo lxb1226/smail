@@ -90,30 +90,10 @@ export async function loader({ params, request }: Route.LoaderArgs) {
   }
 
   const url = new URL(request.url);
-  const langParam = url.searchParams.get('lang');
+  const currentLanguage = getCurrentLanguage(url.pathname);
 
   try {
-    // 尝试多语言加载
-    const languages = langParam && ['zh', 'en', 'ja'].includes(langParam) 
-      ? [langParam as 'zh' | 'en' | 'ja'] 
-      : ['zh', 'en', 'ja'];
-    
-    let post = null;
-    let currentLanguage = 'zh';
-
-    for (const lang of languages) {
-      try {
-        post = await getPostBySlug(slug, lang);
-        currentLanguage = lang;
-        break;
-      } catch {
-        continue;
-      }
-    }
-
-    if (!post) {
-      throw new Response("Post Not Found", { status: 404 });
-    }
+    const post = await getPostBySlug(slug, currentLanguage);
 
     // 获取相关文章（同分类的其他文章）
     const relatedPosts = await getAllPosts(currentLanguage);

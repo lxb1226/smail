@@ -139,36 +139,19 @@ const i18nConfig = {
 	},
 };
 
-// 延迟初始化i18n，避免重复初始化
-let isInitialized = false;
-
-// 初始化函数
-export const initializeI18n = (language?: SupportedLanguage) => {
-	if (isInitialized) {
-		return Promise.resolve();
-	}
-
-	isInitialized = true;
-
-	if (typeof window !== "undefined") {
-		// 客户端：使用语言检测器
-		return i18n.use(LanguageDetector).use(initReactI18next).init({
-			...i18nConfig,
-			detection: detectionOptions,
-			lng: language || undefined, // 使用传入的语言
-		});
-	} else {
-		// 服务器端：使用指定语言或默认语言
-		return i18n.use(initReactI18next).init({
-			...i18nConfig,
-			lng: language || defaultLanguage,
-		});
-	}
-};
-
-// 自动初始化（为了向后兼容）
-if (!isInitialized) {
-	initializeI18n();
+// 简化的初始化 - 直接同步初始化
+if (typeof window !== "undefined") {
+	// 客户端：使用语言检测器
+	i18n.use(LanguageDetector).use(initReactI18next).init({
+		...i18nConfig,
+		detection: detectionOptions,
+	});
+} else {
+	// 服务器端：使用默认语言
+	i18n.use(initReactI18next).init({
+		...i18nConfig,
+		lng: defaultLanguage,
+	});
 }
 
 export default i18n;
@@ -188,6 +171,8 @@ export const getCurrentLanguage = (pathname?: string): SupportedLanguage => {
 		if (pathLang) {
 			return pathLang;
 		}
+		// 如果没有语言前缀，说明是中文默认路径
+		return "zh";
 	}
 
 	// 在客户端，从URL路径中提取语言
@@ -197,15 +182,11 @@ export const getCurrentLanguage = (pathname?: string): SupportedLanguage => {
 		if (pathLang) {
 			return pathLang;
 		}
-
-		// 回退到i18n检测的语言
-		const currentLang = i18n.language;
-		return supportedLanguages.includes(currentLang as SupportedLanguage)
-			? (currentLang as SupportedLanguage)
-			: defaultLanguage;
+		// 如果没有语言前缀，说明是中文默认路径
+		return "zh";
 	}
 
-	// 在服务器端，如果没有提供路径参数，返回默认语言
+	// 在服务器端，返回默认语言
 	return defaultLanguage;
 };
 
