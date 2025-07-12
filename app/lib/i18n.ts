@@ -139,19 +139,36 @@ const i18nConfig = {
 	},
 };
 
-// 初始化i18n - 使用统一的配置来避免SSR/CSR不匹配
-if (typeof window !== "undefined") {
-	// 客户端：使用语言检测器
-	i18n.use(LanguageDetector).use(initReactI18next).init({
-		...i18nConfig,
-		detection: detectionOptions,
-	});
-} else {
-	// 服务器端：使用默认语言，不使用语言检测器
-	i18n.use(initReactI18next).init({
-		...i18nConfig,
-		lng: defaultLanguage,
-	});
+// 延迟初始化i18n，避免重复初始化
+let isInitialized = false;
+
+// 初始化函数
+export const initializeI18n = (language?: SupportedLanguage) => {
+	if (isInitialized) {
+		return Promise.resolve();
+	}
+
+	isInitialized = true;
+
+	if (typeof window !== "undefined") {
+		// 客户端：使用语言检测器
+		return i18n.use(LanguageDetector).use(initReactI18next).init({
+			...i18nConfig,
+			detection: detectionOptions,
+			lng: language || undefined, // 使用传入的语言
+		});
+	} else {
+		// 服务器端：使用指定语言或默认语言
+		return i18n.use(initReactI18next).init({
+			...i18nConfig,
+			lng: language || defaultLanguage,
+		});
+	}
+};
+
+// 自动初始化（为了向后兼容）
+if (!isInitialized) {
+	initializeI18n();
 }
 
 export default i18n;
@@ -227,8 +244,12 @@ export const generateLocalizedPath = (
 	// 移除现有的语言前缀
 	const cleanPath = path.replace(/^\/(zh|en|ja)/, "") || "/";
 
-	// 所有语言都添加前缀，确保路径一致性
-	return `/${language}${cleanPath === "/" ? "" : cleanPath}`;
+	// 中文使用默认路径（无前缀），其他语言添加前缀
+	if (language === "zh") {
+		return cleanPath;
+	} else {
+		return `/${language}${cleanPath === "/" ? "" : cleanPath}`;
+	}
 };
 
 // 工具函数：获取所有语言的路径
