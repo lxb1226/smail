@@ -35,6 +35,36 @@
       "name": "Dang.ai",
       "url": "https://dang.ai/",
       "description": "Dang.ai"
+    },
+    {
+      "id": "turbo0",
+      "name": "Turbo0",
+      "url": "https://turbo0.com/item/tmpmail",
+      "description": "Turbo0"
+    },
+    {
+      "id": "aifinder",
+      "name": "Aifinder",
+      "url": "https://aifinder.site",
+      "description": "Aifinder"
+    },
+    {
+      "id": "twelve",
+      "name": "Twelve Tools",
+      "url": "https://twelve.tools",
+      "description": "Twelve Tools"
+    },
+    {
+      "id": "fazier",
+      "name": "Fazier",
+      "url": "https://fazier.com/launches/www.tmpmail.online",
+      "description": "Fazier"
+    },
+    {
+      "id": "showmebest",
+      "name": "ShowMeBestAI",
+      "url": "https://www.showmebest.ai",
+      "description": "ShowMeBestAI"
     }
   ]
 }

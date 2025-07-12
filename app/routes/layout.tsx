@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { Navigation } from "~/components/Navigation";
 import { Footer } from "~/components/Footer";
+import { Breadcrumb } from "~/components/Breadcrumb";
 import {
 	getCurrentLanguage,
 	generateLocalizedPath,
@@ -45,6 +46,7 @@ export default function Layout() {
 				currentLang={currentLang}
 				onLanguageChange={switchLanguage}
 			/>
+			<Breadcrumb />
 			<Outlet />
 			<Footer />
 		</>

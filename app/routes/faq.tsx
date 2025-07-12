@@ -13,14 +13,50 @@ import {
 import type { Route } from "./+types/faq";
 
 export function meta(_: Route.MetaArgs) {
-	// 注意：meta函数在服务器端运行，无法直接使用useTranslation
-	// 这里使用默认的中文内容，多语言版本的meta将在lang.faq.tsx中处理
+	// 生成FAQ页面的结构化数据
+	const faqSchema = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		"name": "TmpMail临时邮箱常见问题",
+		"description": "关于TmpMail临时邮箱服务的常见问题解答",
+		"mainEntity": [
+			{
+				"@type": "Question",
+				"name": "什么是临时邮箱？",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "临时邮箱是一种一次性邮件地址服务，可以接收邮件但不需要注册，通常用于保护个人隐私、避免垃圾邮件等场景。"
+				}
+			},
+			{
+				"@type": "Question", 
+				"name": "TmpMail是免费的吗？",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "是的，TmpMail完全免费提供临时邮箱服务，无需注册，无隐藏费用，无广告干扰。"
+				}
+			},
+			{
+				"@type": "Question",
+				"name": "邮件会保存多久？",
+				"acceptedAnswer": {
+					"@type": "Answer",
+					"text": "邮件和邮箱地址会保存24小时，过期后会自动删除，确保您的隐私安全。"
+				}
+			}
+		]
+	};
+
 	return [
 		{ title: "常见问题解答 - TmpMail临时邮箱使用指南及疑难解答" },
 		{
 			name: "description",
 			content:
 				"TmpMail临时邮箱常见问题全面解答：如何使用一次性邮箱、邮件保存时长、附件下载、隐私安全等。快速找到使用临时邮箱服务的答案，轻松上手免费临时邮件服务。",
+		},
+		{
+			name: "script:ld+json",
+			content: JSON.stringify(faqSchema),
 		},
 	];
 }

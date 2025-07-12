@@ -232,12 +232,12 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 				<div className="max-w-6xl mx-auto">
 					{/* Hero Section */}
 					<div className="text-center mb-12">
-						<h2 className="text-4xl font-bold text-gray-800 mb-4">
+						<h1 className="text-4xl font-bold text-gray-800 mb-4">
 							{t("hero.title")}
 							<span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
 								{t("hero.highlight")}
 							</span>
-						</h2>
+						</h1>
 						<p className="text-lg text-gray-600 max-w-2xl mx-auto">
 							{t("hero.description")}
 						</p>
@@ -253,7 +253,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 										<div className="bg-blue-600 rounded-lg p-2">
 											<Mail className="h-5 w-5 text-white" />
 										</div>
-										<span className="text-gray-800">{t("mailbox.title")}</span>
+										<h2 className="text-gray-800">{t("mailbox.title")}</h2>
 									</CardTitle>
 									<div className="flex flex-wrap items-center gap-2 text-sm">
 										<span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
@@ -337,7 +337,7 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 									<div className="flex items-center justify-between">
 										<div className="flex items-center gap-2">
 											<CardTitle className="flex items-center space-x-2">
-												<span>{t("inbox.title")}</span>
+												<h2>{t("inbox.title")}</h2>
 											</CardTitle>
 											<span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
 												{loaderData.stats.unread} {t("inbox.unread")}
@@ -409,18 +409,18 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 					{/* Features Section */}
 					<div className="mt-16">
 						<div className="text-center mb-8">
-							<h3 className="text-2xl font-bold text-gray-800 mb-2">
+							<h2 className="text-2xl font-bold text-gray-800 mb-2">
 								{t("features.title")}
-							</h3>
+							</h2>
 							<p className="text-gray-600">{t("features.subtitle")}</p>
 						</div>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 							<Card className="text-center">
 								<CardContent className="pt-6">
 									<div className="text-4xl mb-4">🔒</div>
-									<h4 className="text-lg font-semibold mb-2">
+									<h3 className="text-lg font-semibold mb-2">
 										{t("features.privacy.title")}
-									</h4>
+									</h3>
 									<p className="text-gray-600 text-sm">
 										{t("features.privacy.description")}
 									</p>
@@ -429,9 +429,9 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 							<Card className="text-center">
 								<CardContent className="pt-6">
 									<div className="text-4xl mb-4">⚡</div>
-									<h4 className="text-lg font-semibold mb-2">
+									<h3 className="text-lg font-semibold mb-2">
 										{t("features.instant.title")}
-									</h4>
+									</h3>
 									<p className="text-gray-600 text-sm">
 										{t("features.instant.description")}
 									</p>
@@ -440,9 +440,9 @@ export default function Home({ loaderData }: Route.ComponentProps) {
 							<Card className="text-center">
 								<CardContent className="pt-6">
 									<div className="text-4xl mb-4">💰</div>
-									<h4 className="text-lg font-semibold mb-2">
+									<h3 className="text-lg font-semibold mb-2">
 										{t("features.free.title")}
-									</h4>
+									</h3>
 									<p className="text-gray-600 text-sm">
 										{t("features.free.description")}
 									</p>

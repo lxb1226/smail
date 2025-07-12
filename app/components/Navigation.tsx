@@ -42,11 +42,21 @@ export function Navigation({
 			label: t("navigation.faq"),
 			description: t("faq:hero.subtitle"),
 		},
-		// {
-		// 	href: generateLocalizedPath("/contact", currentLang),
-		// 	label: t("navigation.contact"),
-		// 	description: t("contact:subtitle")
-		// },
+		{
+			href: generateLocalizedPath("/contact", currentLang),
+			label: t("navigation.contact"),
+			description: t("contact:subtitle"),
+		},
+		{
+			href: generateLocalizedPath("/privacy", currentLang),
+			label: t("navigation.privacy"),
+			description: t("privacy:meta.description"),
+		},
+		{
+			href: generateLocalizedPath("/terms", currentLang),
+			label: t("navigation.terms"),
+			description: t("terms:meta.description"),
+		},
 	];
 
 	// 开发环境下添加debug页面

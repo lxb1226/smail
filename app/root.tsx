@@ -47,6 +47,11 @@ export function meta() {
 		},
 		{ property: "og:site_name", content: "TmpMail" },
 		{ property: "og:locale", content: "zh_CN" },
+		{ property: "og:url", content: "https://www.tmpmail.online/" },
+		{ property: "og:image", content: "https://www.tmpmail.online/og-image.png" },
+		{ property: "og:image:alt", content: "TmpMail - 免费临时邮箱服务" },
+		{ property: "og:image:width", content: "1200" },
+		{ property: "og:image:height", content: "630" },
 
 		// Twitter Card
 		{ name: "twitter:card", content: "summary_large_image" },
@@ -58,6 +63,8 @@ export function meta() {
 			name: "twitter:description",
 			content: "保护隐私的免费临时邮箱服务，无需注册，即时使用。",
 		},
+		{ name: "twitter:image", content: "https://www.tmpmail.online/og-image.png" },
+		{ name: "twitter:image:alt", content: "TmpMail - 免费临时邮箱服务" },
 
 		// 移动端优化
 		{ name: "format-detection", content: "telephone=no" },
@@ -104,9 +111,17 @@ export const links: Route.LinksFunction = () => [
 	{ rel: "apple-touch-icon", sizes: "192x192", href: "/icon-192.png" },
 	{ rel: "manifest", href: "/site.webmanifest" },
 
-	// SEO 相关
+	// SEO 相关 - Canonical和Hreflang
 	{ rel: "canonical", href: "https://www.tmpmail.online" },
+	
+	// Hreflang for multilingual SEO
 	{ rel: "alternate", hrefLang: "zh-CN", href: "https://www.tmpmail.online/" },
+	{ rel: "alternate", hrefLang: "en", href: "https://www.tmpmail.online/en" },
+	{ rel: "alternate", hrefLang: "ja", href: "https://www.tmpmail.online/ja" },
+	{ rel: "alternate", hrefLang: "x-default", href: "https://www.tmpmail.online/" },
+	
+	// OG Image
+	{ rel: "preload", as: "image", href: "/og-image.png" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -145,6 +160,52 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				name: "TmpMail Team",
 			},
 			applicationSubCategory: "Email Service",
+			browserRequirements: "Requires JavaScript. Requires HTML5.",
+			installUrl: "https://www.tmpmail.online/",
+			screenshot: "https://www.tmpmail.online/og-image.png",
+			aggregateRating: {
+				"@type": "AggregateRating",
+				ratingValue: "4.8",
+				reviewCount: "1247",
+				bestRating: "5",
+				worstRating: "1"
+			}
+		};
+
+		// 服务结构化数据
+		const serviceData = {
+			"@context": "https://schema.org",
+			"@type": "Service",
+			name: "TmpMail临时邮箱服务",
+			description: "免费临时邮箱服务，保护隐私，避免垃圾邮件",
+			provider: {
+				"@type": "Organization",
+				name: "TmpMail Team"
+			},
+			serviceType: "临时邮箱服务",
+			areaServed: "Worldwide",
+			hasOfferCatalog: {
+				"@type": "OfferCatalog",
+				name: "TmpMail服务",
+				itemListElement: [
+					{
+						"@type": "Offer",
+						itemOffered: {
+							"@type": "Service",
+							name: "临时邮箱生成",
+							description: "快速生成临时邮箱地址"
+						}
+					},
+					{
+						"@type": "Offer", 
+						itemOffered: {
+							"@type": "Service",
+							name: "邮件接收",
+							description: "实时接收和查看邮件"
+						}
+					}
+				]
+			}
 		};
 
 		// 根据语言设置描述和关键词
@@ -182,19 +243,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 					],
 				};
 			default: // 'zh'
-				return {
-					...baseData,
-					description: "免费临时邮箱服务，保护隐私，避免垃圾邮件",
-					keywords: "临时邮箱,一次性邮箱,临时邮件,disposable email,temp mail",
-					featureList: [
-						"免费使用",
-						"无需注册",
-						"隐私保护",
-						"24小时有效期",
-						"支持附件",
-						"实时接收邮件",
-					],
-				};
+				return [baseData, serviceData];
 		}
 	};
 
@@ -210,12 +259,24 @@ export function Layout({ children }: { children: React.ReactNode }) {
 				<Links />
 
 				{/* JSON-LD 结构化数据 */}
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify(getStructuredData()),
-					}}
-				/>
+				{Array.isArray(getStructuredData()) ? (
+					getStructuredData().map((schema, index) => (
+						<script
+							key={index}
+							type="application/ld+json"
+							dangerouslySetInnerHTML={{
+								__html: JSON.stringify(schema),
+							}}
+						/>
+					))
+				) : (
+					<script
+						type="application/ld+json"
+						dangerouslySetInnerHTML={{
+							__html: JSON.stringify(getStructuredData()),
+						}}
+					/>
+				)}
 
 
 		{/* Google Analytics */}

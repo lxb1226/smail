@@ -14,45 +14,46 @@ export function loader({ request }: LoaderFunctionArgs) {
 	// 使用当前日期，ISO 8601格式
 	const currentDate = new Date().toISOString().split("T")[0]; // YYYY-MM-DD格式
 
-	// 网站主要页面 - 只包含实际存在的路由
-	const pages = [
-		{
-			url: "",
-			changefreq: "daily",
-			priority: "1.0",
-			lastmod: currentDate,
-		},
-		{
-			url: "/about",
-			changefreq: "monthly",
-			priority: "0.8",
-			lastmod: currentDate,
-		},
-		{
-			url: "/contact",
-			changefreq: "monthly",
-			priority: "0.7",
-			lastmod: currentDate,
-		},
-		{
-			url: "/faq",
-			changefreq: "monthly",
-			priority: "0.7",
-			lastmod: currentDate,
-		},
-		{
-			url: "/privacy",
-			changefreq: "yearly",
-			priority: "0.5",
-			lastmod: currentDate,
-		},
-		{
-			url: "/terms",
-			changefreq: "yearly",
-			priority: "0.5",
-			lastmod: currentDate,
-		},
+	// 支持的语言
+	const languages = ["zh", "en", "ja"];
+	
+	// 主要页面路径
+	const pageRoutes = [
+		{ path: "", priority: "1.0", changefreq: "daily" },
+		{ path: "/about", priority: "0.8", changefreq: "monthly" },
+		{ path: "/contact", priority: "0.7", changefreq: "monthly" },
+		{ path: "/faq", priority: "0.7", changefreq: "monthly" },
+		{ path: "/privacy", priority: "0.5", changefreq: "yearly" },
+		{ path: "/terms", priority: "0.5", changefreq: "yearly" },
 	];
+
+	// 生成所有页面 - 包含多语言版本
+	const pages = [];
+	
+	// 添加默认中文页面（根路径）
+	pageRoutes.forEach(route => {
+		pages.push({
+			url: route.path,
+			changefreq: route.changefreq,
+			priority: route.priority,
+			lastmod: currentDate,
+		});
+	});
+
+	// 添加多语言页面
+	languages.forEach(lang => {
+		if (lang !== "zh") { // 默认是中文，跳过
+			pageRoutes.forEach(route => {
+				const url = route.path === "" ? `/${lang}` : `/${lang}${route.path}`;
+				pages.push({
+					url,
+					changefreq: route.changefreq,
+					priority: route.priority,
+					lastmod: currentDate,
+				});
+			});
+		}
+	});
 
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

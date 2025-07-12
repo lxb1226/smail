@@ -91,10 +91,10 @@ export function Footer() {
 							</li>
 							<li>
 								<Link
-									to="/terms"
+									to="/contact"
 									className="text-gray-300 hover:text-blue-400 transition-colors"
 								>
-									{t("navigation.terms")}
+									{t("navigation.contact")}
 								</Link>
 							</li>
 						</ul>
